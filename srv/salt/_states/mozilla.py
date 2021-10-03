@@ -76,7 +76,22 @@ def managed(name, version="latest", lang="en-US", **kwargs):
     )
     _propagate_changes(ret, file_ret)
 
-    # TODO: install desktop file
+    product_cap = product.capitalize()
+    desktop_ret = __states__['file.managed'](
+        name="/home/jonas/.local/share/applications/firefox.desktop",
+        contents=f"""[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=/opt/{product}/{product}-bin %u
+Icon=/opt/{product}/browser/chrome/icons/default/default128.png
+Name={product_cap}
+""",
+        user="jonas",
+        group="jonas",
+        mode="0600",
+    )
+    _propagate_changes(desktop_ret)
 
     return ret
 
