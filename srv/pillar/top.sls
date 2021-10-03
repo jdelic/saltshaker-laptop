@@ -1,3 +1,5 @@
 base:
     '*':
         - config
+        - repos
+        - ssl

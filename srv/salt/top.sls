@@ -7,3 +7,7 @@ base:
         - enpass
         - firefox
         - thunderbird
+        - zoom
+        - teams
+        - hashicorp
+        - salt-minion
