@@ -9,8 +9,11 @@ inputrc:
         - source: salt://etc_mods/inputrc
 
 
-ensure-interfaces.d-works:
-    file.append:
-        - name: /etc/network/interfaces
-        - text: source /etc/network/interfaces.d/*
-        - order: 2
+hosts-deny:
+    file.managed:
+        - name: /etc/hosts.deny
+        - contents: |
+            ALL: ALL
+        - user: root
+        - group: root
+        - mode: '0644'
