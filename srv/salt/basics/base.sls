@@ -2,11 +2,8 @@ basesystem-packages:
     pkg.installed:
         - pkgs:
             - unzip
-            - scdaemon
-            - opensc
             - info
             - efitools
-            - sbsigntool
             - make
             - git
             - firejail

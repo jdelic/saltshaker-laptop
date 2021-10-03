@@ -65,6 +65,23 @@ timezone-germany:
             - service: dbus
 
 
+empty-crontab:
+    file.managed:
+        - name: /etc/cron.d/00-ignore
+        - contents: |
+              # nothing to see here, this is just for salt
+
+
+cron:
+    service.running:
+        - sig: /usr/sbin/cron
+        - watch:
+            - file: /etc/cron.d*
+        - require:
+            - pkg: basesystem-packages
+
+
+
 # enforce en_us.UTF8
 default-locale-gen:
     locale.present:

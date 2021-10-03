@@ -42,7 +42,7 @@ desktop-packages:
             - libvirt-daemon-system
         - install_recommends: False
         - require:
-            - pkg: base-packages
+            - pkg: basesystem-packages
 
 
 desktop-activated:

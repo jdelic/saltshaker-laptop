@@ -7,4 +7,16 @@ include:
     - .ssl
 
 
+crypto-packages:
+    pkg.installed:
+        - pkgs:
+            - gnupg
+            - gpgv
+            - openssl
+            - scdaemon
+            - opensc
+            - sbsigntool
+            - dirmngr
+
+
 # vim: syntax=yaml
