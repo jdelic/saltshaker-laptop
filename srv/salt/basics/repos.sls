@@ -9,12 +9,12 @@ bullseye:
         - order: 1  # execute this state early!
 
 
-saltstack-repo:
-    pkgrepo.managed:
-        - name: {{pillar['repos']['saltstack']}}
-        - file: /etc/apt/sources.list.d/saltstack.list
-        - key_url: salt://saltstack_0E08A149DE57BFBE.pgp.key
-        - order: 2  # execute this state early!
+#saltstack-repo:
+#    pkgrepo.managed:
+#        - name: {{pillar['repos']['saltstack']}}
+#        - file: /etc/apt/sources.list.d/saltstack.list
+#        - key_url: salt://saltstack_0E08A149DE57BFBE.pgp.key
+#        - order: 2  # execute this state early!
 
 
 updates-bullseye:
@@ -38,7 +38,7 @@ backports-org-bullseye:
         - order: 2  # execute this state early!
     file.managed:
         - name: /etc/apt/preferences.d/bullseye-backports
-        - source: salt://etc_mods/bullseye-backports
+        - source: salt://basics/etc_mods/bullseye-backports
 
 
 hashicorp-repo:

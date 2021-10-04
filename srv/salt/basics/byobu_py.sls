@@ -33,7 +33,6 @@ def byobu(username, set_bashrc=True):
 
     if set_bashrc:
         file_bashrc = state('/home/%s/.bashrc' % username).file
-        file_bashrc.require(st_user)
         file_bashrc.managed(
             source='salt://basics/bashrc',
             user=username,

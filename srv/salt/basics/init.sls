@@ -14,7 +14,7 @@ include:
 policy-deny:
     file.managed:
         - name: /usr/sbin/policy-rc.d
-        - source: salt://policy-rc.d
+        - source: salt://basics/policy-rc.d
         - mode: 0755
         - user: root
         - group: root
@@ -51,7 +51,7 @@ root:
 root-bashrc:
     file.managed:
         - name: /root/.bashrc
-        - source: salt://mn/users/bashrc.root
+        - source: salt://basics/bashrc.root
         - user: root
         - group: root
         - mode: 640

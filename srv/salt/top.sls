@@ -9,5 +9,4 @@ base:
         - thunderbird
         - zoom
         - teams
-        - hashicorp
         - salt-minion

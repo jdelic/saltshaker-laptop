@@ -6,7 +6,7 @@
 inputrc:
     file.managed:
         - name: /etc/inputrc
-        - source: salt://etc_mods/inputrc
+        - source: salt://basics/etc_mods/inputrc
 
 
 hosts-deny:
