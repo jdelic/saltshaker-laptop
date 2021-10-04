@@ -13,7 +13,9 @@ basesystem-packages:
             - dnsutils
             - efitools
             - firejail
+            - firmware-intel-sound
             - firmware-linux-nonfree
+            - firmware-sof-signed
             - git
             - info
             - jq

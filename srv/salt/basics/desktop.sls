@@ -1,6 +1,9 @@
 desktop-packages:
     pkg.installed:
         - pkgs:
+            - alsa-firmware-loaders
+            - alsa-utils
+            - apulse
             - apt-file
             - arc-theme
             - at-spi2-core
@@ -15,6 +18,7 @@ desktop-packages:
             - gnome-themes-standard
             - gnome-tweaks
             - gthumb
+            - libasound2-plugins
             - libgdk-pixbuf2.0-bin
             - libinput-tools
             - libvirt-daemon
@@ -24,13 +28,14 @@ desktop-packages:
             - network-manager-openvpn
             - network-manager-gnome
             - network-manager-openvpn-gnome
+            - p7zip-full
             - plymouth
             - plymouth-themes
             - pulseaudio
             - pulseaudio-module-bluetooth
             - pulseaudio-module-gsettings
+            - sound-theme-freedesktop
             - virt-manager
-            - p7zip-full
             - unison-gtk
             - virtinst
             - vlc
