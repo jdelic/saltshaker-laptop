@@ -19,6 +19,7 @@ desktop-packages:
             - gnome-tweaks
             - gthumb
             - libasound2-plugins
+            - libcanberra-pulse
             - libgdk-pixbuf2.0-bin
             - libinput-tools
             - libvirt-daemon
