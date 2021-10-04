@@ -1,45 +1,44 @@
 desktop-packages:
     pkg.installed:
         - pkgs:
+            - apt-file
+            - arc-theme
+            - at-spi2-core
+            - chrome-gnome-shell
             - gnome-shell
             - gdm3
-            - gnome-session
-            - arc-theme
-            - gnome-themes-standard
+            - gimp
             - gnome-control-center
-            - nautilus
             - gnome-icon-theme
-            - x11-xserver-utils
+            - gnome-session
+            - gnome-terminal
+            - gnome-themes-standard
+            - gnome-tweaks
+            - gthumb
+            - libgdk-pixbuf2.0-bin
+            - libinput-tools
+            - libvirt-daemon
+            - libvirt-daemon-system
+            - nautilus
             - network-manager
             - network-manager-openvpn
             - network-manager-gnome
             - network-manager-openvpn-gnome
-            - pulseaudio-module-gsettings
-            - pulseaudio-module-bluetooth
-            - pulseaudio
-            - gnome-terminal
-            - gnome-tweaks
             - plymouth
             - plymouth-themes
-            - gthumb
-            - gimp
-            - libinput-tools
-            - xdotool
+            - pulseaudio
+            - pulseaudio-module-bluetooth
+            - pulseaudio-module-gsettings
+            - virt-manager
+            - p7zip-full
+            - unison-gtk
+            - virtinst
+            - vlc
             - wmctrl
+            - x11-xserver-utils
+            - xdotool
             - xfonts-scalable
             - xserver-xorg
-            - apt-file
-            - virt-manager
-            - libvirt-daemon
-            - p7zip-full
-            - nftables
-            - vlc
-            - unison-gtk
-            - libgdk-pixbuf2.0-bin
-            - at-spi2-core
-            - chrome-gnome-shell
-            - virtinst
-            - libvirt-daemon-system
         - install_recommends: False
         - require:
             - pkg: basesystem-packages

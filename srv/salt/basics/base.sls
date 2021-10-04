@@ -1,29 +1,30 @@
 basesystem-packages:
     pkg.installed:
         - pkgs:
-            - unzip
-            - info
-            - efitools
-            - make
-            - git
-            - firejail
-            - smbios-utils
-            - byobu
-            - firmware-linux-nonfree
-            - less
-            - bash-completion
-            - coreutils
-            - patch
-            - dnsutils
-            - net-tools
-            - libcap2-bin
             - apt-transport-https
             - apt-transport-s3
+            - bash-completion
+            - byobu
+            - coreutils
             - cron
+            - curl
             - dbus
             - dbus-user-session
+            - dnsutils
+            - efitools
+            - firejail
+            - firmware-linux-nonfree
+            - git
+            - info
             - jq
-            - curl
+            - less
+            - libcap2-bin
+            - make
+            - net-tools
+            - nftables
+            - patch
+            - smbios-utils
             - systemd-timesyncd
+            - unzip
         - order: 1
 
