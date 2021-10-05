@@ -36,6 +36,7 @@ desktop-packages:
             - pulseaudio
             - pulseaudio-module-bluetooth
             - pulseaudio-module-gsettings
+            - seahorse
             - snapd
             - sound-theme-freedesktop
             - squashfs-tools
