@@ -19,7 +19,7 @@ def _error(ret, err_msg):
     return ret
 
 
-def managed(name, version="latest", lang="en-US", **kwargs):
+def managed(name, version="latest", lang="en-US", icon=None, **kwargs):
     """
     Download the latest product (firefox or thunderbird) to /opt
     """
@@ -43,12 +43,13 @@ def managed(name, version="latest", lang="en-US", **kwargs):
             allow_redirects=False
         )
 
-        if resp.status_code != 301:
-            _error(ret, "Expected Mozilla download server to send a redirect")
+        if resp.status_code != 302:
+            _error(ret,
+                   f"Expected Mozilla download server to send a redirect ({resp.status_code})")
             return ret
 
         from urllib.parse import urlparse
-        up = urlparse(resp.url)
+        up = urlparse(resp.headers["location"])
         fn = __salt__['file.basename'](up.path)
 
         vr = re.match(rf'{product}-([0-9]+\.[0-9]+\.?[0-9]*)\.tar\.bz2', fn)
@@ -76,22 +77,33 @@ def managed(name, version="latest", lang="en-US", **kwargs):
     )
     _propagate_changes(ret, file_ret)
 
+    if not icon:
+        if __salt__['file.file_exists'](
+                f"/opt/{product}/browser/chrome/icons/default/default128.png"):
+            icon = "/opt/{product}/browser/chrome/icons/default/default128.png"
+        elif __salt__['file.file_exists'](
+                f"/opt/{product}/chrome/icons/default/default128.png"):
+            icon = "/opt/{product}/chrome/icons/default/default128.png"
+        else:
+            _error(ret, f"Can't find a valid icon for {product}")
+            return ret
+
     product_cap = product.capitalize()
     desktop_ret = __states__['file.managed'](
-        name="/home/jonas/.local/share/applications/firefox.desktop",
+        name=f"/home/jonas/.local/share/applications/{product}.desktop",
         contents=f"""[Desktop Entry]
 Encoding=UTF-8
 Version=1.0
 Type=Application
 Exec=/opt/{product}/{product}-bin %u
-Icon=/opt/{product}/browser/chrome/icons/default/default128.png
+Icon={icon}
 Name={product_cap}
 """,
         user="jonas",
         group="jonas",
         mode="0600",
     )
-    _propagate_changes(desktop_ret)
+    _propagate_changes(ret, desktop_ret)
 
     return ret
 
