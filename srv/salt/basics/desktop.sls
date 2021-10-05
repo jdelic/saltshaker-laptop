@@ -66,4 +66,11 @@ snap-service:
         - name: snapd
         - enable: True
 
+
+set-wayland-state:
+    file.managed:
+        - name: /etc/gdm3/daemon.conf
+        - source: salt://basics/daemon.conf.jinja
+        - template: jinja
+
 # vim: syntax=yaml
