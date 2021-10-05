@@ -10,3 +10,4 @@ base:
         - zoom
         - teams
         - salt-minion
+        - slack

@@ -7,7 +7,7 @@ include:
     - .desktop
     - .noexim
     - .byobu_py
-
+    - .grub
 
 # enforce that Debian packages can't launch daemons while salt runs
 # see http://people.debian.org/~hmh/invokerc.d-policyrc.d-specification.txt
@@ -94,3 +94,5 @@ default-locale-set:
             - locale: default-locale-gen
         - order: 2
 
+
+# vim: syntax=yaml
