@@ -20,6 +20,7 @@ desktop-packages:
             - gthumb
             - libasound2-plugins
             - libcanberra-pulse
+            - libdbus-glib-1-2
             - libgdk-pixbuf2.0-bin
             - libinput-tools
             - libvirt-daemon
@@ -35,7 +36,9 @@ desktop-packages:
             - pulseaudio
             - pulseaudio-module-bluetooth
             - pulseaudio-module-gsettings
+            - snapd
             - sound-theme-freedesktop
+            - squashfs-tools
             - virt-manager
             - unison-gtk
             - virtinst
@@ -45,6 +48,7 @@ desktop-packages:
             - xdotool
             - xfonts-scalable
             - xserver-xorg
+            - zenity
         - install_recommends: False
         - require:
             - pkg: basesystem-packages
@@ -55,3 +59,11 @@ desktop-activated:
         - name: systemctl set-default graphical.target
         - require:
             - pkg: desktop-packages
+
+
+snap-service:
+    service.running:
+        - name: snapd
+        - enable: True
+
+# vim: syntax=yaml
