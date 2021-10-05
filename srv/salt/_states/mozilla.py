@@ -71,7 +71,7 @@ def managed(name, version="latest", lang="en-US", icon=None, **kwargs):
         source=fileurl,
         source_hash=hashurl,
         source_hash_name=f"linux-x86_64/{lang}/{fn}",
-        if_missing="/opt/{product}",
+        if_missing=f"/opt/{product}",
         require=require,
         **kwargs
     )
@@ -80,10 +80,10 @@ def managed(name, version="latest", lang="en-US", icon=None, **kwargs):
     if not icon:
         if __salt__['file.file_exists'](
                 f"/opt/{product}/browser/chrome/icons/default/default128.png"):
-            icon = "/opt/{product}/browser/chrome/icons/default/default128.png"
+            icon = f"/opt/{product}/browser/chrome/icons/default/default128.png"
         elif __salt__['file.file_exists'](
                 f"/opt/{product}/chrome/icons/default/default128.png"):
-            icon = "/opt/{product}/chrome/icons/default/default128.png"
+            icon = f"/opt/{product}/chrome/icons/default/default128.png"
         else:
             _error(ret, f"Can't find a valid icon for {product}")
             return ret
