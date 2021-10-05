@@ -11,3 +11,4 @@ base:
         - teams
         - salt-minion
         - slack
+        - airtame
