@@ -4,4 +4,14 @@ firefox:
             - pkg: desktop-packages
 
 
-# TODO: add firefox provisioning policy
+firefox-policy:
+    file.managed:
+        - name: /opt/firefox/distribution/policies.json
+        - source: salt://firefox/policies.json
+        - makedirs: True
+        - require:
+            - mozilla: firefox
+
+
+
+# vim: syntax=yaml 
