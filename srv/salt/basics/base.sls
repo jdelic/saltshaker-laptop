@@ -22,6 +22,8 @@ basesystem-packages:
             - less
             - libcap2-bin
             - make
+            - man
+            - manpages
             - net-tools
             - nftables
             - patch
@@ -30,3 +32,5 @@ basesystem-packages:
             - unzip
         - order: 1
 
+
+# vim: syntax=yaml
