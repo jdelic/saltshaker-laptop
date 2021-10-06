@@ -12,7 +12,10 @@
             "chrome-gnome-shell@gnome.org": {
                 "install_mode": "normal_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/gnome-shell-integration/latest.xpi"
-            }
+            },
+            "firefox-enpass@enpass.io": {
+                "install_mode": "normal_installed",
+                "install_url": "https://dl.enpass.io/stable/extensions/firefox/versions/v6.6.2-9/enpass-firefox-6.6.2.xpi"
         },
         "OfferToSaveLogins": false,
         "PasswordManagerEnabled": true,
