@@ -141,7 +141,7 @@ def file(username, path, profile=None, **kwargs):
 
     homedir = info["home"]
     firefoxdir = os.path.join(homedir, ".mozilla", "firefox")
-    if not os.path.exists(os.path.join(firefoxdir, "profiles.ini"):
+    if not os.path.exists(os.path.join(firefoxdir, "profiles.ini")):
         _error(ret, "Can't find user's firefox profiles folder in %s" % 
                     os.path.join(firefoxdir, "profiles.ini"))
         return ret
