@@ -123,12 +123,6 @@ def file(username, path, profile=None, **kwargs):
         "comment": "",
     }
 
-
-    if "name" in kwargs:
-        _error(ret, "Do not set 'name' on mozilla.file, set path as a relative path to the "
-                    "profile folder instead.")
-        return ret
-
     if path.startswith("/") or path.startswith("\\"):
         _error(ret, "Do not set absolute paths on mozilla.file. 'path' is relative to the "
                     "user's profile folder.")
