@@ -8,5 +8,6 @@ spotify:
         - name: spotify-client
         - require:
             - aptrepo: spotify
+            - pkg: desktop-packages
 
 # vim: syntax=yaml
