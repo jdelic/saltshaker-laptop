@@ -12,3 +12,4 @@ base:
         - salt-minion
         - slack
         - airtame
+        - spotify
