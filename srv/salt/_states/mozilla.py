@@ -1,5 +1,7 @@
+import os
 import re
 import requests
+import configparser
 
 
 def _propagate_changes(myret, theirret):
@@ -19,7 +21,7 @@ def _error(ret, err_msg):
     return ret
 
 
-def managed(name, version="latest", lang="en-US", icon=None, **kwargs):
+def installed(name, version="latest", lang="en-US", icon=None, **kwargs):
     """
     Download the latest product (firefox or thunderbird) to /opt
     """
@@ -107,3 +109,82 @@ Name={product_cap}
 
     return ret
 
+
+def file(username, path, profile=None, **kwargs):
+    """
+    Allows you to drop a file into the user profile. Linux only!
+    """
+
+    ret = {
+        "name": name,
+        "changes": {},
+        "pchanges": {},
+        "result": True,
+        "comment": "",
+    }
+
+
+    if "name" in kwargs:
+        _error(ret, "Do not set 'name' on mozilla.file, set path as a relative path to the "
+                    "profile folder instead.")
+        return ret
+
+    if path.startswith("/") or path.startswith("\\"):
+        _error(ret, "Do not set absolute paths on mozilla.file. 'path' is relative to the "
+                    "user's profile folder.")
+        return ret
+
+    info = __salt__['user.info'](username)
+    if not info or "home" not in info:
+        _error(ret, "User %s appears to not exist on this system or doesn't have a home" % username)
+        return ret
+
+    homedir = info["home"]
+    firefoxdir = os.path.join(homedir, ".mozilla", "firefox")
+    if not os.path.exists(os.path.join(firefoxdir, "profiles.ini"):
+        _error(ret, "Can't find user's firefox profiles folder in %s" % 
+                    os.path.join(firefoxdir, "profiles.ini"))
+        return ret
+
+    config = configparser.ConfigParser()
+    config.read(os.path.join(firefoxdir, "profiles.ini"))
+    
+    profiledir = None
+    userprofile = None
+
+    if profile:
+        if profile in config.sections():
+            if not "path" in config[profile]:
+                _error(ret, "Profile %s has no path" % profile)
+                return ret
+            userprofile = profile
+            profiledir = os.path.join(firefoxdir, config[profile]["path"])
+        else:
+            for p in config.sections():
+                if "path" in config[profile] and profile == config[profile]["path"]:
+                    userprofile = p
+                    profiledir = os.path.join(firefoxdir, profile)
+                    break
+    else:
+        for s in config.sections():
+            if s.startswith("profile") and profiledir and "path" in config[s]:
+                _error(ret, "profiles.ini contains more than one profile. Please specify the profile "
+                            "name in mozilla.file")
+                return ret
+            else:
+                if "path" in config[s]:
+                    userprofile = s
+                    profiledir = os.path.join(firefoxdir, config[s]["path"])
+
+    if not userprofile or not profiledir:
+        _error(ret, "mozilla.file was unable to find a valid profile")
+        return ret
+
+    filename = os.path.join(profiledir, path)
+
+    file_ret = __states__['file.managed'](
+        name=filename,
+        **kwargs,
+    )
+    _propagate_changes(ret, file_ret)
+    return ret

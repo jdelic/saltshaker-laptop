@@ -1,4 +1,4 @@
 thunderbird:
-    mozilla.managed:
+    mozilla.installed:
         - require:
             - pkg: desktop-packages

@@ -1,5 +1,5 @@
 firefox:
-    mozilla.managed:
+    mozilla.install:
         - require:
             - pkg: desktop-packages
 
@@ -12,6 +12,14 @@ firefox-policy:
         - require:
             - mozilla: firefox
 
+
+firefox-userprefs:
+    mozilla.file:
+        - username: jonas
+        - path: user.js
+        - source: salt://firefox/user.js
+        - require:
+            - mozilla: firefox
 
 
 # vim: syntax=yaml 
