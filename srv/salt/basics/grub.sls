@@ -4,7 +4,7 @@ grub-defaults:
         - source: salt://basics/grub.defaults
     cmd.run:
         - name: update-grub
-        - watch:
+        - onchanges:
             - file: grub-defaults
 
 # vim: syntax=yaml
