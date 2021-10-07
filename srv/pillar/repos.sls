@@ -7,3 +7,7 @@ repos:
     enpass: deb https://apt.enpass.io/ stable main
     hashicorp: deb https://apt.releases.hashicorp.com bullseye main
     saltstack: deb http://repo.saltstack.com/py3/debian/10/amd64/latest buster main
+    spotify: deb http://repository.spotify.com stable non-free
+
+
+# vim: syntax=yaml

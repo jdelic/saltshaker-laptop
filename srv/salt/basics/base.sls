@@ -22,7 +22,7 @@ basesystem-packages:
             - less
             - libcap2-bin
             - make
-            - man
+            - man-db
             - manpages
             - net-tools
             - nftables
