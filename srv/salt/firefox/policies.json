@@ -16,6 +16,14 @@
             "firefox-enpass@enpass.io": {
                 "installation_mode": "normal_installed",
                 "install_url": "https://dl.enpass.io/stable/extensions/firefox/versions/v6.6.2-9/enpass-firefox-6.6.2.xpi"
+            },
+            "de-DE@dictionaries.addons.mozilla.org": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/german-dictionary/latest.xpi"
+            },
+            "@testpilot-containers": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi"
             }
         },
         "OfferToSaveLogins": false,
