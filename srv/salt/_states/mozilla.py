@@ -116,7 +116,7 @@ def file(username, path, profile=None, **kwargs):
     """
 
     ret = {
-        "name": name,
+        "name": kwargs["name"] if "name" in kwargs else username,
         "changes": {},
         "pchanges": {},
         "result": True,
