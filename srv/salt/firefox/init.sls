@@ -1,5 +1,5 @@
 firefox:
-    mozilla.install:
+    mozilla.installed:
         - require:
             - pkg: desktop-packages
 
