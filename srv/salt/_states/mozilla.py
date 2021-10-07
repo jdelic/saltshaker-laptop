@@ -174,10 +174,9 @@ def file(username, path, profile=None, **kwargs):
         _error(ret, "mozilla.file was unable to find a valid profile")
         return ret
 
-    filename = os.path.join(profiledir, path)
+    kwargs["name"] = os.path.join(profiledir, path)
 
     file_ret = __states__['file.managed'](
-        name=filename,
         **kwargs,
     )
     _propagate_changes(ret, file_ret)
