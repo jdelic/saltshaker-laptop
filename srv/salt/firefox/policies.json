@@ -20,7 +20,7 @@
         },
         "OfferToSaveLogins": false,
         "PasswordManagerEnabled": true,
-        "SanitizeOnShutDown": {
+        "SanitizeOnShutdown": {
             "Cache": true,
             "Cookies": true,
             "Downloads": true,
