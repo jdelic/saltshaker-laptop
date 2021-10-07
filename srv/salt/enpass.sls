@@ -13,4 +13,5 @@ enpass:
             - pkg: desktop-packages
 
 
+# vim: syntax=yaml
 
