@@ -8,6 +8,7 @@ desktop-packages:
             - arc-theme
             - at-spi2-core
             - chrome-gnome-shell
+            - fonts-liberation
             - gnome-shell
             - gdm3
             - gimp
@@ -40,6 +41,7 @@ desktop-packages:
             - snapd
             - sound-theme-freedesktop
             - squashfs-tools
+            - ttf-mscorefonts-installer
             - virt-manager
             - unison-gtk
             - virtinst
