@@ -7,24 +7,24 @@ I'm using this to get to my minimal laptop setup on a Dell XPS13. I am currently
 running this on a 9310 model.
 
 Among other things, this config will install:
-  
+
 * Gnome
-* Most important apps: 
+* Most important apps:
 
-  - Firefox, 
-  - Thunderbird, 
-  - Spotify, 
-  - Albert (my favorite launcher), 
+  - Firefox,
+  - Thunderbird,
+  - Spotify,
+  - Albert (my favorite launcher),
   - Enpass
-  
-* Most important Firefox extensions: 
 
-  - uBlock, 
-  - Enpass, 
-  - German dictionary, 
-  - Multi-account containers, 
+* Most important Firefox extensions:
+
+  - uBlock,
+  - Enpass,
+  - German dictionary,
+  - Multi-account containers,
   - Gnome Extension Manager
-  
+
 * Enforces Firefox sanitization on closing the browser and other settings.
 
 
@@ -32,7 +32,7 @@ Getting to Netinst
 ------------------
 
 Download the `Debian Netinst ISO with non-free firmware <_netinst>`. Then
-install the minimal system. I like using the text mode installer and I 
+install the minimal system. I like using the text mode installer and I
 partition like this:
 
 * 512MB EFI
@@ -40,7 +40,7 @@ partition like this:
 * Remainder is dm-crypt encrypted volume with LVM (start by configuring the
   encrypted partition in the text mode installer, then add LVM and a volume
   group ``vg0``)
-  
+
   - 90GB EXT4 vg0-root /root
   - 16GB SWAP vg0-swap ---
   - 256GB EXT4 vg0-home /home
@@ -51,21 +51,21 @@ when Gnome is installed, Gnome will use NetworkManager and we'll have to remove
 the wifi settings we're adding here.
 
 .. code-block:: shell
-    
+
     mount /dev/sda1 /mnt/usb
-    echo "deb [trusted=yes] file:/mnt/usb bullseye main contrib non-free" >> /etc/apt/sources.list 
-    apt update 
-    apt -o Acquire::Check-Valid-Until=false install firmware-iwlwifi vim wpasupplicant wireless-tools firmware-linux-nonfree 
+    echo "deb [trusted=yes] file:/mnt/usb bullseye main contrib non-free" >> /etc/apt/sources.list
+    apt update
+    apt -o Acquire::Check-Valid-Until=false install firmware-iwlwifi vim wpasupplicant wireless-tools firmware-linux-nonfree
     modprobe ath11k
     wpa_passphrase [YOUR SSID] > /etc/wpa_supplicant/wpa_supplicant-wlp0s20f3.conf
-    vi /etc/wpa_supplicant/wpa_supplicant-wlp0s20f3.conf 
+    vi /etc/wpa_supplicant/wpa_supplicant-wlp0s20f3.conf
 
     ### contents of /etc/wpa_supplicant/wpa_supplicant-wlp0s20f3.conf
     ctrl_interface=DIR=/run/wpa_supplicant
     country=DE
     network={
         ssid="[YOUR SSID]"
-        psk=...  # filled by wpa_passphrase 
+        psk=...  # filled by wpa_passphrase
         priority=10
     }
     # just for the record, free wifi access points without wpa work like this
@@ -114,13 +114,12 @@ and get going.
     systemctl disable --now salt-minion
     git clone https://github.com/jdelic/saltshaker-laptop
     mkdir -p /etc/salt/minion.d
-    cp ~/saltshaker-laptop/etc/salt-minion/minion.d/saltshaker.conf /etc/salt/minion.d/ 
+    cp ~/saltshaker-laptop/etc/salt-minion/minion.d/saltshaker.conf /etc/salt/minion.d/
     sudo ln -sv ~/saltshaker-laptop/srv/salt /etc/salt/salt
     sudo ln -sv ~/saltshaker-laptop/srv/pillar /etc/salt/pillar
     salt-call --local state.highstate
 
 
-.. _netinst: https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.0.0+nonfree/amd64/iso-cd/ 
+.. _netinst: https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.0.0+nonfree/amd64/iso-cd/
 
-
-# vim: wrap textwidth=80 
+.. # vim: wrap textwidth=80
