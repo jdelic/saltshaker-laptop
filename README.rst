@@ -115,7 +115,7 @@ and get going.
     salt-call --local state.highstate
 
 
-.. _netinst: https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/
+.. _netinst: https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.0.0+nonfree/amd64/iso-cd/ 
 
 
 # vim: wrap textwidth=80 
