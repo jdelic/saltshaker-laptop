@@ -8,20 +8,20 @@ running this on a 9310 model.
 
 Among other things, this config will install:
   
- * Gnome
- * Most important apps: 
-     - Firefox, 
-     - Thunderbird, 
-     - Spotify, 
-     - Albert (my favorite launcher), 
-     - Enpass
- * Most important Firefox extensions: 
-     - uBlock, 
-     - Enpass, 
-     - German dictionary, 
-     - Multi-account containers, 
-     - Gnome Extension Manager
- * Enforces Firefox sanitization on closing the browser and other settings.
+* Gnome
+* Most important apps: 
+    - Firefox, 
+    - Thunderbird, 
+    - Spotify, 
+    - Albert (my favorite launcher), 
+    - Enpass
+* Most important Firefox extensions: 
+    - uBlock, 
+    - Enpass, 
+    - German dictionary, 
+    - Multi-account containers, 
+    - Gnome Extension Manager
+* Enforces Firefox sanitization on closing the browser and other settings.
 
 
 Getting to Netinst
@@ -31,14 +31,14 @@ Download the `Debian Netinst ISO with non-free firmware <_netinst>`. Then
 install the minimal system. I like using the text mode installer and I 
 partition like this:
 
- * 512MB EFI
- * 512MB EXT4 /boot
- * Remainder is dm-crypt encrypted volume with LVM (start by configuring the
-   encrypted partition in the text mode installer, then add LVM and a volume
-   group ``vg0``)
-     - 90GB EXT4 vg0-root /root
-     - 16GB SWAP vg0-swap ---
-     - 256GB EXT4 vg0-home /home
+* 512MB EFI
+* 512MB EXT4 /boot
+* Remainder is dm-crypt encrypted volume with LVM (start by configuring the
+  encrypted partition in the text mode installer, then add LVM and a volume
+  group ``vg0``)
+    - 90GB EXT4 vg0-root /root
+    - 16GB SWAP vg0-swap ---
+    - 256GB EXT4 vg0-home /home
 
 After booting into the minimal system, bring up wifi. We're going to use
 wpa_supplicant and systemd-networkd to establish a network connection. Later
