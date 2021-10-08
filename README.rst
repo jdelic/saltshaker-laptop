@@ -31,7 +31,7 @@ Among other things, this config will install:
 Getting to Netinst
 ------------------
 
-Download the `Debian Netinst ISO with non-free firmware <_netinst>`. Then
+Download the `Debian Netinst ISO with non-free firmware <netinst_>`__. Then
 install the minimal system. I like using the text mode installer and I
 partition like this:
 
