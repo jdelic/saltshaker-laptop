@@ -1,4 +1,4 @@
-nftables-install:
+nftables-config:
     file.managed:
         - name: /etc/nftables.conf
         - source: salt://nftables/nftables.conf
@@ -15,3 +15,11 @@ nftables-install:
         - user: root
         - group: root
         - mode: '0755'
+
+
+nftables-service:
+    service.running:
+        - name: nftables
+        - enable: True
+        - require:
+            - file: nftables-config
