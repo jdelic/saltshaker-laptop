@@ -10,17 +10,21 @@ Among other things, this config will install:
   
 * Gnome
 * Most important apps: 
-    - Firefox, 
-    - Thunderbird, 
-    - Spotify, 
-    - Albert (my favorite launcher), 
-    - Enpass
+
+  - Firefox, 
+  - Thunderbird, 
+  - Spotify, 
+  - Albert (my favorite launcher), 
+  - Enpass
+  
 * Most important Firefox extensions: 
-    - uBlock, 
-    - Enpass, 
-    - German dictionary, 
-    - Multi-account containers, 
-    - Gnome Extension Manager
+
+  - uBlock, 
+  - Enpass, 
+  - German dictionary, 
+  - Multi-account containers, 
+  - Gnome Extension Manager
+  
 * Enforces Firefox sanitization on closing the browser and other settings.
 
 
@@ -36,9 +40,10 @@ partition like this:
 * Remainder is dm-crypt encrypted volume with LVM (start by configuring the
   encrypted partition in the text mode installer, then add LVM and a volume
   group ``vg0``)
-    - 90GB EXT4 vg0-root /root
-    - 16GB SWAP vg0-swap ---
-    - 256GB EXT4 vg0-home /home
+  
+  - 90GB EXT4 vg0-root /root
+  - 16GB SWAP vg0-swap ---
+  - 256GB EXT4 vg0-home /home
 
 After booting into the minimal system, bring up wifi. We're going to use
 wpa_supplicant and systemd-networkd to establish a network connection. Later
