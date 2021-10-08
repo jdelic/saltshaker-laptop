@@ -121,6 +121,4 @@ and get going.
 
 
 .. _netinst: https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.0.0+nonfree/amd64/iso-cd/ 
-
-
-# vim: wrap textwidth=80 
+.. # vim: wrap textwidth=80 
