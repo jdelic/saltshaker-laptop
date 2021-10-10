@@ -13,3 +13,4 @@ base:
         - slack
         - airtame
         - spotify
+        - yubikey
