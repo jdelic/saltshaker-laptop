@@ -100,6 +100,7 @@ to debug wifi:
     # other useful commands are:
     networkctl
     iwlist scan
+    nmctl
 
 
 Once you have a network connection, edit ``/etc/apt/sources.list`` and enable
