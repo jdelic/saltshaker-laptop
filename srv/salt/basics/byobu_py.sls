@@ -40,5 +40,8 @@ def byobu(username, set_bashrc=True):
             mode='640'
         )
 
-
-byobu("jonas")
+for user in __pillar__['users']:
+    if isinstance(user, str):
+        byobu(user)
+    else:
+        raise ValueError("not a username string %s" % user)
