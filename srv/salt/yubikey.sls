@@ -1,6 +1,6 @@
 yubikey-packages:
     pkg.installed:
-        pkgs:
+        - pkgs:
             - ykcs11
             - ykls
             - yubico-piv-tool
