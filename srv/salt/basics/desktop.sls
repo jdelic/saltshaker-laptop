@@ -100,7 +100,7 @@ libinput-gestures-start:
     cmd.run:
         - name: /var/cache/salt/libinput-gestures/libinput-gestures-setup autostart start
         - cwd: /var/cache/salt/libinput-gestures
-        - unless: /var/cache/salt/libinput-gestures/libinput-gestures-setup status | grep -q "libinput-gestures is set to autostart as a user service"
+        - unless: /var/cache/salt/libinput-gestures/libinput-gestures-setup status | grep -q "libinput-gestures is set to autostart"
         - runas: {{user}}
         - require:
             - cmd: libinput-gestures-install
