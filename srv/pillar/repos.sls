@@ -1,5 +1,5 @@
 repos:
-    albert: deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_Testing/ /
+    albert: deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_11/ /
     bullseye: deb http://ftp-stud.hs-esslingen.de/debian/ bullseye main contrib non-free
     bullseye-backports: deb http://ftp-stud.hs-esslingen.de/debian/ bullseye-backports main contrib non-free
     bullseye-security: deb http://security.debian.org/debian-security bullseye-security main contrib non-free
