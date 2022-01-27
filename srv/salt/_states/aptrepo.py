@@ -122,6 +122,6 @@ def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=
             _propagate_changes(ret, keyfile_ret)
     
     if ret["changes"]:
-        __salt__['aptpkg.refresh_db']()
+        __salt__['pkg.refresh_db']()
 
     return ret
