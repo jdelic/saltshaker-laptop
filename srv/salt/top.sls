@@ -14,3 +14,4 @@ base:
         - airtame
         - spotify
         - yubikey
+        - dev
