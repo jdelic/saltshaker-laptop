@@ -4,7 +4,6 @@ python-essentials:
         - pkgs:
             - python3-pip
             - python3-virtualenv
-            - pip
             - virtualenv
             - python3-dev
         - install_recommends: False
