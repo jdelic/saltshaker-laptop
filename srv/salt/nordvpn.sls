@@ -14,7 +14,7 @@ nordvpn:
             - pkg: desktop-packages
 
 
-{% for user in pillars['users'] %}
+{% for user in pillar['users'] %}
 group-nordvpn-{{user}}:
     user.present:
         - name: {{user}}
