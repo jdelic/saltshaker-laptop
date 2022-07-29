@@ -6,6 +6,7 @@ repos:
     bullseye-updates: deb http://deb.debian.org/debian bullseye-updates main contrib non-free
     enpass: deb https://apt.enpass.io/ stable main
     hashicorp: deb https://apt.releases.hashicorp.com bullseye main
+    nordvpn: deb https://repo.nordvpn.com/deb/nordvpn/debian stable main
     saltstack: deb http://repo.saltstack.com/py3/debian/10/amd64/latest buster main
     spotify: deb http://repository.spotify.com stable non-free
 

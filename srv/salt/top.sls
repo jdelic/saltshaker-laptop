@@ -15,3 +15,4 @@ base:
         - spotify
         - yubikey
         - dev
+        - nordvpn
