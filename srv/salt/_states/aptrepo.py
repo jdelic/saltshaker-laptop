@@ -116,7 +116,7 @@ def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=
         if not __salt__["file.file_exists"](signed_by):
             log.debug("storing dearmored key %s in %s", signing_key_url, signed_by)
             keyfile_ret = __states__['file.managed'](name=signed_by,
-                                                     url=signing_key_url,
+                                                     source=signing_key_url,
                                                      skip_verify=skip_verify)
             log.debug(keyfile_ret)
             _propagate_changes(ret, keyfile_ret)
