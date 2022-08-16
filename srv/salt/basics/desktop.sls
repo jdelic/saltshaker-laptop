@@ -37,7 +37,7 @@ desktop-packages:
             - pulseaudio
             - pulseaudio-module-bluetooth
             - pulseaudio-module-gsettings
-            - qemu-kvm
+            - qemu-system-x86
             - seahorse
             - snapd
             - sound-theme-freedesktop
