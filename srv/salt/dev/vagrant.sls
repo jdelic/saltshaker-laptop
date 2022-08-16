@@ -1,2 +1,5 @@
 vagrant:
-    pkg.installed
+    pkg.installed:
+        - pkgs:
+            - vagrant
+            - vagrant-libvirt
