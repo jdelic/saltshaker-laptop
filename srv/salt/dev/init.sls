@@ -1,5 +1,6 @@
 include:
     - .python
+    - .vagrant
 
 dev-essentials:
     pkg.installed:
