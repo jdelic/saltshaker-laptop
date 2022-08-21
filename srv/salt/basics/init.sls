@@ -9,8 +9,8 @@ include:
     - .byobu_py
     - .grub
     - .pam
-    - .nftables
     - .bluetooth
+
 
 # enforce that Debian packages can't launch daemons while salt runs
 # see http://people.debian.org/~hmh/invokerc.d-policyrc.d-specification.txt
