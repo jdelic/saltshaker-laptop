@@ -1,4 +1,5 @@
 include:
+    - .nfs
     - .python
     - .vagrant
 
