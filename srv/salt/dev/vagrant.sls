@@ -16,3 +16,11 @@ vagrant-libvirt-{{user}}:
         - require:
             - pkg: vagrant
 {% endfor %}
+
+
+vagrant-enable-nfs:
+    file.append:
+        - name: /etc/hosts.allow
+        - text: |
+            # allow 192.168.120-192.168.123 
+            rpcbind mountd nfsd statd lockd rquotad : 127.0.0.1 192.168.120.1/255.255.252.0
