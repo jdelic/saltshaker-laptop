@@ -4,6 +4,7 @@ vagrant:
             - vagrant
             - libffi-dev
             - libvirt-dev
+            - rsync
 
 
 {% for user in pillar['users'] %}
