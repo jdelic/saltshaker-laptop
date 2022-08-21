@@ -112,7 +112,7 @@ group-input-{{user}}:
         - name: {{user}}
         - optional_groups:
             - input
-
+            - libvirt
 {% endfor %}
 
 # vim: syntax=yaml
