@@ -8,6 +8,7 @@ desktop-packages:
             - arc-theme
             - at-spi2-core
             - chrome-gnome-shell
+            - dnsmasq  # required by libvirtd
             - fonts-liberation
             - gnome-shell
             - gdm3
