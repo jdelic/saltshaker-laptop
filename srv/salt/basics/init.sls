@@ -84,6 +84,14 @@ cron:
             - pkg: basesystem-packages
 
 
+firewalld:
+    service.running:
+        - sig: /usr/sbin/python3 /usr/sbin/firewalld
+        - watch:
+            - file: /etc/firewalld*
+        - require:
+            - pkg: basesystem-packages
+
 
 # enforce en_us.UTF8
 default-locale-gen:
