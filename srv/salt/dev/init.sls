@@ -41,6 +41,7 @@ dev-essentials:
             - libtsan0 
             - libubsan1 
             - linux-libc-dev
+            - linux-headers-amd64
         - install_recommends: False
 
 # vim: syntax=yaml
