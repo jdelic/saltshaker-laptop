@@ -42,6 +42,7 @@ desktop-packages:
             - seahorse
             - snapd
             - sound-theme-freedesktop
+            - spice-client-gtk
             - squashfs-tools
             - swtpm
             - swtpm-libs
