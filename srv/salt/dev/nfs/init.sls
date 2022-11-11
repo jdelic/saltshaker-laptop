@@ -12,3 +12,11 @@ nfs-kernel-server-defaults:
         - mode: '0644'
         - require:
             - pkg: nfs-kernel-server
+
+
+nfs-firewalld-service:
+    firewalld.service:
+        - name: nfs
+        - ports:
+            - 32767/tcp
+            - 32767/udp
