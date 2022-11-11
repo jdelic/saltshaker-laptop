@@ -43,6 +43,7 @@ desktop-packages:
             - snapd
             - sound-theme-freedesktop
             - spice-client-gtk
+            - spice-vdagent
             - squashfs-tools
             - swtpm
             - swtpm-libs
