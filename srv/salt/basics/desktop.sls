@@ -43,9 +43,13 @@ desktop-packages:
             - snapd
             - sound-theme-freedesktop
             - squashfs-tools
+            - swtpm
+            - swtpm-libs
+            - swtpm-tools
             - ttf-mscorefonts-installer
-            - virt-manager
             - unison-gtk
+            - virt-manager
+            - virt-viewer
             - virtinst
             - vlc
             - wmctrl
