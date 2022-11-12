@@ -13,6 +13,7 @@ desktop-packages:
             - gnome-shell
             - gdm3
             - gimp
+            - gir1.2-spiceclientgtk-3.0
             - gnome-control-center
             - gnome-icon-theme
             - gnome-session
