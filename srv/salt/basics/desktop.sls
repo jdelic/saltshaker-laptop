@@ -8,6 +8,7 @@ desktop-packages:
             - arc-theme
             - at-spi2-core
             - chrome-gnome-shell
+            - cups
             - dnsmasq  # required by libvirtd
             - fonts-liberation
             - gnome-shell
@@ -64,6 +65,12 @@ desktop-packages:
         - install_recommends: False
         - require:
             - pkg: basesystem-packages
+
+
+xerox-driver:
+    pkg.installed:
+        - sources:
+            - xeroxofficeprtdrv: https://download.support.xerox.com/pub/drivers/CQ8580/drivers/linux/pt_BR/XeroxOfficev5Pkg-Linuxx86_64-5.20.661.4684.deb
 
 
 desktop-activated:
