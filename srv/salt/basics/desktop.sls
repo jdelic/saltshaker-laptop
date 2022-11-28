@@ -50,6 +50,7 @@ desktop-packages:
             - swtpm
             - swtpm-libs
             - swtpm-tools
+            - system-config-printer
             - ttf-mscorefonts-installer
             - unison-gtk
             - virt-manager
