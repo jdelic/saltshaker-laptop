@@ -107,7 +107,6 @@ Once you have a network connection, edit ``/etc/apt/sources.list`` and enable
 the bookworm sources. Then you can install ``git``, grab this repo, install salt
 and get going.
 
-
 .. code-block:: shell
     cd
     cat >/etc/apt/sources.list.d/saltstack.list
