@@ -2,6 +2,7 @@ discord:
     file.managed:
         - name: /var/cache/salt/discord/discord.deb
         - source: 'https://discord.com/api/download?platform=linux&format=deb'
+        - skip_verify: True
         - makedirs: True
         - user: root
         - group: root
