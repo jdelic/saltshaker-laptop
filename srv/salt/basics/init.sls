@@ -50,6 +50,8 @@ root:
         - gid: 0
         - home: /root
         - password:
+        - remove_groups: False
+        - createhome: False
 
 
 root-bashrc:

@@ -20,6 +20,8 @@ group-nordvpn-{{user}}:
         - name: {{user}}
         - optional_groups:
             - nordvpn
+        - remove_groups: False
+        - createhome: False
 {% endfor %}
 
 # vim: syntax=yaml
