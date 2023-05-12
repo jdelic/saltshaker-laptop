@@ -8,15 +8,13 @@ vagrant:
             - rsync
 
 
-{% for user in pillar['users'] %}
-vagrant-libvirt-{{user}}:
+vagrant-libvirt:
     cmd.run:
         - name: vagrant plugin install vagrant-libvirt
         - unless: vagrant plugin list | grep -q libvirt
-        - runas: {{user}}
+        - runas: root
         - require:
             - pkg: vagrant
-{% endfor %}
 
 
 vagrant-enable-nfs:
