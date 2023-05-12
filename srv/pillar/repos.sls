@@ -1,5 +1,5 @@
 repos:
-    albert: deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_11/ /
+    albert: deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_Testing/ /
     bookworm: deb http://ftp-stud.hs-esslingen.de/debian/ bookworm main contrib non-free
     bookworm-backports: deb http://ftp-stud.hs-esslingen.de/debian/ bookworm-backports main contrib non-free
     bookworm-security: deb http://security.debian.org/debian-security bookworm-security main contrib non-free
