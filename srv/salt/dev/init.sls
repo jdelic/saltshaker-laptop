@@ -13,10 +13,8 @@ dev-essentials:
             - dpkg-dev 
             - fakeroot 
             - g++ 
-            - g++-10 
             - gcc
-            - gcc-10 
-            - libalgorithm-diff-perl 
+            - libalgorithm-diff-perl
             - libalgorithm-diff-xs-perl 
             - libalgorithm-merge-perl 
             - libasan6 
@@ -32,11 +30,11 @@ dev-essentials:
             - libexpat1-dev 
             - libfakeroot 
             - libfile-fcntllock-perl 
-            - libgcc-10-dev 
+            - libgcc-12-dev
             - libitm1 
             - liblsan0 
             - libnsl-dev
-            - libstdc++-10-dev 
+            - libstdc++-12-dev
             - libtirpc-dev 
             - libtsan0 
             - libubsan1 
