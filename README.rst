@@ -108,6 +108,7 @@ the bookworm sources. Then you can install ``git``, grab this repo, install salt
 and get going.
 
 .. code-block:: shell
+
     cd
     cat >/etc/apt/sources.list.d/saltstack.list
     deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/11/amd64/latest bullseye main
