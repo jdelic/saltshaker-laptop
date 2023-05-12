@@ -4,6 +4,7 @@ vagrant:
             - vagrant
             - libffi-dev
             - libvirt-dev
+            - ruby-dev
             - rsync
 
 
