@@ -18,6 +18,7 @@ desktop-packages:
             - gnome-control-center
             - gnome-icon-theme
             - gnome-session
+            - gnome-shell-extension-manager
             - gnome-terminal
             - gnome-tweaks
             - gthumb
@@ -105,9 +106,18 @@ libinput-gestures-git:
 {% for user in pillar['users'] %}
 libinput-gestures-install:
     cmd.run:
-        - name: /var/cache/salt/libinput-gestures/libinput-gestures-setup desktop
+        - name: /var/cache/salt/libinput-gestures/libinput-gestures-setup install
         - cwd: /var/cache/salt/libintput-gestures
         - unless: /var/cache/salt/libinput/gestures/libinput-gestures-setup status | grep -q "libinput-gestures is installed"
+        - runas: {{user}}
+        - watch:
+              - git: libinput-gestures-git
+
+libinput-gestures-desktop:
+    cmd.run:
+        - name: /var/cache/salt/libinput-gestures/libinput-gestures-setup desktop
+        - cwd: /var/cache/salt/libintput-gestures
+        - unless: /var/cache/salt/libinput/gestures/libinput-gestures-setup status | grep -q "libinput-gestures is set up as a desktop application"
         - runas: {{user}}
         - watch:
             - git: libinput-gestures-git
@@ -120,6 +130,7 @@ libinput-gestures-start:
         - runas: {{user}}
         - require:
             - cmd: libinput-gestures-install
+            - cmd: lipinput-gestures-desktop
 
 group-input-{{user}}:
     user.present:
