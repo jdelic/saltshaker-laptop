@@ -9,7 +9,6 @@ base:
         - firefox
         - thunderbird
         - zoom
-        - teams
         - salt-minion
         - slack
         - airtame
