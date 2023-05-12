@@ -5,6 +5,8 @@ base:
         - basics
         - albert
         - enpass
+        - discord
+        - experimental
         - firefox
         - thunderbird
         - zoom

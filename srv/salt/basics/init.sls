@@ -9,8 +9,9 @@ include:
     - .byobu_py
     - .grub
     - .pam
-    - .nftables
     - .bluetooth
+    - .firewalld
+
 
 # enforce that Debian packages can't launch daemons while salt runs
 # see http://people.debian.org/~hmh/invokerc.d-policyrc.d-specification.txt
@@ -84,11 +85,11 @@ cron:
             - pkg: basesystem-packages
 
 
-
 # enforce en_us.UTF8
 default-locale-gen:
     locale.present:
         - name: en_US.UTF-8
+
 
 default-locale-set:
     locale.system:

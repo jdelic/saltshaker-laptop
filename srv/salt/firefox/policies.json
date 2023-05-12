@@ -22,6 +22,7 @@
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi"
             }
         },
+        "OfferToSaveLogins": false,
         "OfferToSaveLoginsDefault": false,
         "SanitizeOnShutdown": {
             "Cache": true,
