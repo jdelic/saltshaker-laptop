@@ -9,12 +9,15 @@ bullseye:
         - order: 1  # execute this state early!
 
 
-#saltstack-repo:
-#    pkgrepo.managed:
-#        - name: {{pillar['repos']['saltstack']}}
-#        - file: /etc/apt/sources.list.d/saltstack.list
-#        - key_url: salt://saltstack_0E08A149DE57BFBE.pgp.key
-#        - order: 2  # execute this state early!
+saltstack-repo:
+    aptrepo.managed:
+        - name: {{pillar['repos']['saltstack']}}
+        - listfile_name: /etc/apt/sources.list.d/saltstack.list
+        - signing_key_url: https://repo.saltproject.io/salt/py3/debian/11/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
+        - signed_by: /etc/apt/keyrings/salt-archive-keyring-2023.gpg
+        - dearmor: False
+        - arch: amd64
+        - order: 2  # execute this state early!
 
 
 updates-bullseye:
