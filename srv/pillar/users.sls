@@ -2,3 +2,5 @@
 users:
     - jonas
 
+sudoers:
+    - jonas

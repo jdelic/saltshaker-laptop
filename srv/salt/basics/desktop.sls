@@ -127,6 +127,8 @@ group-input-{{user}}:
         - optional_groups:
             - input
             - libvirt
+        - remove_groups: False
+        - createhome: False
 {% endfor %}
 
 # vim: syntax=yaml
