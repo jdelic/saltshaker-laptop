@@ -19,7 +19,6 @@ desktop-packages:
             - gnome-icon-theme
             - gnome-session
             - gnome-terminal
-            - gnome-themes-standard
             - gnome-tweaks
             - gthumb
             - libasound2-plugins
