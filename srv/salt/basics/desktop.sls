@@ -130,7 +130,7 @@ libinput-gestures-start:
         - runas: {{user}}
         - require:
             - cmd: libinput-gestures-install
-            - cmd: lipinput-gestures-desktop
+            - cmd: libinput-gestures-desktop
 
 group-input-{{user}}:
     user.present:
