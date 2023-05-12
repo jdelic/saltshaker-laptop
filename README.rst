@@ -104,13 +104,16 @@ to debug wifi:
 
 
 Once you have a network connection, edit ``/etc/apt/sources.list`` and enable
-the bullseye sources. Then you can install ``git``, grab this repo, install salt
+the bookworm sources. Then you can install ``git``, grab this repo, install salt
 and get going.
 
 
 .. code-block:: shell
-
     cd
+    cat >/etc/apt/sources.list.d/saltstack.list
+    deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/11/amd64/latest bullseye main
+    apt install --no-install-recommends ca-certificates wget
+    wget -O /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/debian/11/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
     apt install --no-install-recommends git salt-minion
     systemctl disable --now salt-minion
     git clone https://github.com/jdelic/saltshaker-laptop
