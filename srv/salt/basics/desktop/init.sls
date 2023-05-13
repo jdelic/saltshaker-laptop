@@ -61,6 +61,7 @@ desktop-packages:
             - virt-viewer
             - virtinst
             - vlc
+            - weston
             - wmctrl
             - x11-xserver-utils
             - xdotool
@@ -96,6 +97,7 @@ set-wayland-state:
         - name: /etc/gdm3/daemon.conf
         - source: salt://basics/daemon.conf.jinja
         - template: jinja
+        - backup: minion
 
 
 # vim: syntax=yaml
