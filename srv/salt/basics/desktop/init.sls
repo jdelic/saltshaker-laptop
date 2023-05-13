@@ -11,6 +11,8 @@ desktop-packages:
             - apt-file
             - arc-theme
             - at-spi2-core
+            - bluez-obexd
+            - bluez-tools
             - chrome-gnome-shell
             - cups
             - dnsmasq  # required by libvirtd
@@ -19,8 +21,10 @@ desktop-packages:
             - gdm3
             - gimp
             - gir1.2-spiceclientgtk-3.0
+            - gir1.2-wp-0.4
             - gnome-control-center
             - gnome-icon-theme
+            - gnome-remote-desktop
             - gnome-session
             - gnome-shell-extension-manager
             - gnome-terminal
@@ -31,6 +35,8 @@ desktop-packages:
             - libdbus-glib-1-2
             - libgdk-pixbuf2.0-bin
             - libinput-tools
+            - libpipewire-0.3-common
+            - libpipewire-0.3-modules
             - libvirt-daemon
             - libvirt-daemon-system
             - nautilus
@@ -42,8 +48,9 @@ desktop-packages:
             - plymouth
             - plymouth-themes
             - pulseaudio
-            - pulseaudio-module-bluetooth
-            - pulseaudio-module-gsettings
+            - pipewire-bin
+            - pipewire-audio
+            - pipewire-pulse
             - qemu-system-x86
             - seahorse
             - snapd
@@ -61,7 +68,10 @@ desktop-packages:
             - virt-viewer
             - virtinst
             - vlc
+            - wayland-utils
+            - wayland-protocols
             - weston
+            - wireplumber
             - wmctrl
             - x11-xserver-utils
             - xdotool
