@@ -47,7 +47,6 @@ desktop-packages:
             - p7zip-full
             - plymouth
             - plymouth-themes
-            - pulseaudio
             - pipewire-bin
             - pipewire-audio
             - pipewire-pulse
