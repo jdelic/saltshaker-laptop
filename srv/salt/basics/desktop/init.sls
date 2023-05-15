@@ -35,6 +35,7 @@ desktop-packages:
             - libdbus-glib-1-2
             - libgdk-pixbuf2.0-bin
             - libinput-tools
+            - libpam-gnome-keyring
             - libpipewire-0.3-common
             - libpipewire-0.3-modules
             - libvirt-daemon
