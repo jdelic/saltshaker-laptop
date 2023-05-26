@@ -1,6 +1,6 @@
 
 v4l2loopback:
-    pkg.install:
+    pkg.installed:
         - pkgs:
             - v4l2loopback-dkms         # for virtual camera support
             - v4l2loopback-dkms-utils
