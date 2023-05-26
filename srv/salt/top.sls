@@ -15,5 +15,6 @@ base:
         - slack
         - spotify
         - thunderbird
+        - xerox
         - yubikey
         - zoom
