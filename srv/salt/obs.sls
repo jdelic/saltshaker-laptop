@@ -3,7 +3,7 @@ v4l2loopback:
     pkg.installed:
         - pkgs:
             - v4l2loopback-dkms         # for virtual camera support
-            - v4l2loopback-dkms-utils
+            - v4l2loopback-utils
         - install_recommends: False
     file.managed:
         - name: /etc/modules-load.d/v4l2loopback.conf
