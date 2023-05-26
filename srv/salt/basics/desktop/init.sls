@@ -1,5 +1,6 @@
-#include:
-#    - .libinput
+include:
+    - .flatpak
+#    - .libinput  # 2023-05: disabled for bookworm with Wayland
 
 
 desktop-packages:
@@ -39,6 +40,7 @@ desktop-packages:
             - libpipewire-0.3-modules
             - libvirt-daemon
             - libvirt-daemon-system
+            - malcontent  # unfortunately needed because otherwise gnome-settings->Applications doesn't populate
             - nautilus
             - network-manager
             - network-manager-openvpn
