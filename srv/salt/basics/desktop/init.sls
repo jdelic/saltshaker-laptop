@@ -18,6 +18,7 @@ desktop-packages:
             - cups
             - dnsmasq  # required by libvirtd
             - fonts-liberation
+            - fonts-powerline  # for starship
             - gnome-shell
             - gdm3
             - gimp
