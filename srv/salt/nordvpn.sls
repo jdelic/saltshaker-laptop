@@ -11,6 +11,7 @@ nordvpn-repo:
 nordvpn:
     pkg.installed:
         - require:
+            - aptrepo: nordvpn-repo
             - pkg: desktop-packages
 
 
@@ -22,6 +23,8 @@ group-nordvpn-{{user}}:
             - nordvpn
         - remove_groups: False
         - createhome: False
+        - require:
+            - pkg: nordvpn
 {% endfor %}
 
 # vim: syntax=yaml
