@@ -2,17 +2,18 @@
 
 base:
     '*':
-        - basics
+        - airtame
         - albert
-        - enpass
+        - basics
+        - dev
         - discord
+        - enpass
         - firefox
-        - thunderbird
-        - zoom
+        - nordvpn
+        - obs
         - salt-minion
         - slack
-        - airtame
         - spotify
+        - thunderbird
         - yubikey
-        - dev
-        - nordvpn
+        - zoom
