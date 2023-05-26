@@ -1,6 +1,6 @@
 
 wayland:
-    enabled: false
+    enabled: true
 
 
 public-interfaces:
