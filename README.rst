@@ -2,7 +2,7 @@ My laptop config
 ================
 
 This is supposed to run from a local salt-minion install, using ``salt-call``
-in a masterless setup. Based on a clean Debian Bullseye netinst installation,
+in a masterless setup. Based on a clean Debian Bookworm netinst installation,
 I'm using this to get to my minimal laptop setup on a Dell XPS13. I am currently
 running this on a 9310 model.
 
@@ -14,6 +14,7 @@ Among other things, this config will install:
   - Firefox,
   - Thunderbird,
   - Spotify,
+  - Slack
   - Albert (my favorite launcher),
   - Enpass
 
@@ -22,16 +23,22 @@ Among other things, this config will install:
   - uBlock,
   - Enpass,
   - German dictionary,
-  - Multi-account containers,
-  - Gnome Extension Manager
+  - Multi-account containers
 
 * Enforces Firefox sanitization on closing the browser and other settings.
+
+* Some other available applications include:
+
+  - nordvpn
+  - Discord
+  - OBS
+  - Airtame
 
 
 Getting to Netinst
 ------------------
 
-Download the `Debian Netinst ISO with non-free firmware <netinst_>`__. Then
+Download the `Debian Netinst ISO <netinst_>`__. Then
 install the minimal system. I like using the text mode installer and I
 partition like this:
 
@@ -45,67 +52,12 @@ partition like this:
   - 16GB SWAP vg0-swap ---
   - 256GB EXT4 vg0-home /home
 
-After booting into the minimal system, bring up wifi. We're going to use
-wpa_supplicant and systemd-networkd to establish a network connection. Later
-when Gnome is installed, Gnome will use NetworkManager and we'll have to remove
-the wifi settings we're adding here.
+After booting into the minimal system under bookwork, wifi will have been
+configured in ``/etc/network/interfaces``. Gnome will later use NetworkManager,
+which will not manage network adapters listed in ``/etc/network/interfaces``.
+So after the first run of ``salt-call``, you'll have to remove the static
+configuration.
 
-.. code-block:: shell
-
-    mount /dev/sda1 /mnt/usb
-    echo "deb [trusted=yes] file:/mnt/usb bullseye main contrib non-free" >> /etc/apt/sources.list
-    apt update
-    apt -o Acquire::Check-Valid-Until=false install firmware-iwlwifi vim wpasupplicant wireless-tools firmware-linux-nonfree
-    modprobe ath11k
-    wpa_passphrase [YOUR SSID] > /etc/wpa_supplicant/wpa_supplicant-wlp0s20f3.conf
-    vi /etc/wpa_supplicant/wpa_supplicant-wlp0s20f3.conf
-
-    ### contents of /etc/wpa_supplicant/wpa_supplicant-wlp0s20f3.conf
-    ctrl_interface=DIR=/run/wpa_supplicant
-    country=DE
-    network={
-        ssid="[YOUR SSID]"
-        psk=...  # filled by wpa_passphrase
-        priority=10
-    }
-    # just for the record, free wifi access points without wpa work like this
-    network={
-         ssid="starbucks"
-         key_mgmt=NONE
-         priority=20
-    }
-    ### EOF
-
-    vi /etc/systemd/network/10-[YOUR SSID].network
-
-    ### contents of /etc/systemd/network/10-[YOUR SSID].network
-    [Match]
-    Name=wlp0s20f3
-    SSID=maurus.net
-
-    [Network]
-    DHCP=ipv4
-    ### EOF
-
-    systemctl start wpa_supplicant@wlp0s20f3
-    systemctl enable systemd-networkd --now
-
-
-You might have to set up a ``resolv.conf`` and there are other useful commands
-to debug wifi:
-
-.. code-block:: shell
-
-    ln -sv /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-    # other useful commands are:
-    networkctl
-    iwlist scan
-    nmctl
-
-
-Once you have a network connection, edit ``/etc/apt/sources.list`` and enable
-the bookworm sources. Then you can install ``git``, grab this repo, install salt
-and get going.
 
 .. code-block:: shell
 
@@ -124,5 +76,5 @@ and get going.
     salt-call --local state.highstate
 
 
-.. _netinst: https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/11.0.0+nonfree/amd64/iso-cd/
+.. _netinst: https://www.debian.org/devel/debian-installer/
 .. # vim: wrap textwidth=80
