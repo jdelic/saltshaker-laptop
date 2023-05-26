@@ -37,6 +37,7 @@ def byobu(username, set_bashrc=True):
             source='salt://basics/bashrc',
             user=username,
             group=username,
+            template="jinja",
             mode='640'
         )
 

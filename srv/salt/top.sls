@@ -14,6 +14,7 @@ base:
         - salt-minion
         - slack
         - spotify
+        - starship
         - thunderbird
         - xerox
         - yubikey

@@ -10,3 +10,7 @@ trusted-interfaces:
     - virbr0
     - virbr1
     - virbr2
+
+
+starship:
+    enabled: true
