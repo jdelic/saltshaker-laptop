@@ -88,7 +88,20 @@ useful and you can install them from ``Extension Manager``:
   sensible)
 * Tray Icons Reloaded (no idea why Gnome tries to remove them... so much
   software still uses them)
+  - Make sure to change the settings to allow like 10 or so icons
+
 * No Overview At Start-up (with Albert as launcher this is just annoying)
+
+
+Important Gnome Settings to remember
+------------------------------------
+
+1. To get Albert to launch on ``META+X`` use Gnome settings and set a Keyboard
+   shortcut for ``albert toggle``.
+2. In the keyboard settings also change "Navigation"->"Switch Applications" to
+   "disabled" and "Switch Windows" to "Alt+Tab"
+3. On Gnome Tweaks set the clock to show calendar weeks and the date
+
 
 .. _netinst: https://www.debian.org/devel/debian-installer/
 .. # vim: wrap textwidth=80
