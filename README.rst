@@ -33,6 +33,7 @@ Among other things, this config will install:
   - Discord
   - OBS
   - Airtame
+  - Starship prompt
 
 
 Getting to Netinst
@@ -75,6 +76,19 @@ configuration.
     sudo ln -sv ~/saltshaker-laptop/srv/pillar /etc/salt/pillar
     salt-call --local state.highstate
 
+
+Important Gnome Extensions
+--------------------------
+
+These aren't installed automatically by this salt config, but I find them
+useful and you can install them from ``Extension Manager``:
+
+* Frippery Move Clock (moves the clock to the right where it belongs)
+* Vertical overview (because vertically stacked virtual desktops are much more
+  sensible)
+* Tray Icons Reloaded (no idea why Gnome tries to remove them... so much
+  software still uses them)
+* No Overview At Start-up (with Albert as launcher this is just annoying)
 
 .. _netinst: https://www.debian.org/devel/debian-installer/
 .. # vim: wrap textwidth=80
