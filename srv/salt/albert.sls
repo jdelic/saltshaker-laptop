@@ -11,3 +11,14 @@ albert:
         - require:
             - pkg: desktop-packages
 
+
+{% for user in pillar['users'] %}
+albert-autostart-{{user}}:
+    file.symlink:
+        - name: /home/{{user}}/.config/autostart/albert.desktop
+        - target: /usr/share/applications/albert.desktop
+        - user: {{user}}
+        - group: {{user}}
+        - require:
+            - pkg: albert
+{% endfor %}
