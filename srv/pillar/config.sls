@@ -14,3 +14,10 @@ trusted-interfaces:
 
 starship:
     enabled: true
+
+
+#firefox:
+#    gtk-theme-override: "Adwaita:light"
+
+#thunderbird:
+#    gtk-theme-override: "Adwaita:light"

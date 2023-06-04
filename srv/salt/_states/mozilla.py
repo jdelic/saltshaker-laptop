@@ -82,7 +82,7 @@ def installed(name, product=None, version="latest", lang="en-US", **kwargs):
     return ret
 
 
-def desktop(name, user, group, product=None, icon=None, **kwargs):
+def desktop(name, user, group, gtk_theme_override=None, product=None, icon=None, **kwargs):
     """
     add a .desktop file in /home/{user}/.local/share/applications/{name}
     :param name:
@@ -124,13 +124,16 @@ def desktop(name, user, group, product=None, icon=None, **kwargs):
     homedir = info["home"]
 
     product_cap = product.capitalize()
+    cmdline = f"/opt/{product}/{product}-bin %u"
+    if gtk_theme_override:
+        cmdline = f"env GTK_THEME={gtk_theme_override} {cmdline}"
     desktop_ret = __states__['file.managed'](
         name=os.path.join(homedir, ".local", "share", "applications", f"{product}.desktop"),
         contents=f"""[Desktop Entry]
 Encoding=UTF-8
 Version=1.0
 Type=Application
-Exec=/opt/{product}/{product}-bin %u
+Exec={cmdline}
 Icon={icon}
 Name={product_cap}
 """,
