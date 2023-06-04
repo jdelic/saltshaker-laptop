@@ -21,7 +21,7 @@ def _error(ret, err_msg):
     return ret
 
 
-def installed(name, version="latest", lang="en-US", icon=None, **kwargs):
+def installed(name, product=None, version="latest", lang="en-US", **kwargs):
     """
     Download the latest product (firefox or thunderbird) to /opt
     """
@@ -33,8 +33,9 @@ def installed(name, version="latest", lang="en-US", icon=None, **kwargs):
         "result": True,
         "comment": "",
     }
+    if not product:
+        product = name
 
-    product = name
     require = kwargs.get("require", None)
 
     ver = version
@@ -78,6 +79,31 @@ def installed(name, version="latest", lang="en-US", icon=None, **kwargs):
         **kwargs
     )
     _propagate_changes(ret, file_ret)
+    return ret
+
+
+def desktop(name, user, group, product=None, icon=None, **kwargs):
+    """
+    add a .desktop file in /home/{user}/.local/share/applications/{name}
+    :param name:
+    :param version:
+    :param lang:
+    :param icon:
+    :param kwargs:
+    :return:
+    """
+
+    ret = {
+        "name": name,
+        "changes": {},
+        "pchanges": {},
+        "result": True,
+        "comment": "",
+    }
+    if not product:
+        product = name
+
+    require = kwargs.get("require", None)
 
     if not icon:
         if __salt__['file.file_exists'](
@@ -90,9 +116,16 @@ def installed(name, version="latest", lang="en-US", icon=None, **kwargs):
             _error(ret, f"Can't find a valid icon for {product}")
             return ret
 
+    info = __salt__['user.info'](user)
+    if not info or "home" not in info:
+        _error(ret, "User %s appears to not exist on this system or doesn't have a home" % user)
+        return ret
+
+    homedir = info["home"]
+
     product_cap = product.capitalize()
     desktop_ret = __states__['file.managed'](
-        name=f"/home/jonas/.local/share/applications/{product}.desktop",
+        name=os.path.join(homedir, ".local", "share", "applications", f"{product}.desktop"),
         contents=f"""[Desktop Entry]
 Encoding=UTF-8
 Version=1.0
@@ -101,9 +134,11 @@ Exec=/opt/{product}/{product}-bin %u
 Icon={icon}
 Name={product_cap}
 """,
-        user="jonas",
-        group="jonas",
+        user=user,
+        group=group,
         mode="0600",
+        require=require,
+        **kwargs
     )
     _propagate_changes(ret, desktop_ret)
 

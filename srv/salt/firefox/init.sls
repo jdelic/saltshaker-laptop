@@ -4,6 +4,26 @@ firefox:
             - pkg: desktop-packages
 
 
+{% for user in pillar['users'] %}
+firefox-desktop-{{user}}:
+    mozilla.desktop:
+        - product: firefox
+        - user: {{user}}
+        - group: {{user}}
+        - require:
+            - mozilla: firefox
+
+
+firefox-userprefs-{{user}}:
+    mozilla.file:
+        - username: {{user}}
+        - path: user.js
+        - source: salt://firefox/user.js
+        - require:
+            - mozilla: firefox
+{% endfor %}
+
+
 firefox-policy:
     file.managed:
         - name: /etc/firefox/policies/policies.json
@@ -12,15 +32,6 @@ firefox-policy:
         - group: root
         - mode: 0644
         - makedirs: True
-        - require:
-            - mozilla: firefox
-
-
-firefox-userprefs:
-    mozilla.file:
-        - username: jonas
-        - path: user.js
-        - source: salt://firefox/user.js
         - require:
             - mozilla: firefox
 
