@@ -88,7 +88,7 @@ useful and you can install them from ``Extension Manager``:
   sensible)
 * Tray Icons Reloaded (no idea why Gnome tries to remove them... so much
   software still uses them)
-  
+
   - Make sure to change the settings to allow like 10 or so icons
 
 * No Overview At Start-up (with Albert as launcher this is just annoying)
