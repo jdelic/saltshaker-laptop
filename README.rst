@@ -11,11 +11,11 @@ Among other things, this config will install:
 * Gnome
 * Most important apps:
 
-  - Firefox,
-  - Thunderbird,
-  - Spotify,
+  - Firefox
+  - Thunderbird
+  - Spotify
   - Slack
-  - Albert (my favorite launcher),
+  - `Albert (my favorite launcher) <albert_>`__,
   - Enpass
 
 * Most important Firefox extensions:
@@ -33,7 +33,7 @@ Among other things, this config will install:
   - Discord
   - OBS
   - Airtame
-  - Starship prompt
+  - `Starship prompt <starship_>`__
 
 
 Getting to Netinst
@@ -104,5 +104,21 @@ Important Gnome Settings to remember
 3. On Gnome Tweaks set the clock to show calendar weeks and the date
 
 
+Which Albert Plugins to Enable?
+-------------------------------
+
+I commonly use
+
+* Applications
+* Calculator
+* Python
+* System
+
+  - I rename "Poweroff" to "Shutdown"
+
+* Terminal
+
 .. _netinst: https://www.debian.org/devel/debian-installer/
+.. _starship: https://starship.rs
+.. _albert: https://github.com/albertlauncher/albert
 .. # vim: wrap textwidth=80
