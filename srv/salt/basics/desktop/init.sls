@@ -1,6 +1,5 @@
 include:
     - .flatpak
-#    - .libinput  # 2023-05: disabled for bookworm with Wayland
 
 
 desktop-packages:
