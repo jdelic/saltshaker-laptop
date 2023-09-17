@@ -19,10 +19,3 @@ firewalld-public-zone:
         - name: public
         - interfaces:
             {{ pillar['public-interfaces'] }}
-
-
-firewalld-local-zone:
-    firewalld.present:
-        - name: trusted
-        - interfaces:
-            {{ pillar['trusted-interfaces'] }}

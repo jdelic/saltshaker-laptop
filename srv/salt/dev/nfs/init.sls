@@ -14,9 +14,10 @@ nfs-kernel-server-defaults:
             - pkg: nfs-kernel-server
 
 
-nfs-firewalld-service:
-    firewalld.service:
-        - name: nfs
-        - ports:
-            - 32767/tcp
-            - 32767/udp
+nfs-libvirt-access:
+    firewalld.present:
+        - name: libvirt
+        - services:
+            - nfs
+            - rpc-bind
+            - mountd
