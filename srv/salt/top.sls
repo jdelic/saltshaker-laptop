@@ -9,7 +9,6 @@ base:
         - discord
         - enpass
         - firefox
-        - nordvpn
         - obs
         - salt-minion
         - slack
