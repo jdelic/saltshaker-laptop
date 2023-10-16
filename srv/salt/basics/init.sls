@@ -6,6 +6,7 @@ include:
     - .base
     - .desktop
     - .noexim
+    - .nounup
     - .byobu_py
     - .grub
     - .pam
