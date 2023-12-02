@@ -9,6 +9,8 @@ base:
         - discord
         - enpass
         - firefox
+        - gimp
+        - inkscape
         - obs
         - salt-minion
         - slack

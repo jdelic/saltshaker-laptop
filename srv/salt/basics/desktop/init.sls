@@ -20,7 +20,6 @@ desktop-packages:
             - fonts-powerline  # for starship
             - gnome-shell
             - gdm3
-            - gimp
             - gir1.2-spiceclientgtk-3.0
             - gir1.2-wp-0.4
             - gnome-control-center
