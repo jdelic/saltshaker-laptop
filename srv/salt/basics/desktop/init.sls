@@ -16,10 +16,12 @@ desktop-packages:
             - chrome-gnome-shell
             - cups
             - dnsmasq  # required by libvirtd
+            - evince
             - fonts-liberation
             - fonts-powerline  # for starship
             - gnome-shell
             - gdm3
+            - ghostscript
             - gir1.2-spiceclientgtk-3.0
             - gir1.2-wp-0.4
             - gnome-control-center
@@ -30,6 +32,7 @@ desktop-packages:
             - gnome-terminal
             - gnome-tweaks
             - gthumb
+            - imagemagick
             - libasound2-plugins
             - libcanberra-pulse
             - libdbus-glib-1-2
