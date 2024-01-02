@@ -1,4 +1,5 @@
 include:
+    - .golang
     - .nfs
     - .python
     - .vagrant
