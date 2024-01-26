@@ -3,7 +3,7 @@ spotify:
         - name: {{pillar['repos']['spotify']}}
         - listfile_name: spotify.list
         - signed_by: /usr/share/keyrings/spotify-archive-keyring.gpg
-        - signing_key_url: https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
+        - signing_key_url: https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg 
     pkg.installed:
         - name: spotify-client
         - require:
