@@ -63,6 +63,18 @@ root-bashrc:
         - mode: 640
 
 
+{% for user in pillar["users"] %}
+{{user}}-bashrc:
+    file.managed:
+        - name: /home/{{user}}/.bashrc
+        - source: salt://basics/bashrc
+        - template: jinja
+        - user: {{user}}
+        - group: {{user}}
+        - mode: '0640'
+{% endfor %}
+
+
 timezone-germany:
     cmd.run:
         - name: timedatectl set-timezone Europe/Berlin
