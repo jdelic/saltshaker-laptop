@@ -7,7 +7,6 @@ include:
     - .desktop
     - .noexim
     - .nounup
-    - .byobu_py
     - .grub
     - .pam
     - .bluetooth
