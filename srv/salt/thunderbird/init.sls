@@ -1,34 +1,25 @@
-firefox:
+thunderbird:
     mozilla.installed:
         - require:
             - pkg: desktop-packages
 
 
 {% for user in pillar['users'] %}
-firefox-desktop-{{user}}:
+thunderbird-desktop-{{user}}:
     mozilla.desktop:
-        - product: firefox
+        - product: thunderbird
         - user: {{user}}
         - group: {{user}}
-        - gtk_theme_override: {{pillar.get("firefox", {}).get("gtk-theme-override", "")}}
+        - gtk_theme_override: {{pillar.get("thunderbird", {}).get("gtk-theme-override", "")}}
         - require:
-            - mozilla: firefox
-
-
-firefox-userprefs-{{user}}:
-    mozilla.file:
-        - username: {{user}}
-        - path: user.js
-        - source: salt://firefox/user.js
-        - require:
-            - mozilla: firefox
+            - mozilla: thunderbird
 {% endfor %}
 
 
-firefox-policy:
+thunderbird-policy:
     file.managed:
-        - name: /etc/firefox/policies/policies.json
-        - source: salt://firefox/policies.json
+        - name: /etc/thunderbird/policies/policies.json
+        - source: salt://thunderbird/policies.json
         - template: jinja
         - context:
             certificates:
@@ -40,9 +31,7 @@ firefox-policy:
         - mode: 0644
         - makedirs: True
         - require:
-            - mozilla: firefox
+            - mozilla: thunderbird
 {% for cert in pillar['ssl'].get('install-ca-certs', []) %}
             - file: install-certificates-{{salt['file.basename'](cert)}}
 {% endfor %}
-
-# vim: syntax=yaml

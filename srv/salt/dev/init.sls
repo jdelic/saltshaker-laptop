@@ -1,6 +1,8 @@
 include:
+    - .golang
     - .nfs
     - .python
+    #- .ruby
     - .vagrant
 
 dev-essentials:
@@ -40,6 +42,7 @@ dev-essentials:
             - libubsan1 
             - linux-libc-dev
             - linux-headers-amd64
+            - netcat-openbsd
         - install_recommends: False
 
 # vim: syntax=yaml

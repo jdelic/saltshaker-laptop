@@ -34,7 +34,10 @@
             "OfflineApps": true,
             "Locked": false
         },
-        "SearchSuggestEnabled": false
+        "SearchSuggestEnabled": false,
+        "Certificates": {
+            "Install": {{certificates|tojson}}
+        }
     }
 }
 

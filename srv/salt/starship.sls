@@ -1,6 +1,8 @@
 starship-install:
-    cmd.run:
-        - name: snap install --edge --color=never starship
-        - unless: /usr/bin/snap list --color=never | grep -q starship
+    cmd.script:
+        - name: install.sh -y
+        - source: https://starship.rs/install.sh
+        - runas: root
+        - creates: /usr/local/bin/starship
         - require:
             - pkg: desktop-packages
