@@ -1,5 +1,8 @@
 {
     "policies": {
+        "DNSOverHTTPS": {
+            "Enabled": false
+        },
         "Certificates": {
             "Install": {{certificates|tojson}}
         }
