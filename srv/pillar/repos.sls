@@ -7,7 +7,7 @@ repos:
     enpass: deb https://apt.enpass.io/ stable main
     hashicorp: deb https://apt.releases.hashicorp.com bookworm main
     nordvpn: deb https://repo.nordvpn.com/deb/nordvpn/debian stable main
-    saltstack: deb https://repo.saltproject.io/salt/py3/debian/11/amd64/latest bullseye main
+    saltstack: deb https://repo.saltproject.io/salt/py3/debian/12/amd64/latest bookworm main
     spotify: deb http://repository.spotify.com stable non-free
 
 
