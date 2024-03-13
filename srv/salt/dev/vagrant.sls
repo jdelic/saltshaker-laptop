@@ -4,7 +4,6 @@ vagrant:
             - vagrant
             - libffi-dev
             - libvirt-dev
-            - ruby-dev
             - rsync
 
 
@@ -15,6 +14,7 @@ vagrant-libvirt:
         - runas: root
         - require:
             - pkg: vagrant
+            - pkg: ruby
 
 
 vagrant-enable-nfs:
