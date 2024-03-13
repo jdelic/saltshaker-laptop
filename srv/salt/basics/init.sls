@@ -103,6 +103,8 @@ cron:
 default-locale-gen:
     locale.present:
         - name: en_US.UTF-8
+        - require:
+            - service: dbus
 
 
 default-locale-set:
