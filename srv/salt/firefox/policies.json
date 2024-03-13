@@ -43,11 +43,11 @@
             "Locked": false
         },
         "SearchSuggestEnabled": false,
-        "Certificates": {
-            "Install": {{certificates|tojson}}
-        },
         "EncryptedMediaExtensions": {
             "Enabled": true
+        },
+        "Certificates": {
+            "Install": {{certificates|tojson}}
         }
     }
 }
