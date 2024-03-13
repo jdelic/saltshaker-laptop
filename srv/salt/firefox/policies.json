@@ -45,6 +45,9 @@
         "SearchSuggestEnabled": false,
         "Certificates": {
             "Install": {{certificates|tojson}}
+        },
+        "EncryptedMediaExtensions": {
+            "Enabled": true
         }
     }
 }
