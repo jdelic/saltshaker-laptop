@@ -7,7 +7,7 @@
             },
             "firefox-enpass@enpass.io": {
                 "installation_mode": "normal_installed",
-                "install_url": "https://dl.enpass.io/stable/extensions/firefox/versions/v6.6.2-9/enpass-firefox-6.6.2.xpi"
+                    "install_url": "https://dl.enpass.io/stable/extensions/firefox/versions/6.9.4.173/enpass-firefox-6.9.4.2.xpi"
             },
             "de-DE@dictionaries.addons.mozilla.org": {
                 "installation_mode": "normal_installed",
@@ -16,6 +16,14 @@
             "@testpilot-containers": {
                 "installation_mode": "normal_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/multi-account-containers/latest.xpi"
+            },
+            "gdpr@cavi.au.dk": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/consent-o-matic/latest.xpi"
+            },
+            "uMatrix@raymondhill.net": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/umatrix/latest.xpi"
             }
         },
         "DNSOverHTTPS": {
