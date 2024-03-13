@@ -18,6 +18,7 @@ spotify-desktop-{{user}}:
         - source: /usr/share/spotify/spotify.desktop
         - user: {{user}}
         - group: {{user}}
+        - makedirs: True
         - mode: '0644'
         - require:
             - pkg: spotify

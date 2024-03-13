@@ -140,6 +140,7 @@ Name={product_cap}
         user=user,
         group=group,
         mode="0600",
+        makedirs=True,
         require=require,
         **kwargs
     )
