@@ -74,7 +74,7 @@ configuration.
     cp ~/saltshaker-laptop/etc/salt-minion/minion.d/saltshaker.conf /etc/salt/minion.d/
     sudo ln -sv ~/saltshaker-laptop/srv/salt /etc/salt/salt
     sudo ln -sv ~/saltshaker-laptop/srv/pillar /etc/salt/pillar
-    salt-call --local state.highstate
+    salt-call --local state.highstate | less
 
 
 Important Gnome Extensions
@@ -83,15 +83,17 @@ Important Gnome Extensions
 These aren't installed automatically by this salt config, but I find them
 useful and you can install them from ``Extension Manager``:
 
-* Frippery Move Clock (moves the clock to the right where it belongs)
-* Vertical overview (because vertically stacked virtual desktops are much more
-  sensible)
-* Tray Icons Reloaded (no idea why Gnome tries to remove them... so much
-  software still uses them)
+* `Frippery Move Clock <frippery_>`__ (moves the clock to the right where it 
+  belongs)
+* `Vertical overview <vertical_>`__ (because vertically stacked virtual 
+  desktops are much more sensible)
+* `Tray Icons <trayicons_>`__: Reloaded (no idea why Gnome tries to remove 
+  them... so much software still uses them)
 
   - Make sure to change the settings to allow like 10 or so icons
 
-* No Overview At Start-up (with Albert as launcher this is just annoying)
+* `No Overview At Start-up <nooverview_>`__ (with Albert as launcher the
+  default is just annoying)
 
 
 Important Gnome Settings to remember
@@ -121,4 +123,8 @@ I commonly use
 .. _netinst: https://www.debian.org/devel/debian-installer/
 .. _starship: https://starship.rs
 .. _albert: https://github.com/albertlauncher/albert
+.. _frippery: https://extensions.gnome.org/extension/2/move-clock/
+.. _vertical: https://extensions.gnome.org/extension/4144/vertical-overview/
+.. _nooverview: https://extensions.gnome.org/extension/4099/no-overview/
+.. _trayicons: https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
 .. # vim: wrap textwidth=80
