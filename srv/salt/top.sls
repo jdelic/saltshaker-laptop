@@ -2,7 +2,6 @@
 
 base:
     '*':
-        - airtame
         - albert
         - basics
         - dev
@@ -17,6 +16,14 @@ base:
         - spotify
         - starship
         - thunderbird
-        - xerox
         - yubikey
         - zoom
+
+    'id:parasite':
+        - match: grain
+        - airtame
+        - xerox
+
+    'id:hades':
+        - match: grain
+        - nvidia
