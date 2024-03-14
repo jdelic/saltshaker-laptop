@@ -5,12 +5,12 @@ enpass-repo:
         - listfile_name: enpass.list
         - signed_by: /usr/share/keyrings/enpass-archive-keyring.gpg
         - signing_key_url: https://apt.enpass.io/keys/enpass-linux.key
+        - require:
+              - pkg: desktop-packages
 
 
 enpass:
-    pkg.installed:
-        - require:
-            - pkg: desktop-packages
+    pkg.installed
 
 
 # vim: syntax=yaml

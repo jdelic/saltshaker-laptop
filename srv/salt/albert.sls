@@ -5,6 +5,8 @@ albert-repo:
         - signed_by: /etc/apt/keyrings/albert-archive-keyring.gpg
         - signing_key_url: https://download.opensuse.org/repositories/home:manuelschneid3r/Debian_12/Release.key
         - dearmor: True
+        - require:
+            - pkg: desktop-packages
 
 
 albert:
@@ -12,7 +14,6 @@ albert:
         - pkgs:
             - albert
         - require:
-            - pkg: desktop-packages
             - aptrepo: albert-repo
 
 
