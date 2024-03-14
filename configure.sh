@@ -1,5 +1,6 @@
 #!/bin/bash
 
+BASEDIR="$(dirname $0)"
 cat >/tmp/saltstack.list <<EOF
 deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/12/amd64/latest bookworm main
 EOF
@@ -12,9 +13,9 @@ apt update
 apt install --no-install-recommends git salt-minion
 systemctl disable --now salt-minion
 mkdir -p /etc/salt/minion.d
-cp ~/saltshaker-laptop/etc/salt-minion/minion.d/saltshaker.conf /etc/salt/minion.d/
-ln -sv ~/saltshaker-laptop/srv/salt /etc/salt/salt
-ln -sv ~/saltshaker-laptop/srv/pillar /etc/salt/pillar
+cp $BASEDIR/etc/salt-minion/minion.d/saltshaker.conf /etc/salt/minion.d/
+ln -sv $BASEDIR/srv/salt /etc/salt/salt
+ln -sv $BASEDIR/srv/pillar /etc/salt/pillar
 salt-call --local state.highstate | less
 EOF
 sudo bash $TMP1
