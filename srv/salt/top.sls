@@ -27,3 +27,5 @@ base:
     'id:hades':
         - match: grain
         - nvidia
+        - cameractrls
+        - steam
