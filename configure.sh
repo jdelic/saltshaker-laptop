@@ -8,6 +8,7 @@ cat >$TMP1 <<EOF
 mv /tmp/saltstack.list /etc/apt/sources.list.d/saltstack.list
 apt install --no-install-recommends ca-certificates wget
 wget -O /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/debian/12/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
+apt update
 apt install --no-install-recommends git salt-minion
 systemctl disable --now salt-minion
 mkdir -p /etc/salt/minion.d

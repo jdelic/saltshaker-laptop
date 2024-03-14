@@ -62,19 +62,10 @@ configuration.
 
 .. code-block:: shell
 
-    cd
-    cat >/etc/apt/sources.list.d/saltstack.list
-    deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/12/amd64/latest bookworm main
-    apt install --no-install-recommends ca-certificates wget
-    wget -O /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/debian/12/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
-    apt install --no-install-recommends git salt-minion
-    systemctl disable --now salt-minion
+    apt install --no-install-recommends ca-certificates wget git
     git clone https://github.com/jdelic/saltshaker-laptop
-    mkdir -p /etc/salt/minion.d
-    cp ~/saltshaker-laptop/etc/salt-minion/minion.d/saltshaker.conf /etc/salt/minion.d/
-    sudo ln -sv ~/saltshaker-laptop/srv/salt /etc/salt/salt
-    sudo ln -sv ~/saltshaker-laptop/srv/pillar /etc/salt/pillar
-    salt-call --local state.highstate | less
+    cd saltshaker-laptop
+    ./configure.sh
 
 
 Important Gnome Extensions
