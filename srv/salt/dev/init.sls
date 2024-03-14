@@ -2,7 +2,8 @@ include:
     - .golang
     - .nfs
     - .python
-    #- .ruby
+    - .ruby
+    #- .fpm
     - .vagrant
 
 dev-essentials:
