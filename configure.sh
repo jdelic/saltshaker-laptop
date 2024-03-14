@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEDIR="$(dirname $0)"
+BASEDIR="$(readlink -f $(dirname $0))"
 cat >/tmp/saltstack.list <<EOF
 deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/12/amd64/latest bookworm main
 EOF
