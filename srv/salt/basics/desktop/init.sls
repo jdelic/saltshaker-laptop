@@ -108,4 +108,19 @@ set-wayland-state:
         - backup: minion
 
 
+{% for user in pillar['users'] %}
+    {% for key, extid in {"Move_Clock@rmy.pobox.com": "2",
+            "vertical-overview@RensAlthuis.github.com": "4144",
+            "no-overview@fthx": "4099",
+            "trayIconsReloaded@selfmade.pl": "2890"] %}
+install-extensions-{{user}}-{{extid}}:
+    cmd.script:
+        - name: install-gnome-extensions.sh -e {{extid}}
+        - source: salt://basics/desktop/install-gnome-extensions.sh
+        - runas: {{user}}
+        - unless: test -d "{{salt['file.join'](salt['user.info'](user).home, ".local", "share", "gnome-shell", "extensions", key)}}"
+    {% endfor %}
+{% endfor %}
+
+
 # vim: syntax=yaml
