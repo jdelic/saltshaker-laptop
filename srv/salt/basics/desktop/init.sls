@@ -112,7 +112,7 @@ set-wayland-state:
     {% for key, extid in {"Move_Clock@rmy.pobox.com": "2",
             "vertical-overview@RensAlthuis.github.com": "4144",
             "no-overview@fthx": "4099",
-            "trayIconsReloaded@selfmade.pl": "2890"] %}
+            "trayIconsReloaded@selfmade.pl": "2890"} %}
 install-extensions-{{user}}-{{extid}}:
     cmd.script:
         - name: install-gnome-extensions.sh -e {{extid}}
