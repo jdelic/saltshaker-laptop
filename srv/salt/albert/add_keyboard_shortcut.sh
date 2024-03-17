@@ -28,4 +28,4 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom$new_shortcut_index/ command "albert toggle"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom$new_shortcut_index/ binding "<Super>x"
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "${declaration_string}"
-echo "${declaration_string}"
+
