@@ -3,8 +3,9 @@ My laptop config
 
 This is supposed to run from a local salt-minion install, using ``salt-call``
 in a masterless setup. Based on a clean Debian Bookworm netinst installation,
-I'm using this to get to my minimal laptop setup on a Dell XPS13. I am currently
-running this on a 9310 model.
+I'm using this to provision my work setup on a Dell XPS13 and my home PC. I
+am currently running this on a 9310 model, unfortunately the newer ones are
+terrible, and my custom-built Ryzen 9.
 
 Among other things, this config will install:
 
@@ -17,6 +18,7 @@ Among other things, this config will install:
   - Slack
   - `Albert (my favorite launcher) <albert_>`__,
   - Enpass
+  - Yubikey support
 
 * Most important Firefox extensions:
 
@@ -34,6 +36,13 @@ Among other things, this config will install:
   - OBS
   - Airtame
   - `Starship prompt <starship_>`__
+  - Steam
+  - Inkscape
+  - Zoom
+  - Xerox printer drivers
+  - GIMP
+  - VLC
+  - Logitech camera controls for my Brio webcam
 
 
 Getting to Netinst

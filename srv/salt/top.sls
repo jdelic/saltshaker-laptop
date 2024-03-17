@@ -1,4 +1,4 @@
-# Laptop desktop environment from Debian Netinst minimal installation
+# Desktop environment from Debian Netinst minimal installation
 
 base:
     '*':
