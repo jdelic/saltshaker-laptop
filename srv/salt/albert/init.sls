@@ -32,7 +32,7 @@ albert-autostart-{{user}}:
 
 albert-keyboard-shortcut-{{user}}:
     cmd.script:
-        - name: albert_keyboard_shortcut.py
+        - name: albert_keyboard_shortcut.py create
         - source: salt://albert/albert_keyboard_shortcut.py
         - runas: {{user}}
         - require:
