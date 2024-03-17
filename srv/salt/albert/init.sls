@@ -34,4 +34,6 @@ albert-keyboard-shortcut-{{user}}:
         - name: albert_keyboard_shortcut.py
         - source: salt://albert/albert_keyboard_shortcut.py
         - runas: {{user}}
+        - require:
+            - file: albert-autostart-{{user}}
 {% endfor %}
