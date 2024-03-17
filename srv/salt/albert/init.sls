@@ -31,12 +31,13 @@ albert-autostart-{{user}}:
 
 albert-keyboard-shortcut-{{user}}:
     cmd.script:
-        - name: add_keyboard_shortcut.sh 'Toggle Albert' 'albert toggle' '<Super>X'
         - source: salt://albert/add_keyboard_shortcut.sh
         - runas: {{user}}
         - unless: >
             gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | 
               sed s/\'/\"/g | jq .[] | 
-              xargs -n 1 printf "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:%s" | 
+              xargs -n 1 printf "org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:%s\n" |
               xargs -n 1 gsettings list-recursively | grep -q "albert toggle"
+        - require:
+            - file: albert-autostart-{{user}}
 {% endfor %}
