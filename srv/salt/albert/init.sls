@@ -13,6 +13,7 @@ albert:
     pkg.installed:
         - pkgs:
             - albert
+            - python3-gi
         - require:
             - aptrepo: albert-repo
 
