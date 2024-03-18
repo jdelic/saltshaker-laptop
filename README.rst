@@ -80,8 +80,8 @@ configuration.
 Important Gnome Extensions
 --------------------------
 
-These aren't installed automatically by this salt config, but I find them
-useful and you can install them from ``Extension Manager``:
+These are installed automatically by this salt config, but I find them
+useful and you should know. You can install them from ``Extension Manager``:
 
 * `Frippery Move Clock <frippery_>`__ (moves the clock to the right where it 
   belongs)
@@ -100,7 +100,8 @@ Important Gnome Settings to remember
 ------------------------------------
 
 1. To get Albert to launch on ``META+X`` use Gnome settings and set a Keyboard
-   shortcut for ``albert toggle``.
+   shortcut for ``albert toggle``. This is installed automatically by this
+   config.
 2. In the keyboard settings also change "Navigation"->"Switch Applications" to
    "disabled" and "Switch Windows" to "Alt+Tab"
 3. On Gnome Tweaks set the clock to show calendar weeks and the date
