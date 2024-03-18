@@ -11,6 +11,7 @@ desktop-packages:
             - apt-file
             - arc-theme
             - at-spi2-core
+            - bluetooth
             - bluez-obexd
             - bluez-tools
             - chrome-gnome-shell
@@ -37,6 +38,7 @@ desktop-packages:
             - libcanberra-pulse
             - libdbus-glib-1-2
             - libgdk-pixbuf2.0-bin
+            - libgnome-bluetooth13
             - libinput-tools
             - libpam-gnome-keyring
             - libpipewire-0.3-common
