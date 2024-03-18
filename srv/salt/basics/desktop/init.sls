@@ -122,6 +122,12 @@ install-extensions-{{user}}-{{extid}}:
         - runas: {{user}}
         - unless: test -d "{{salt['file.join'](salt['user.info'](user).home, ".local", "share", "gnome-shell", "extensions", key)}}"
     {% endfor %}
+
+fix-gnome-keyboard-shortcuts:
+    cmd.script:
+        - name: gnome_alttab_setup.py
+        - source: salt://basics/desktop/gnome-alttab-setup.py
+        - runas: {{user}}
 {% endfor %}
 
 
