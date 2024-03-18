@@ -175,7 +175,7 @@ def firefox_file(username, path, profile=None, initialize_profile=False, **kwarg
     homedir = info["home"]
     firefoxdir = os.path.join(homedir, ".mozilla", "firefox")
     if not os.path.exists(os.path.join(firefoxdir, "profiles.ini")):
-        if initialize_profile
+        if initialize_profile:
             # Initialize the profile
             if not profile:
                 profile = "default"

@@ -18,6 +18,7 @@ firefox-desktop-{{user}}:
 firefox-userprefs-{{user}}:
     mozilla.firefox_file:
         - username: {{user}}
+        - initialize_profile: True
         - path: user.js
         - source: salt://firefox/user.js
         - require:
