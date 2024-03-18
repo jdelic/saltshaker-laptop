@@ -183,7 +183,7 @@ def firefox_file(username, path, profile=None, initialize_profile=False, **kwarg
         else:
             _error(ret, "Can't find user's firefox profiles folder in %s" %
                         os.path.join(firefoxdir, "profiles.ini"))
-        return ret
+            return ret
 
     config = configparser.ConfigParser()
     config.read(os.path.join(firefoxdir, "profiles.ini"))
