@@ -14,9 +14,7 @@ basesystem-packages:
             - efitools
             - firejail
             - firewalld
-            - firmware-intel-sound
             - firmware-linux-nonfree
-            - firmware-sof-signed
             - git
             - info
             - jq

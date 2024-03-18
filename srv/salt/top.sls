@@ -22,10 +22,12 @@ base:
     'id:parasite':
         - match: grain
         - airtame
+        - basics.intel-firmware
         - xerox
 
     'id:hades':
         - match: grain
+        - basics.amd-firmware
         - nvidia
         - cameractrls
         - steam
