@@ -149,7 +149,7 @@ Name={product_cap}
     return ret
 
 
-def file(username, path, profile=None, **kwargs):
+def firefox_file(username, path, profile=None, initialize_profile=False, **kwargs):
     """
     Allows you to drop a file into the user profile. Linux only!
     """
@@ -163,7 +163,7 @@ def file(username, path, profile=None, **kwargs):
     }
 
     if path.startswith("/") or path.startswith("\\"):
-        _error(ret, "Do not set absolute paths on mozilla.file. 'path' is relative to the "
+        _error(ret, "Do not set absolute paths on mozilla.firefox_file. 'path' is relative to the "
                     "user's profile folder.")
         return ret
 
@@ -175,8 +175,14 @@ def file(username, path, profile=None, **kwargs):
     homedir = info["home"]
     firefoxdir = os.path.join(homedir, ".mozilla", "firefox")
     if not os.path.exists(os.path.join(firefoxdir, "profiles.ini")):
-        _error(ret, "Can't find user's firefox profiles folder in %s" % 
-                    os.path.join(firefoxdir, "profiles.ini"))
+        if initialize_profile
+            # Initialize the profile
+            if not profile:
+                profile = "default"
+            __salt__['cmd.run']("/opt/firefox/firefox-bin --headless --CreateProfile %s" % profile, runas=username)
+        else:
+            _error(ret, "Can't find user's firefox profiles folder in %s" %
+                        os.path.join(firefoxdir, "profiles.ini"))
         return ret
 
     config = configparser.ConfigParser()
@@ -186,6 +192,7 @@ def file(username, path, profile=None, **kwargs):
     userprofile = None
 
     if profile:
+        # Search by section title ("Profile0")
         if profile in config.sections():
             if not "path" in config[profile]:
                 _error(ret, "Profile %s has no path" % profile)
@@ -193,16 +200,18 @@ def file(username, path, profile=None, **kwargs):
             userprofile = profile
             profiledir = os.path.join(firefoxdir, config[profile]["path"])
         else:
+            # Search by name ("default-release")
             for p in config.sections():
-                if "path" in config[profile] and profile == config[profile]["path"]:
+                if "path" in config[profile] and profile == config[profile]["name"]:
                     userprofile = p
-                    profiledir = os.path.join(firefoxdir, profile)
+                    profiledir = os.path.join(firefoxdir, config[profile]["path"])
                     break
     else:
         for s in config.sections():
+            # profiledir will be None for the first section starting with "profile"
             if s.startswith("profile") and profiledir and "path" in config[s]:
                 _error(ret, "profiles.ini contains more than one profile. Please specify the profile "
-                            "name in mozilla.file")
+                            "name in mozilla.firefox_file")
                 return ret
             else:
                 if "path" in config[s]:
@@ -210,7 +219,7 @@ def file(username, path, profile=None, **kwargs):
                     profiledir = os.path.join(firefoxdir, config[s]["path"])
 
     if not userprofile or not profiledir:
-        _error(ret, "mozilla.file was unable to find a valid profile")
+        _error(ret, "mozilla.firefox_file was unable to find a valid profile")
         return ret
 
     kwargs["name"] = os.path.join(profiledir, path)

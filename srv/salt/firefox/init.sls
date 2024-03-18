@@ -16,7 +16,7 @@ firefox-desktop-{{user}}:
 
 
 firefox-userprefs-{{user}}:
-    mozilla.file:
+    mozilla.firefox_file:
         - username: {{user}}
         - path: user.js
         - source: salt://firefox/user.js
