@@ -128,6 +128,13 @@ fix-gnome-keyboard-shortcuts:
         - name: gnome_alttab_setup.py
         - source: salt://basics/desktop/gnome-alttab-setup.py
         - runas: {{user}}
+
+
+fix-calendar-display-options:
+    cmd.script:
+        - name: tweak_topbar_calendar_settings.py
+        - source: salt://basics/desktop/tweak_topbar_calendar_settings.py
+        - runas: {{user}}
 {% endfor %}
 
 
