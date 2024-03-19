@@ -96,14 +96,12 @@ useful and you should know. You can install them from ``Extension Manager``:
   default is just annoying)
 
 
-Important Gnome Settings to remember
-------------------------------------
+Important Gnome Settings changed by this config
+-----------------------------------------------
 
-1. To get Albert to launch on ``META+X`` use Gnome settings and set a Keyboard
-   shortcut for ``albert toggle``. This is installed automatically by this
-   config.
-2. In the keyboard settings also change "Navigation"->"Switch Applications" to
-   "disabled" and "Switch Windows" to "Alt+Tab"
+1. Add keyboard shortcut for Albert to launch ``albert toggle`` on ``META+X``.
+2. Change "Navigation"->"Switch Applications" to "disabled" and "Switch
+   Windows" to "Alt+Tab"
 3. On Gnome Tweaks set the clock to show calendar weeks and the date
 
 
