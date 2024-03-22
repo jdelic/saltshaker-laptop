@@ -20,5 +20,15 @@ starship-install:
             - file: {{user}}-fonts-dir
         - require_in:
             - cmd: {{user}}-fccache
+
+
+{{user}}-droidsans-activate:
+    cmd.script:
+        - name: set_gnometerm_font.py
+        - source: salt://starship/set_gnometerm_font.py
+        - runas: {{user}}
+        - require:
+            - archive: {{user}}-droidsans-nerdfont
+            - cmd: {{user}}-fccache
 {% endfor %}
 
