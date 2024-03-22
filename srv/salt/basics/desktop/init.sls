@@ -126,7 +126,7 @@ install-extensions-{{user}}-{{extid}}:
 fix-gnome-task-keyboard-shortcuts:
     cmd.script:
         - name: gnome_alttab_setup.py
-        - source: salt://basics/desktop/gnome-alttab-setup.py
+        - source: salt://basics/desktop/gnome_alttab_setup.py
         - runas: {{user}}
 
 
