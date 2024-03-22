@@ -6,3 +6,19 @@ starship-install:
         - creates: /usr/local/bin/starship
         - require:
             - pkg: desktop-packages
+
+
+{% for user in pillar['users'] %}
+{{user}}-droidsans-nerdfont:
+    archive.extracted:
+        - name: {{salt['file.join'](salt['user.info'](user).home, ".local", "share", "fonts", "droidsans-nerdfont")}}
+        - source: {{pillar['downloads']['droidsans-nerdfont']['url']}}
+        - source_hash: {{pillar['downloads']['droidsans-nerdfont']['hash']}}
+        - user: {{user}}
+        - enforce_toplevel: False
+        - require:
+            - file: {{user}}-fonts-dir
+        - require_in:
+            - cmd: {{user}}-fccache
+{% endfor %}
+

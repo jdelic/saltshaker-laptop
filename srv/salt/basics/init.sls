@@ -72,6 +72,23 @@ root-bashrc:
         - user: {{user}}
         - group: {{user}}
         - mode: '0640'
+
+
+{{user}}-fonts-dir:
+    file.directory:
+        - name: /home/{{user}}/.local/share/fonts
+        - makedirs: True
+        - user: {{user}}
+        - group: {{user}}
+        - mode: '0755'
+
+
+{{user}}-fccache:
+    cmd.run:
+        - name: /usr/bin/fc-cache -rv
+        - runas: {{user}}
+        - watch:
+            - file: /home/{{user}}/.local/share/fonts*
 {% endfor %}
 
 

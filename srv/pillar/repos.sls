@@ -11,4 +11,9 @@ repos:
     spotify: deb http://repository.spotify.com stable non-free
 
 
+downloads:
+    droidsans-nerdfont:
+        url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DroidSansMono.zip
+        hash: sha256=9fc4a511a9e8d3fa5062a2d94398e18898a0b45916ab42b6891307fcee493485
+
 # vim: syntax=yaml
