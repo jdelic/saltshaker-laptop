@@ -16,6 +16,13 @@ albert:
             - python3-gi
         - require:
             - aptrepo: albert-repo
+    file.managed:
+        - name: /usr/share/applications/albert.desktop
+        - source: salt://albert/albert.desktop
+        - user: root
+        - group: root
+        - require:
+            - pkg: albert
 
 
 {% for user in pillar['users'] %}
