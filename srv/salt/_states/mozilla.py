@@ -201,9 +201,9 @@ def firefox_file(username, path, profile=None, initialize_profile=False, **kwarg
             profiledir = os.path.join(firefoxdir, config[profile]["path"])
         else:
             # Search by name ("default-release")
-            for p in config.sections():
-                if "path" in config[profile] and profile == config[profile]["name"]:
-                    userprofile = p
+            for s in config.sections():
+                if "path" in config[s] and profile == config[s]["name"]:
+                    userprofile = s
                     profiledir = os.path.join(firefoxdir, config[profile]["path"])
                     break
     else:
