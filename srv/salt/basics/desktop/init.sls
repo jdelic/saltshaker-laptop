@@ -123,10 +123,17 @@ install-extensions-{{user}}-{{extid}}:
         - unless: test -d "{{salt['file.join'](salt['user.info'](user).home, ".local", "share", "gnome-shell", "extensions", key)}}"
     {% endfor %}
 
-fix-gnome-keyboard-shortcuts:
+fix-gnome-task-keyboard-shortcuts:
     cmd.script:
         - name: gnome_alttab_setup.py
         - source: salt://basics/desktop/gnome-alttab-setup.py
+        - runas: {{user}}
+
+
+fix-gnome-desktop-keyboard-shortcuts:
+    cmd.script:
+        - name: gnome_vertical_workspace_setup.py
+        - source: salt://basics/desktop/gnome_vertical_workspace_setup.py
         - runas: {{user}}
 
 
