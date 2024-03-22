@@ -10,6 +10,7 @@ base:
         - firefox
         - gimp
         - inkscape
+        - intellij
         - obs
         - salt-minion
         - slack
