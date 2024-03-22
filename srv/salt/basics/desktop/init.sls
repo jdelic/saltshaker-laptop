@@ -117,8 +117,8 @@ set-wayland-state:
             "trayIconsReloaded@selfmade.pl": "2890"}.items() %}
 install-extensions-{{user}}-{{extid}}:
     cmd.script:
-        - name: install-gnome-extensions.sh -e {{extid}}
-        - source: salt://basics/desktop/install-gnome-extensions.sh
+        - name: install_gnome_extensions.sh -e {{extid}}
+        - source: salt://basics/desktop/install_gnome_extensions.sh
         - runas: {{user}}
         - unless: test -d "{{salt['file.join'](salt['user.info'](user).home, ".local", "share", "gnome-shell", "extensions", key)}}"
     {% endfor %}
@@ -135,6 +135,8 @@ fix-gnome-desktop-keyboard-shortcuts:
         - name: gnome_vertical_workspace_setup.py
         - source: salt://basics/desktop/gnome_vertical_workspace_setup.py
         - runas: {{user}}
+        - require:
+            - cmd: install-extensions-{{user}}-4144
 
 
 fix-calendar-display-options:
@@ -142,6 +144,17 @@ fix-calendar-display-options:
         - name: tweak_topbar_calendar_settings.py
         - source: salt://basics/desktop/tweak_topbar_calendar_settings.py
         - runas: {{user}}
+
+
+fix-tray-icons-options:
+    cmd.script:
+        - name: gnome_tray_icons_setup.py
+        - source: salt://basics/desktop/gnome_tray_icons_setup.py
+        - runas: {{user}}
+        - env:
+            - GSETTINGS_SCHEMA_DIR: {{salt['file.join'](salt['user.info'](user).home, ".local", "share", "gnome-shell", "extensions", "trayIconsReloaded@selfmade.pl", "schemas")}}
+        - require:
+            - cmd: install-extensions-{{user}}-2890
 {% endfor %}
 
 
