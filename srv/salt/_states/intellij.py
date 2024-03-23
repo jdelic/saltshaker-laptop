@@ -40,7 +40,7 @@ def installed(name, target="/opt/idea", platform="linux", **kwargs):
         f"https://data.services.jetbrains.com/products/releases?code=IIU&latest=true&type=release&build=",
         allow_redirects=False,
     )
-    r = resp.json()['IIC'][0]['downloads'][platform]
+    r = resp.json()['IIU'][0]['downloads'][platform]
 
     file_ret = __states__['archive.extracted'](
         name=target,
