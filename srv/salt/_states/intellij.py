@@ -37,7 +37,7 @@ def installed(name, target="/opt/idea", platform="linux", **kwargs):
     require = kwargs.get("require", None)
 
     resp = requests.get(
-        f"https://data.services.jetbrains.com/products/releases?code=IIC&latest=true&type=release&build=",
+        f"https://data.services.jetbrains.com/products/releases?code=IIU&latest=true&type=release&build=",
         allow_redirects=False,
     )
     r = resp.json()['IIC'][0]['downloads'][platform]
