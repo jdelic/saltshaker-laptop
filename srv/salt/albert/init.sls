@@ -13,7 +13,6 @@ albert:
     pkg.installed:
         - pkgs:
             - albert
-            - python3-gi
         - require:
             - aptrepo: albert-repo
     file.managed:
@@ -34,7 +33,7 @@ albert-autostart-{{user}}:
         - group: {{user}}
         - makedirs: True
         - require:
-            - pkg: albert
+            - file: albert
 
 
 albert-keyboard-shortcut-{{user}}:

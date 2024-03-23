@@ -57,6 +57,7 @@ desktop-packages:
             - pipewire-bin
             - pipewire-audio
             - pipewire-pulse
+            - python3-gi
             - qemu-system-x86
             - seahorse
             - snapd
