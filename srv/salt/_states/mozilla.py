@@ -204,7 +204,7 @@ def firefox_file(username, path, profile=None, initialize_profile=False, **kwarg
             for s in config.sections():
                 if "path" in config[s] and profile == config[s]["name"]:
                     userprofile = s
-                    profiledir = os.path.join(firefoxdir, config[profile]["path"])
+                    profiledir = os.path.join(firefoxdir, config[s]["path"])
                     break
     else:
         for s in config.sections():
