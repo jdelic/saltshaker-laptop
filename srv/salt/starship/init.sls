@@ -18,6 +18,7 @@ starship-install:
         - enforce_toplevel: False
         - require:
             - file: {{user}}-fonts-dir
+            - pkg: desktop-packages
         - require_in:
             - cmd: {{user}}-fccache
 
