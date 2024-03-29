@@ -101,6 +101,8 @@ snap-service:
     service.running:
         - name: snapd
         - enable: True
+        - require:
+            - pkg: desktop-packages
 
 
 set-wayland-state:
@@ -122,6 +124,8 @@ install-extensions-{{user}}-{{extid}}:
         - source: salt://basics/desktop/install_gnome_extensions.sh
         - runas: {{user}}
         - unless: test -d "{{salt['file.join'](salt['user.info'](user).home, ".local", "share", "gnome-shell", "extensions", key)}}"
+        - require:
+            - pkg: desktop-packages
     {% endfor %}
 
 fix-gnome-task-keyboard-shortcuts:
@@ -129,6 +133,8 @@ fix-gnome-task-keyboard-shortcuts:
         - name: gnome_alttab_setup.py
         - source: salt://basics/desktop/gnome_alttab_setup.py
         - runas: {{user}}
+        - require:
+            - pkg: desktop-packages
 
 
 fix-gnome-desktop-keyboard-shortcuts:
@@ -145,6 +151,8 @@ fix-calendar-display-options:
         - name: tweak_topbar_calendar_settings.py
         - source: salt://basics/desktop/tweak_topbar_calendar_settings.py
         - runas: {{user}}
+        - require:
+            - pkg: desktop-packages
 
 
 fix-tray-icons-options:
