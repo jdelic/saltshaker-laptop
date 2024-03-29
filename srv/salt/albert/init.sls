@@ -15,25 +15,29 @@ albert:
             - albert
         - require:
             - aptrepo: albert-repo
-    file.managed:
-        - name: /usr/share/applications/albert.desktop
-        - source: salt://albert/albert.desktop
-        - user: root
-        - group: root
-        - require:
-            - pkg: albert
 
 
 {% for user in pillar['users'] %}
-albert-autostart-{{user}}:
-    file.symlink:
-        - name: /home/{{user}}/.config/autostart/albert.desktop
-        - target: /usr/share/applications/albert.desktop
+albert-desktop-{{user}}:
+   file.managed:
+        - name: /home/{{user}}/.local/share/applications/albert.desktop
+        - source: salt://albert/albert.desktop
         - user: {{user}}
         - group: {{user}}
         - makedirs: True
         - require:
-            - file: albert
+            - pkg: albert
+
+
+albert-autostart-{{user}}:
+   file.symlink:
+        - name: /home/{{user}}/.config/autostart/albert.desktop
+        - target: /home/{{user}}/.local/share/applications/albert.desktop
+        - user: {{user}}
+        - group: {{user}}
+        - makedirs: True
+        - require:
+            - file: albert-desktop-{{user}}
 
 
 albert-keyboard-shortcut-{{user}}:
