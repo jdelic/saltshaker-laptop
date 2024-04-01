@@ -48,6 +48,7 @@ def set_gnome_terminal_font(font_name='DroidSansM Nerd Font Mono', font_size='10
 def set_gnome_terminal_theme_variant(variant="dark"):
     settings = Gio.Settings.new('org.gnome.Terminal.Legacy.Settings')
     settings.set_enum('theme-variant', 2) 
+    settings.apply()
     print("Gnome Terminal dark mode activated")
 
 # You can use the `fc-list` command in the terminal to list all fonts and find the exact name
