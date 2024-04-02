@@ -1,4 +1,4 @@
-#!/usr/bin/env /usr/bin/dbus-launch /usr/bin/python3
+#!/usr/bin/dbus-launch /usr/bin/python3
 from gi.repository import Gio
 
 
