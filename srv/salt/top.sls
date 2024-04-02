@@ -28,7 +28,6 @@ base:
 
     'id:hades':
         - match: grain
-        - basics.x11-optional
         - basics.amd-firmware
         - nvidia
         - cameractrls

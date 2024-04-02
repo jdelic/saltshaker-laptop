@@ -10,6 +10,7 @@ basesystem-packages:
             - curl
             - dbus
             - dbus-user-session
+            - dbus-x11
             - dnsutils
             - efitools
             - firejail
