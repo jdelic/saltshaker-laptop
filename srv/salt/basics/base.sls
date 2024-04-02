@@ -31,6 +31,8 @@ basesystem-packages:
             - systemd-timesyncd
             - unzip
         - order: 1
+        - require:
+            - pkgrepo: bookworm
 
 
 # vim: syntax=yaml
