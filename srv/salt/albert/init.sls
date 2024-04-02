@@ -41,10 +41,26 @@ albert-autostart-{{user}}:
 
 
 albert-keyboard-shortcut-{{user}}:
-    cmd.script:
-        - name: albert_keyboard_shortcut.py create
+    file.managed:
+        - name: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "albert_keyboard_shortcut.py")}}
         - source: salt://albert/albert_keyboard_shortcut.py
-        - runas: {{user}}
+        - user: {{user}}
+        - group: {{user}}
+        - mode: '0700'
+        - makedirs: True
         - require:
             - file: albert-autostart-{{user}}
+
+
+albert-keyboard-shortcut-startup-{{user}}:
+    file.accumulated:
+        - name: startup-scripts-{{user}}
+        - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
+        - text: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "albert_keyboard_shortcut.py")}} create
+        - require_in:
+            - file: startup-scripts-file-{{user}}
+        - require:
+            - file: albert-keyboard-shortcut-{{user}}
 {% endfor %}
+
+# vim: syntax=yaml

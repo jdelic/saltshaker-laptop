@@ -24,12 +24,27 @@ starship-install:
 
 
 {{user}}-droidsans-activate:
-    cmd.script:
-        - name: set_gnometerm_font.py
+    file.managed:
+        - name: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "set_gnometerm_font.py")}}
         - source: salt://starship/set_gnometerm_font.py
-        - runas: {{user}}
+        - user: {{user}}
+        - group: {{user}}
+        - mode: '0700'
+        - makedirs: True
         - require:
             - archive: {{user}}-droidsans-nerdfont
             - cmd: {{user}}-fccache
+
+
+startup-{{user}}-droidsans-activate:
+    file.accumulated:
+        - name: startup-scripts-{{user}}
+        - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
+        - text: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "set_gnometerm_font.py")}}
+        - require_in:
+            - file: startup-scripts-file-{{user}}
+        - require:
+            - file: {{user}}-droidsans-activate
 {% endfor %}
 
+# vim: syntax=yaml
