@@ -1,4 +1,4 @@
-#!/usr/bin/dbus-launch /usr/bin/python3
+#!/usr/bin/python3
 from gi.repository import Gio
 
 
@@ -21,6 +21,7 @@ def main():
     set_keybinding('move-to-workspace-left', ['<Super><Shift><Alt>Left', '<Control><Shift><Alt>Left'])
     set_keybinding('move-to-workspace-right', ['<Super><Shift><Alt>Right', '<Control><Shift><Alt>Right'])
     settings.apply()
+    Gio.Settings.sync()
 
 
 if __name__ == "__main__":

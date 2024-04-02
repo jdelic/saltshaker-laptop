@@ -1,4 +1,4 @@
-#!/usr/bin/dbus-launch /usr/bin/python3
+#!/usr/bin/python3
 from gi.repository import Gio
 
 
@@ -17,6 +17,7 @@ def main():
     set_keybinding('switch-windows', ['<Alt>Tab'])
     set_keybinding('switch-windows-backward', ['<Shift><Alt>Tab'])
     settings.apply()
+    Gio.Settings.sync()
 
 
 if __name__ == "__main__":

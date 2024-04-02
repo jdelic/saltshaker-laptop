@@ -1,4 +1,4 @@
-#!/usr/bin/dbus-launch /usr/bin/python3
+#!/usr/bin/python3
 import os
 import sys
 from gi.repository import Gio
@@ -25,6 +25,7 @@ def set_tray_icons_number(num_icons=8, icon_margin_horizontal=0, icon_padding_ho
     settings.set_int('icon-margin-horizontal', icon_margin_horizontal)
     settings.set_int('icon-padding-horizontal', icon_padding_horizontal)
     settings.apply()
+    Gio.Settings.sync()
     print(f"Settings changed to: icons-limit={num_icons} "
           f"icon-margin-horizontal={icon_margin_horizontal} "
           f"icon-padding-horizontal={icon_padding_horizontal}")

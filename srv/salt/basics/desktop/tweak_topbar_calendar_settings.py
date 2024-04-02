@@ -1,4 +1,4 @@
-#!/usr/bin/dbus-launch /usr/bin/python3
+#!/usr/bin/python3
 from gi.repository import Gio
 
 
@@ -10,6 +10,7 @@ def main():
     print("Week Numbers in Calendar enabled.")
     interface_settings.set_boolean('clock-show-date', True)
     print("Date in Top Bar Clock enabled.")
+    Gio.Settings.sync()
 
 
 if __name__ == '__main__':

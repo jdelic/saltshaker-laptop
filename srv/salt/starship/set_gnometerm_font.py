@@ -1,4 +1,4 @@
-#!/usr/bin/dbus-launch /usr/bin/python3
+#!/usr/bin/python3
 from gi.repository import Gio
 
 gnome_dark_palette = ['#171421', '#c01c28', '#26a269', '#a2734c', '#12488b', '#a347ba', '#2aa1b3', '#d0cfcc', '#5e5c64', '#f66151', '#33da7a', '#e9ad0c', '#2a7bde', '#c061cb', '#33c7de', '#ffffff']
@@ -51,7 +51,10 @@ def set_gnome_terminal_theme_variant(variant="dark"):
     settings.apply()
     print("Gnome Terminal dark mode activated")
 
-# You can use the `fc-list` command in the terminal to list all fonts and find the exact name
-set_gnome_terminal_font(font_size=12)
-set_gnome_terminal_theme_variant()
+
+if __name__ == "__main__":
+    # You can use the `fc-list` command in the terminal to list all fonts and find the exact name
+    set_gnome_terminal_font(font_size=10)
+    set_gnome_terminal_theme_variant()
+    Gio.Settings.sync()
 
