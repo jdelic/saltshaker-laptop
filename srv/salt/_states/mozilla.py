@@ -178,7 +178,7 @@ def firefox_file(username, path, profile=None, initialize_profile=False, **kwarg
         if initialize_profile:
             # Initialize the profile
             if not profile:
-                profile = "default"
+                profile = "default-release"
             __salt__['cmd.run']("/opt/firefox/firefox-bin --headless --CreateProfile %s" % profile, runas=username)
         else:
             _error(ret, "Can't find user's firefox profiles folder in %s" %
