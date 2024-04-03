@@ -20,18 +20,20 @@ Among other things, this config will install:
   - Enpass
   - Yubikey support
 
-* Most important Firefox extensions:
+* Most important Firefox extensions (use ``about:debugging`` to find their IDs
+  if you want to add more):
 
   - uBlock,
+  - uMatrix,
   - Enpass,
   - German dictionary,
   - Multi-account containers
+  - GDPR Content-O-Matic
 
 * Enforces Firefox sanitization on closing the browser and other settings.
 
 * Some other available applications include:
 
-  - nordvpn
   - Discord
   - OBS
   - Airtame
@@ -42,7 +44,7 @@ Among other things, this config will install:
   - Xerox printer drivers
   - GIMP
   - VLC
-  - Logitech camera controls for my Brio webcam
+  - Logitech camera controls for Brio webcams
 
 
 Getting to Netinst
