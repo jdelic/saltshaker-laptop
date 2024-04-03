@@ -57,6 +57,7 @@ desktop-packages:
             - pipewire-bin
             - pipewire-audio
             - pipewire-pulse
+            - pulseaudio-utils  # this delivers pactl which we need to control virtual sound sinks
             - python3-gi
             - qemu-system-x86
             - seahorse
