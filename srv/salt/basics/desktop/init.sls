@@ -51,6 +51,7 @@ desktop-packages:
             - network-manager-openvpn
             - network-manager-gnome
             - network-manager-openvpn-gnome
+            - ovmf  # UEFI for KVM VMs
             - p7zip-full
             - plymouth
             - plymouth-themes
