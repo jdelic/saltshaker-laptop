@@ -121,6 +121,15 @@ I commonly use
 
 * Terminal
 
+Changes to be made to the system after ./configure.sh is complete
+-----------------------------------------------------------------
+
+These are changes that this salt configuration currently can't do for you.
+
+1. Change ``enableMiniWindow`` to ``false`` in ``~/.config/zoomus.conf``.
+2. Enable the built-in dark theme in Firefox
+
+
 .. _netinst: https://www.debian.org/devel/debian-installer/
 .. _starship: https://starship.rs
 .. _albert: https://github.com/albertlauncher/albert
