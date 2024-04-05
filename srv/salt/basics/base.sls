@@ -26,6 +26,7 @@ basesystem-packages:
             - manpages
             - net-tools
             - nftables
+            - ntfs-3g
             - patch
             - smbios-utils
             - systemd-timesyncd
