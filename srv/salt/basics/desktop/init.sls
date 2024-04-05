@@ -18,6 +18,7 @@ desktop-packages:
             - cups
             - dnsmasq  # required by libvirtd
             - eog
+            - eog-plugins
             - evince
             - fonts-liberation
             - fonts-powerline  # for starship
