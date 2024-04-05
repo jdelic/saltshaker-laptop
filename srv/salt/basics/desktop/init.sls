@@ -115,6 +115,27 @@ set-wayland-state:
         - backup: minion
 
 
+network-manager-etc-interfaces:
+    file.managed:
+        - name: /etc/network/interfaces
+        - user: root
+        - group: root
+        - mode: '0644'
+        - contents: |
+            # THIS FILE IS MANAGED BY SALT
+            # This file describes the network interfaces available on your system
+            # and how to activate them. For more information, see interfaces(5).
+            source /etc/network/interfaces.d/*
+
+            # The loopback network interface
+            auto lo
+            iface lo inet loopback
+
+            # ... all other interfaces are managed by network-manager
+        - require:
+            - pkg: desktop-packages
+
+
 {% for user in pillar['users'] %}
     {% for key, extid in {"Move_Clock@rmy.pobox.com": "2",
             "vertical-overview@RensAlthuis.github.com": "4144",
