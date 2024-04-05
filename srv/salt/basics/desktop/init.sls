@@ -17,6 +17,7 @@ desktop-packages:
             - chrome-gnome-shell
             - cups
             - dnsmasq  # required by libvirtd
+            - eog
             - evince
             - fonts-liberation
             - fonts-powerline  # for starship
