@@ -64,6 +64,8 @@ desktop-packages:
             - python3-gi
             - qemu-system-x86
             - seahorse
+            - smart-notifier
+            - smartmontools
             - snapd
             - sound-theme-freedesktop
             - spice-client-gtk
@@ -97,6 +99,14 @@ desktop-packages:
 desktop-activated:
     cmd.run:
         - name: systemctl set-default graphical.target
+        - require:
+            - pkg: desktop-packages
+
+
+smartd-service:
+    service.running:
+        - name: smartd
+        - enable: True
         - require:
             - pkg: desktop-packages
 
