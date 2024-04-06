@@ -28,6 +28,7 @@ basesystem-packages:
             - nftables
             - ntfs-3g
             - patch
+            - pmount
             - python-is-python3
             - smbios-utils
             - systemd-timesyncd
