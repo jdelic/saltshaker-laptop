@@ -29,7 +29,6 @@ base:
     'id:hades':
         - match: grain
         - basics.amd-firmware
-        - nvidia
         - cameractrls
-        - cuda
+        - cuda  # includes NVIDIA drivers
         - steam
