@@ -31,4 +31,5 @@ base:
         - basics.amd-firmware
         - nvidia
         - cameractrls
+        - cuda
         - steam
