@@ -124,10 +124,14 @@ I commonly use
 Changes to be made to the system after ./configure.sh is complete
 -----------------------------------------------------------------
 
-These are changes that this salt configuration currently can't do for you.
+These are changes that this salt configuration currently can't do for you. Here
+is my personal "post-install todo list":
 
 1. Change ``enableMiniWindow`` to ``false`` in ``~/.config/zoomus.conf``.
 2. Enable the built-in dark theme in Firefox
+3. Enable ``devtools.netmonitor.persistlog`` in ``about:config``
+4. Import uMatrix config
+5. Remove spacers from Firefox toolbar config
 
 
 .. _netinst: https://www.debian.org/devel/debian-installer/
