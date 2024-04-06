@@ -132,6 +132,8 @@ is my personal "post-install todo list":
 3. Enable ``devtools.netmonitor.persistlog`` in ``about:config``
 4. Import uMatrix config
 5. Remove spacers from Firefox toolbar config
+6. Turn off the Zoom mini-window in the Zoom settings
+7. Install ``CUDA from NVIDIA <cuda_>``__ and ``ollama <ollama_>``__
 
 
 .. _netinst: https://www.debian.org/devel/debian-installer/
@@ -141,4 +143,6 @@ is my personal "post-install todo list":
 .. _vertical: https://extensions.gnome.org/extension/4144/vertical-overview/
 .. _nooverview: https://extensions.gnome.org/extension/4099/no-overview/
 .. _trayicons: https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
+.. _cuda: https://developer.nvidia.com/cuda-downloads
+.. _ollama: https://ollama.com/download
 .. # vim: wrap textwidth=80
