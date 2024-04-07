@@ -138,8 +138,9 @@ is my personal "post-install todo list":
 4. Firefox: Import uMatrix config
 5. Firefox: Remove spacers from Firefox toolbar config
 6. Firefox: Enable extensions to run in private mode (this can't be automated)
-7. Projects: Install ``ollama <ollama_>``__
-
+7. Create Enpass service account and login
+8. Activate IntelliJ IDEA, Slack, and Spotify
+9. Projects: Install ``ollama <ollama_>``__
 
 .. _netinst: https://www.debian.org/devel/debian-installer/
 .. _starship: https://starship.rs
