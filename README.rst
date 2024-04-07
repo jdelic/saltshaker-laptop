@@ -127,13 +127,13 @@ Changes to be made to the system after ./configure.sh is complete
 These are changes that this salt configuration currently can't do for you. Here
 is my personal "post-install todo list":
 
-1. Change ``enableMiniWindow`` to ``false`` in ``~/.config/zoomus.conf``.
-2. Enable the built-in dark theme in Firefox
-3. Enable ``devtools.netmonitor.persistlog`` in ``about:config``
-4. Import uMatrix config
-5. Remove spacers from Firefox toolbar config
-6. Turn off the Zoom mini-window in the Zoom settings
-7. Install ``CUDA from NVIDIA <cuda_>``__ and ``ollama <ollama_>``__
+1. Zoom: Change ``enableMiniWindow`` to ``false`` in ``~/.config/zoomus.conf``.
+2. Firefox: Enable the built-in dark theme in Firefox
+3. Firefox: Enable ``devtools.netmonitor.persistlog`` in ``about:config``
+4. Firefox: Import uMatrix config
+5. Firefox: Remove spacers from Firefox toolbar config
+6. Firefox: Enable extensions to run in private mode (this can't be automated)
+7. Projects: Install ``ollama <ollama_>``__
 
 
 .. _netinst: https://www.debian.org/devel/debian-installer/
@@ -143,6 +143,5 @@ is my personal "post-install todo list":
 .. _vertical: https://extensions.gnome.org/extension/4144/vertical-overview/
 .. _nooverview: https://extensions.gnome.org/extension/4099/no-overview/
 .. _trayicons: https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
-.. _cuda: https://developer.nvidia.com/cuda-downloads
 .. _ollama: https://ollama.com/download
 .. # vim: wrap textwidth=80
