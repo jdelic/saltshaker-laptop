@@ -101,10 +101,15 @@ useful and you should know. You can install them from ``Extension Manager``:
 Important Gnome Settings changed by this config
 -----------------------------------------------
 
+This config installs a autostart script that changes the following Gnome
+settings:
+
 1. Add keyboard shortcut for Albert to launch ``albert toggle`` on ``META+X``.
 2. Change "Navigation"->"Switch Applications" to "disabled" and "Switch
    Windows" to "Alt+Tab"
 3. On Gnome Tweaks set the clock to show calendar weeks and the date
+4. Configure the Gnome extensions, setting the keyboard shortcuts for vertical
+   desktops and configuring the tray icons size and position
 
 
 Which Albert Plugins to Enable?
