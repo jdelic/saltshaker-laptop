@@ -11,3 +11,14 @@ zoom:
         - require:
             - pkg: desktop-packages
             - file: zoom
+
+
+{% for user in pillar['users'] %}
+zoom-disable-miniwindow:
+    ini_manage.options_present:
+        - name: {{salt['file.join'](salt['user.info'](user).home, '.config', 'zoomus.conf')}}
+        - strict: False
+        - sections:
+              General:
+                  enableMiniWindow: {{pillar['zoom']['enable-mini-window']}}
+{% endfor %}

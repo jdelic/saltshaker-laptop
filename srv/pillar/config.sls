@@ -10,6 +10,8 @@ public-interfaces:
 starship:
     enabled: true
 
+zoom:
+    enable-mini-window: false
 
 #firefox:
 #    gtk-theme-override: "Adwaita:light"
