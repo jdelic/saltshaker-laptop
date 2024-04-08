@@ -63,6 +63,7 @@ desktop-packages:
             - pulseaudio-utils  # this delivers pactl which we need to control virtual sound sinks
             - python3-gi
             - qemu-system-x86
+            - qemu-utils
             - seahorse
             - smart-notifier
             - smartmontools
