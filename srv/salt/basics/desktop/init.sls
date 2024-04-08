@@ -78,6 +78,7 @@ desktop-packages:
             - system-config-printer
             - ttf-mscorefonts-installer
             - unison-gtk
+            - usbguard-notifier
             - virt-manager
             - virt-viewer
             - virtinst

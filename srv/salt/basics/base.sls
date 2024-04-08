@@ -33,6 +33,7 @@ basesystem-packages:
             - smbios-utils
             - systemd-timesyncd
             - unzip
+            - usbguard
         - order: 1
         - require:
             - pkgrepo: bookworm
