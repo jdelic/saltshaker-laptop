@@ -15,7 +15,7 @@ zoom:
 
 {% for user in pillar['users'] %}
 zoom-disable-miniwindow:
-    ini_manage.options_present:
+    ini.options_present:
         - name: {{salt['file.join'](salt['user.info'](user).home, '.config', 'zoomus.conf')}}
         - strict: False
         - sections:
