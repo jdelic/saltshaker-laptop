@@ -126,6 +126,7 @@ I commonly use
 
 * Terminal
 
+
 Changes to be made to the system after ./configure.sh is complete
 -----------------------------------------------------------------
 
@@ -142,6 +143,16 @@ is my personal "post-install todo list":
 8. Activate IntelliJ IDEA, Slack, and Spotify
 9. Projects: Install ``ollama <ollama_>``__
 
+
+Windows VMs
+-----------
+
+Make sure to install the *latest* of these:
+
+* ``SPICE client for Windows VMs <spice_>``__
+* ``VirtIO drivers for Windows VMs <virtio_>``__
+
+
 .. _netinst: https://www.debian.org/devel/debian-installer/
 .. _starship: https://starship.rs
 .. _albert: https://github.com/albertlauncher/albert
@@ -150,4 +161,6 @@ is my personal "post-install todo list":
 .. _nooverview: https://extensions.gnome.org/extension/4099/no-overview/
 .. _trayicons: https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
 .. _ollama: https://ollama.com/download
+.. _spice: https://www.spice-space.org/download.html
+.. _virtio: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/
 .. # vim: wrap textwidth=80
