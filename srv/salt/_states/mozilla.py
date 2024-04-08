@@ -174,16 +174,23 @@ def firefox_file(username, path, profile=None, initialize_profile=False, **kwarg
 
     homedir = info["home"]
     firefoxdir = os.path.join(homedir, ".mozilla", "firefox")
-    if not os.path.exists(os.path.join(firefoxdir, "profiles.ini")):
-        if initialize_profile:
-            # Initialize the profile
-            if not profile:
-                profile = "default-release"
-            __salt__['cmd.run']("/opt/firefox/firefox-bin --headless --CreateProfile %s" % profile, runas=username)
-        else:
-            _error(ret, "Can't find user's firefox profiles folder in %s" %
-                        os.path.join(firefoxdir, "profiles.ini"))
-            return ret
+    allow_init_profile = True
+    profiles_config_exists = os.path.exists(os.path.join(firefoxdir, "profiles.ini"))
+    if profiles_config_exists:
+        config = configparser.ConfigParser()
+        config.read(os.path.join(firefoxdir, "profiles.ini"))
+        if "Profile0" in config.sections():
+            allow_init_profile = False
+
+    # profiles.ini either doesn't exist or has no profile
+    if initialize_profile and allow_init_profile:
+        if not profile:
+            profile = "default-release"
+        __salt__['cmd.run']("/opt/firefox/firefox-bin --headless --CreateProfile %s" % profile, runas=username)
+    elif allow_init_profile and not initialize_profile:
+        _error(ret, "No profiles found and not allowed to initialize one in %s" %
+                    os.path.join(firefoxdir, "profiles.ini"))
+        return ret
 
     config = configparser.ConfigParser()
     config.read(os.path.join(firefoxdir, "profiles.ini"))
