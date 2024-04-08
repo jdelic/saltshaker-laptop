@@ -39,4 +39,8 @@ basesystem-packages:
             - pkgrepo: bookworm
 
 
+usbguard:
+    service.running:
+        - enable: True
+
 # vim: syntax=yaml
