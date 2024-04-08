@@ -42,5 +42,7 @@ basesystem-packages:
 usbguard:
     service.running:
         - enable: True
+        - require:
+            - pkg: basesystem-packages
 
 # vim: syntax=yaml

@@ -121,6 +121,14 @@ snap-service:
             - pkg: desktop-packages
 
 
+usbguard-notifier-service:
+    service.running:
+        - name: usbguard-notifier
+        - enable: True
+        - require:
+            - pkg: desktop-packages
+
+
 set-wayland-state:
     file.managed:
         - name: /etc/gdm3/daemon.conf
