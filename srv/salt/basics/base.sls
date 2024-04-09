@@ -32,6 +32,7 @@ basesystem-packages:
             - python-is-python3
             - smbios-utils
             - systemd-timesyncd
+            - traceroute
             - unzip
             - usbguard
         - order: 1
