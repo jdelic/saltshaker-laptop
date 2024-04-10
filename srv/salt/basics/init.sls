@@ -72,6 +72,8 @@ root-bashrc:
         - user: {{user}}
         - group: {{user}}
         - mode: '0640'
+        - context:
+            gnupghome: {{pillar['users'][user].get('gnupghome', '')}}
 
 
 {{user}}-fonts-dir:

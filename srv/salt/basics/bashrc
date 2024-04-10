@@ -136,6 +136,10 @@ if ! shopt -oq posix; then
     fi
 fi
 
+{% if gnupghome -%}
+export GNUPGHOME="{{ gnupghome }}"
+{%- endif %}
+
 {% if pillar.get("starship", {}).get("enabled", False) -%}
 eval "$(starship init bash)"
 {%- endif %}
