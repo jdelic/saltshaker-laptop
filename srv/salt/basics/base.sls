@@ -17,6 +17,7 @@ basesystem-packages:
             - firewalld
             - firmware-linux-nonfree
             - git
+            - git-lfs
             - info
             - jq
             - less
