@@ -18,6 +18,7 @@ basesystem-packages:
             - firmware-linux-nonfree
             - git
             - git-lfs
+            - htop
             - info
             - jq
             - less

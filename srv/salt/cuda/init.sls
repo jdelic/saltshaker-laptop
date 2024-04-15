@@ -14,6 +14,7 @@ cuda:
             - cuda-toolkit-12-4
             - nvidia-kernel-open-dkms
             - cuda-drivers
+            - nvtop
         - install_recommends: False
         - require:
             - aptrepo: cuda-repo
