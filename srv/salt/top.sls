@@ -3,6 +3,7 @@
 base:
     '*':
         - albert
+        - ardour
         - basics
         - dev
         - discord
