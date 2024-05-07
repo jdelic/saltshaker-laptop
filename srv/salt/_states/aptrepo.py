@@ -29,7 +29,8 @@ def _propagate_changes(myret, theirret):
         myret["pchanges"][theirret["name"]] = theirret["pchanges"]
 
 
-def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=None, require=None):
+def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=None, require=None,
+            download_method=None):
     ret = {
         "name": name,
         "changes": {},
@@ -97,15 +98,20 @@ def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=
         if not __salt__["file.file_exists"](signed_by):
             tmp = salt.utils.files.mkstemp()
             log.debug("downloading signed-by keyfile to %s from %s", tmp, signing_key_url)
-            keyfile_ret = __states__['file.managed'](name=tmp,
-                                                     source=signing_key_url,
-                                                     require=require,
-                                                     skip_verify=skip_verify)
+            if download_method is not None and download_method == "curl":
+                keyfile_ret = __states__['cmd.run'](name=f"/usr/bin/curl --no-progress-meter -f -S -o '{tmp}' '{signing_key_url}'")
+                req_cmd = require.append({"file": f"/usr/bin/curl --no-progress-meter -f -S -o '{tmp}' '{signing_key_url}'"}) if require \
+                    else [{"file": tmp}]
+            else:
+                keyfile_ret = __states__['file.managed'](name=tmp,
+                                                         source=signing_key_url,
+                                                         require=require,
+                                                         skip_verify=skip_verify)
+                req_cmd = require.append({"file": tmp}) if require else [{"file": tmp}]
+
             log.debug(keyfile_ret)
             _propagate_changes(ret, keyfile_ret)
-
             log.debug("dearmoring %s to %s", tmp, signed_by)
-            req_cmd = require.append({"file": tmp}) if require else [{"file": tmp}]
             dearmor_ret = __states__['cmd.run'](name="/usr/bin/gpg --dearmor -o '%s' '%s'" % (signed_by, tmp),
                                                 creates=signed_by,
                                                 require=req_cmd)
@@ -115,9 +121,12 @@ def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=
     else:
         if not __salt__["file.file_exists"](signed_by):
             log.debug("storing dearmored key %s in %s", signing_key_url, signed_by)
-            keyfile_ret = __states__['file.managed'](name=signed_by,
-                                                     source=signing_key_url,
-                                                     skip_verify=skip_verify)
+            if download_method is not None and download_method == "curl":
+                keyfile_ret = __states__['cmd.run'](name=f"/usr/bin/curl --no-progress-meter -f -S -o '{tmp}' '{signing_key_url}'")
+            else:
+                keyfile_ret = __states__['file.managed'](name=signed_by,
+                                                         source=signing_key_url,
+                                                         skip_verify=skip_verify)
             log.debug(keyfile_ret)
             _propagate_changes(ret, keyfile_ret)
     

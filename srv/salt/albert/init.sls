@@ -3,7 +3,8 @@ albert-repo:
         - name: {{pillar['repos']['albert']}}
         - listfile_name: albert.list
         - signed_by: /etc/apt/keyrings/albert-archive-keyring.gpg
-        - signing_key_url: https://download.opensuse.org/repositories/home:manuelschneid3r/Debian_12/Release.key
+        - signing_key_url: 'https://build.opensuse.org/projects/home:manuelschneid3r/signing_keys/download?kind=gpg'
+        - download_method: curl
         - dearmor: True
         - require:
             - pkg: desktop-packages
