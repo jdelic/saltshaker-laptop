@@ -19,10 +19,12 @@ basesystem-packages:
             - git
             - git-lfs
             - htop
+            - i2c-tools
             - info
             - jq
             - less
             - libcap2-bin
+            - lm-sensors
             - make
             - man-db
             - manpages
@@ -32,6 +34,7 @@ basesystem-packages:
             - patch
             - pmount
             - python-is-python3
+            - read-edid
             - smbios-utils
             - systemd-timesyncd
             - traceroute
