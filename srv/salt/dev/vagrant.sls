@@ -15,6 +15,7 @@ vagrant-enable-nfs:
             rpcbind mountd nfsd statd lockd rquotad : 127.0.0.1 192.168.120.1/255.255.252.0
 
 
+# as per https://developer.hashicorp.com/vagrant/docs/synced-folders/nfs#root-privilege-requirement
 vagrant-sudoer-rules:
     file.managed:
         - name: /etc/sudoers.d/vagrant
