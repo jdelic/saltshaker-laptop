@@ -16,6 +16,7 @@ desktop-packages:
             - bluez-tools
             - chrome-gnome-shell
             - cups
+            - cups-pk-helper
             - dnsmasq  # required by libvirtd
             - eog
             - eog-plugins
