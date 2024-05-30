@@ -7,6 +7,6 @@ hpprinters:
             - printer-driver-postscript-hp
             - printer-driver-hpijs
             - libsane-hpaio
-        - no_install_recommends: True
+        - install_recommends: False
         - require:
             - pkg: desktop-packages
