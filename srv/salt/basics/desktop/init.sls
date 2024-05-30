@@ -26,6 +26,7 @@ desktop-packages:
             - gnome-shell
             - gdm3
             - ghostscript
+            - gir1.2-libinsane-1.0
             - gir1.2-spiceclientgtk-3.0
             - gir1.2-wp-0.4
             - gnome-control-center
@@ -46,6 +47,7 @@ desktop-packages:
             - libpam-gnome-keyring
             - libpipewire-0.3-common
             - libpipewire-0.3-modules
+            - libsane1
             - libvirt-daemon
             - libvirt-daemon-system
             - malcontent  # unfortunately needed because otherwise gnome-settings->Applications doesn't populate
@@ -66,6 +68,7 @@ desktop-packages:
             - qemu-system-x86
             - qemu-utils
             - seahorse
+            - simple-scan
             - smart-notifier
             - smartmontools
             - snapd

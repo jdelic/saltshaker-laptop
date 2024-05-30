@@ -25,7 +25,8 @@ base:
         - match: grain
         - airtame
         - basics.intel-firmware
-        - xerox
+        - printing.hp
+        - printing.xerox
 
     'id:hades':
         - match: grain
@@ -33,3 +34,4 @@ base:
         - cameractrls
         - cuda  # includes NVIDIA drivers
         - steam
+        - printing.hp
