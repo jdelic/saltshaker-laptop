@@ -68,7 +68,6 @@ desktop-packages:
             - qemu-system-x86
             - qemu-utils
             - seahorse
-            - simple-scan
             - smart-notifier
             - smartmontools
             - snapd
