@@ -1,7 +1,11 @@
 grub-defaults:
     file.managed:
         - name: /etc/default/grub
-        - source: salt://basics/grub.defaults
+        - backup: minion
+        - source: salt://basics/grub.defaults.jinja
+        - template: jinja
+        - context:
+            enable_osprober: {{pillar['grub']['enable_osprober']}}
     cmd.run:
         - name: update-grub
         - onchanges:
