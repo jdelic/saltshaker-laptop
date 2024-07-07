@@ -1,3 +1,7 @@
+# For HP cm1312nfi manual network connection use
+# USB Vendor ID: 03f0
+# USB Product ID: 4f17
+
 vuescan:
     file.managed:
         - name: /var/cache/salt/vuescan/vuex6498.deb
