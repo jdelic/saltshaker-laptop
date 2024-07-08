@@ -10,8 +10,13 @@ public-interfaces:
 starship:
     enabled: true
 
+
 zoom:
     enable-mini-window: false
+
+
+grub:
+    enable_osprober: {{grains['id'] == 'hades'}}
 
 #firefox:
 #    gtk-theme-override: "Adwaita:light"

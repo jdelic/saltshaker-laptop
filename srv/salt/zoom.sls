@@ -1,11 +1,15 @@
 zoom:
     file.managed:
-        - name: /var/cache/zoom_amd64.deb
-        - source: https://zoom.us/client/latest/zoom_amd64.deb
+        - name: /var/cache/salt/zoom/zoom_amd64.deb
+        - source: 'https://zoom.us/client/latest/zoom_amd64.deb'
         - skip_verify: True  # :-(. Zoom doesn't publish hashes.
+        - makedirs: True
+        - user: root
+        - group: root
+        - mode: '0600'
     pkg.installed:
         - sources:
-            - zoom: /var/cache/zoom_amd64.deb
+            - zoom: /var/cache/salt/zoom/zoom_amd64.deb
         - onchanges:
             - file: zoom
         - require:

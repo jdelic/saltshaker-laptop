@@ -35,3 +35,4 @@ base:
         - cuda  # includes NVIDIA drivers
         - steam
         - printing.hp
+        - vuescan
