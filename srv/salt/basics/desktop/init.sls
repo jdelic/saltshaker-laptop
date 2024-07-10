@@ -37,6 +37,8 @@ desktop-packages:
             - gnome-terminal
             - gnome-tweaks
             - gthumb
+            - gvfs-backends
+            - gvfs-fuse
             - imagemagick
             - libasound2-plugins
             - libcanberra-pulse
