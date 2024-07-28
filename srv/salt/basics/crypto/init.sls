@@ -17,6 +17,7 @@ crypto-packages:
             - opensc
             - sbsigntool
             - dirmngr
+            - pcsc-tools
 
 
 # vim: syntax=yaml
