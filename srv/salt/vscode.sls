@@ -1,6 +1,6 @@
 vscode:
     file.managed:
-        - name: /var/cache/salt/vscode/vscode.deb
+        - name: /var/cache/salt/vscode/code.deb
         - source: 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
         - skip_verify: True
         - replace: False
@@ -11,7 +11,7 @@ vscode:
         - dir_mode: '0755'
     pkg.installed:
         - sources:
-            - vscode: /var/cache/salt/vscode/vscode.deb
+            - code: /var/cache/salt/vscode/code.deb
         - onchanges:
             - file: vscode
         - require:
