@@ -40,6 +40,8 @@ Among other things, this config will install:
   - `Starship prompt <starship_>`__
   - Steam
   - Inkscape
+  - IntelliJ IDEA Ultimate
+  - VSCode
   - Zoom
   - Xerox printer drivers
   - GIMP

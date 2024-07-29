@@ -18,6 +18,7 @@ base:
         - spotify
         - starship
         - thunderbird
+        - vscode
         - yubikey
         - zoom
 
