@@ -141,7 +141,7 @@ is my personal "post-install todo list":
 6. Firefox: Enable extensions to run in private mode (this can't be automated)
 7. Create Enpass service account and login
 8. Activate IntelliJ IDEA, Slack, and Spotify
-9. Projects: Install ``ollama <ollama_>``__
+9. Projects: Install `ollama <ollama_>`__
 
 
 Windows VM notes
@@ -164,8 +164,8 @@ Installing a Windows 10 or 11 VM with TPM:
 
 Make sure to install the *latest* of these:
 
-* ``SPICE client for Windows VMs <spice_>``__
-* ``VirtIO drivers for Windows VMs <virtio_>``__
+* `SPICE client for Windows VMs <spice_>`__
+* `VirtIO drivers for Windows VMs <virtio_>`__
 
 
 .. _netinst: https://www.debian.org/devel/debian-installer/
