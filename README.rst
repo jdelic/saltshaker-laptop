@@ -144,8 +144,15 @@ is my personal "post-install todo list":
 9. Projects: Install ``ollama <ollama_>``__
 
 
-Windows VMs
------------
+Windows VM notes
+----------------
+
+Installing a Windows 10 or 11 VM with TPM:
+
+.. code-block::
+
+   virt-install -n "win-vm" --memory=16384 --cpu=host -vcpus=6 --pm="suspend_to_mem=on,suspend_to_disk=on" --disk="path=/dev/gen5/win-payoneer,device=disk,bus=virtio" -c /tmp/win10_2023H2.iso --disk="path=/tmp/virtio-win.iso,device=cdrom"  --features kvm_hidden=on,smm=on --tpm backend.type=emulator,backend.version=2.0,model=tpm-tis --boot loader=/usr/share/OVMF/OVMF_CODE_4M.secboot.fd,loader_ro=yes,loader_type=pflash,nvram_template=/usr/share/OVMF/OVMF_VARS_4M.ms.fd,loader_secure=yes --graphics=spice --video model.type=xml,model.vram=65536,model.vgamem=65536
+
 
 Make sure to install the *latest* of these:
 
