@@ -64,7 +64,7 @@ partition like this:
   - 16GB SWAP vg0-swap ---
   - 256GB EXT4 vg0-home /home
 
-After booting into the minimal system under bookwork, wifi will have been
+After booting into the minimal system under Bookworm, wifi will have been
 configured in ``/etc/network/interfaces``. Gnome will later use NetworkManager,
 which will not manage network adapters listed in ``/etc/network/interfaces``.
 So after the first run of ``salt-call``, you'll have to remove the static
