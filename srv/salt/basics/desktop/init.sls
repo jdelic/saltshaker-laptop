@@ -36,6 +36,7 @@ desktop-packages:
             - gnome-shell-extension-manager
             - gnome-terminal
             - gnome-tweaks
+            - gphoto2
             - gthumb
             - gvfs-backends
             - gvfs-fuse
@@ -45,11 +46,14 @@ desktop-packages:
             - libdbus-glib-1-2
             - libgdk-pixbuf2.0-bin
             - libgnome-bluetooth13
+            - libimobiledevice6
+            - libimobiledevice6-utils
             - libinput-tools
             - libpam-gnome-keyring
             - libpipewire-0.3-common
             - libpipewire-0.3-modules
             - libsane1
+            - libusbmuxd-tools
             - libvirt-daemon
             - libvirt-daemon-system
             - malcontent  # unfortunately needed because otherwise gnome-settings->Applications doesn't populate
@@ -85,6 +89,7 @@ desktop-packages:
             - ttf-mscorefonts-installer
             - unison-gtk
             - usbguard-notifier
+            - usbmuxd
             - virt-manager
             - virt-viewer
             - virtinst
