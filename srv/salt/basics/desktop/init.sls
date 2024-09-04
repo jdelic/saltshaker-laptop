@@ -47,7 +47,7 @@ desktop-packages:
             - libgdk-pixbuf2.0-bin
             - libgnome-bluetooth13
             - libimobiledevice6
-            - libimobiledevice6-utils
+            - libimobiledevice-utils
             - libinput-tools
             - libpam-gnome-keyring
             - libpipewire-0.3-common
