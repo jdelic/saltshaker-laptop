@@ -38,6 +38,7 @@ basesystem-packages:
             - smbios-utils
             - systemd-timesyncd
             - traceroute
+            - uhubctl
             - unzip
             - usbguard
         - order: 1
