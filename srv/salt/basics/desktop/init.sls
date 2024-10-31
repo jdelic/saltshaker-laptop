@@ -162,10 +162,13 @@ network-manager-etc-interfaces:
 
 
 {% for user in pillar['users'] %}
+    {# The ids can be found in .local/share/gnome-shell/extensions/ and the numerical part comes from the URL on
+       extensions.gnome.org #}
     {% for key, extid in {"Move_Clock@rmy.pobox.com": "2",
             "vertical-overview@RensAlthuis.github.com": "4144",
             "no-overview@fthx": "4099",
-            "trayIconsReloaded@selfmade.pl": "2890"}.items() %}
+            "trayIconsReloaded@selfmade.pl": "2890",
+            "improvedosk@nick-shmyrev.dev": "4413"}.items() %}
 install-extensions-{{user}}-{{extid}}:
     cmd.script:
         - name: install_gnome_extensions.sh -e {{extid}}
