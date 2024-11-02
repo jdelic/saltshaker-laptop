@@ -13,8 +13,8 @@ saltstack-repo:
     aptrepo.managed:
         - name: {{pillar['repos']['saltstack']}}
         - listfile_name: /etc/apt/sources.list.d/saltstack.list
-        - signing_key_url: https://repo.saltproject.io/salt/py3/debian/11/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
-        - signed_by: /etc/apt/keyrings/salt-archive-keyring-2023.gpg
+        - signing_key_url: https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public
+        - signed_by: /etc/apt/keyrings/salt-archive-keyring-2024.gpg
         - dearmor: False
         - arch: amd64
         - order: 2  # execute this state early!
