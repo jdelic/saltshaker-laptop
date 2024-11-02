@@ -11,9 +11,9 @@ cuda-repo:
 cuda:
     pkg.installed:
         - pkgs:
-            - cuda-toolkit-12-4
+            - cuda-toolkit-12-6
             - nvidia-kernel-open-dkms
-            - cuda-drivers
+            - nvidia-open
             - nvtop
         - install_recommends: False
         - require:
