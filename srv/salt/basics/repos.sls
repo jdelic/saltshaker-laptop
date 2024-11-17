@@ -20,21 +20,21 @@ saltstack-repo:
         - order: 2  # execute this state early!
 
 
-updates-bookworm:
+bookworm-updates:
     pkgrepo.managed:
         - name: {{pillar['repos']['bookworm-updates']}}
         - file: /etc/apt/sources.list
         - order: 2  # execute this state early!
 
 
-security-updates-bookworm:
+bookworm-security-updates:
     pkgrepo.managed:
         - name: {{pillar['repos']['bookworm-security']}}
         - file: /etc/apt/sources.list
         - order: 2  # execute this state early!
 
 
-backports-org-bookworm:
+bookworm-backports:
     pkgrepo.managed:
         - name: {{pillar['repos']['bookworm-backports']}}
         - file: /etc/apt/sources.list

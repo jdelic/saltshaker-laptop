@@ -15,7 +15,6 @@ basesystem-packages:
             - efitools
             - firejail
             - firewalld
-            - firmware-linux-nonfree
             - git
             - git-lfs
             - htop
