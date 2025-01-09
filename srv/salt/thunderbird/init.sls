@@ -10,7 +10,13 @@ thunderbird-desktop-{{user}}:
         - product: thunderbird
         - user: {{user}}
         - group: {{user}}
-        - gtk_theme_override: {{pillar.get("thunderbird", {}).get("gtk-theme-override", "")}}
+        - envvars:
+            {% if pillar.get("thunderbird", {}).get("gtk-theme-override", False) -%}
+            GTK_THEME: {{pillar.get("thunderbird", {}).get("gtk-theme-override", "")}}
+            {%- endif %}
+            {% if pillar['users'][user].get('gnupghome', False) -%}
+            GNUPGHOME: {{pillar['users'][user]['gnupghome']}}
+            {%- endif %}
         - require:
             - mozilla: thunderbird
 {% endfor %}

@@ -10,7 +10,10 @@ firefox-desktop-{{user}}:
         - product: firefox
         - user: {{user}}
         - group: {{user}}
-        - gtk_theme_override: {{pillar.get("firefox", {}).get("gtk-theme-override", "")}}
+        - envvars:
+            {% if pillar.get("firefox", {}).get("gtk-theme-override", False) -%}
+            GTK_THEME: {{pillar.get("firefox", {}).get("gtk-theme-override", "")}}
+            {%- endif %}
         - require:
             - mozilla: firefox
 
