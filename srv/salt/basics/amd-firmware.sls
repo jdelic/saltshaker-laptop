@@ -20,3 +20,16 @@ x870e-firmware:
         - require:
             - pkgrepo: bookworm-backports
             - pkg: basesystem-packages
+
+
+disable-wcn785x-powersave:
+    file.managed:
+        - name: /etc/NetworkManager/conf.d/disable-wcn785x-powersave.conf
+        - contents: |
+            [connection]
+            wifi.powersave = 2
+        - user: root
+        - group: root
+        - mode: '0644'
+        - require:
+            - pkg: desktop-packages
