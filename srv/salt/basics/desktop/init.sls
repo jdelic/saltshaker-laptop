@@ -22,6 +22,7 @@ desktop-packages:
             - eog-plugins
             - evince
             - fonts-liberation
+            - fonts-noto-color-emoji
             - fonts-powerline  # for starship
             - gnome-shell
             - gdm3
