@@ -55,13 +55,16 @@ def installed(name, product=None, version="latest", lang="en-US", **kwargs):
         up = urlparse(resp.headers["location"])
         fn = __salt__['file.basename'](up.path)
 
-        vr = re.match(rf'{product}-([0-9]+\.[0-9]+\.?[0-9]*)\.tar\.bz2', fn)
+        vr = re.match(rf'{product}-([0-9]+\.[0-9]+\.?[0-9]*)\.?tar\.(xz|bz2)', fn)
         if not vr:
             _error(ret, "Expected Mozilla download to contain a valid version %s = %s" %
                    (resp.url, fn))
             return ret
 
         ver = vr.group(1)
+        # remove trailing dots which can show up if there are only 2 numbers in the version, as Mozilla goes with
+        # 136.0 instead of 136.0.0
+        ver = ver.rstrip(".")
 
     # right now, we don't template the OS part, because download.mozilla.org uses
     # linux64 as an alias for linux-x86_64 and handling that would be complicated and
