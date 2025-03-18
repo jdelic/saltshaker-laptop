@@ -34,6 +34,6 @@ base:
         - basics.amd-firmware
         - cameractrls
         - cuda  # includes NVIDIA drivers
-        - steam
+        #- steam
         - printing.hp
         - vuescan
