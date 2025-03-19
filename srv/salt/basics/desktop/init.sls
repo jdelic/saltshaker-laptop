@@ -169,7 +169,8 @@ network-manager-etc-interfaces:
             "vertical-overview@RensAlthuis.github.com": "4144",
             "no-overview@fthx": "4099",
             "trayIconsReloaded@selfmade.pl": "2890",
-            "improvedosk@nick-shmyrev.dev": "4413"}.items() %}
+            "improvedosk@nick-shmyrev.dev": "4413",
+            "tactile@lundal.io": "4548"}.items() %}
 install-extensions-{{user}}-{{extid}}:
     cmd.script:
         - name: install_gnome_extensions.sh -e {{extid}}
