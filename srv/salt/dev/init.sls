@@ -20,7 +20,7 @@ dev-essentials:
             - libalgorithm-diff-perl
             - libalgorithm-diff-xs-perl 
             - libalgorithm-merge-perl 
-            - libasan6 
+            - libasan8
             - libbinutils
             - libc-dev-bin 
             - libc-devtools 
@@ -39,7 +39,7 @@ dev-essentials:
             - libnsl-dev
             - libstdc++-12-dev
             - libtirpc-dev 
-            - libtsan0 
+            - libtsan2
             - libubsan1 
             - linux-libc-dev
             - linux-headers-amd64

@@ -1,6 +1,6 @@
-bookworm:
+trixie:
     pkgrepo.managed:
-        - name: {{pillar['repos']['bookworm']}}
+        - name: {{pillar['repos']['trixie']}}
         - file: /etc/apt/sources.list
       {% if pillar['repos'].get('pgpkey', None) %}
         - key_url: {{pillar['repos']['pgpkey']}}
@@ -20,28 +20,28 @@ saltstack-repo:
         - order: 2  # execute this state early!
 
 
-bookworm-updates:
-    pkgrepo.managed:
-        - name: {{pillar['repos']['bookworm-updates']}}
-        - file: /etc/apt/sources.list
-        - order: 2  # execute this state early!
+#trixie-updates:
+#    pkgrepo.managed:
+#        - name: {{pillar['repos']['trixie-updates']}}
+#        - file: /etc/apt/sources.list
+#        - order: 2  # execute this state early!
 
 
-bookworm-security-updates:
-    pkgrepo.managed:
-        - name: {{pillar['repos']['bookworm-security']}}
-        - file: /etc/apt/sources.list
-        - order: 2  # execute this state early!
+#trixie-security-updates:
+#    pkgrepo.managed:
+#        - name: {{pillar['repos']['trixie-security']}}
+#        - file: /etc/apt/sources.list
+#        - order: 2  # execute this state early!
 
 
-bookworm-backports:
-    pkgrepo.managed:
-        - name: {{pillar['repos']['bookworm-backports']}}
-        - file: /etc/apt/sources.list
-        - order: 2  # execute this state early!
-    file.managed:
-        - name: /etc/apt/preferences.d/bookworm-backports
-        - source: salt://basics/etc_mods/bookworm-backports
+#trixie-backports:
+#    pkgrepo.managed:
+#        - name: {{pillar['repos']['trixie-backports']}}
+#        - file: /etc/apt/sources.list
+#        - order: 2  # execute this state early!
+#    file.managed:
+#        - name: /etc/apt/preferences.d/trixie-backports
+#        - source: salt://basics/etc_mods/trixie-backports
 
 
 hashicorp-repo:
