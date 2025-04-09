@@ -4,6 +4,7 @@ basesystem-packages:
             - apt-transport-https
             - apt-transport-s3
             - bash-completion
+            - bind9-dnsutils
             - byobu
             - coreutils
             - cron
@@ -11,7 +12,6 @@ basesystem-packages:
             - dbus
             - dbus-user-session
             - dbus-x11
-            - dnsutils
             - efitools
             - firejail
             - firewalld
@@ -34,7 +34,6 @@ basesystem-packages:
             - pmount
             - python-is-python3
             - read-edid
-            - smbios-utils
             - systemd-timesyncd
             - traceroute
             - uhubctl

@@ -14,7 +14,6 @@ desktop-packages:
             - bluetooth
             - bluez-obexd
             - bluez-tools
-            - chrome-gnome-shell
             - cups
             - cups-pk-helper
             - dnsmasq  # required by libvirtd
@@ -29,7 +28,8 @@ desktop-packages:
             - ghostscript
             - gir1.2-libinsane-1.0
             - gir1.2-spiceclientgtk-3.0
-            - gir1.2-wp-0.4
+            - gir1.2-wp-0.5
+            - gnome-browser-connector
             - gnome-control-center
             - gnome-icon-theme
             - gnome-remote-desktop
@@ -46,8 +46,9 @@ desktop-packages:
             - libcanberra-pulse
             - libdbus-glib-1-2
             - libgdk-pixbuf2.0-bin
-            - libgnome-bluetooth13
-            - libimobiledevice6
+            - libgnome-bluetooth-3.0-13
+            - libgnome-bluetooth-ui-3.0-13
+            - libimobiledevice-1.0-6
             - libimobiledevice-utils
             - libinput-tools
             - libpam-gnome-keyring

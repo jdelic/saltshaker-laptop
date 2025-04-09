@@ -2,10 +2,13 @@ trixie:
     pkgrepo.managed:
         - name: {{pillar['repos']['trixie']}}
         - file: /etc/apt/sources.list
-      {% if pillar['repos'].get('pgpkey', None) %}
-        - key_url: {{pillar['repos']['pgpkey']}}
-      {% endif %}
+{% if pillar['repos'].get('pgpkey', None) %}
+        - key_url: {{pillar['repos']['pgpkey']['url']}}
+        - signedby: {{pillar['repos']['pgpkey']['keyring']}}
+{% else %}
+        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
         - consolidate: False
+{% endif %}
         - order: 1  # execute this state early!
 
 
@@ -23,6 +26,7 @@ saltstack-repo:
 #trixie-updates:
 #    pkgrepo.managed:
 #        - name: {{pillar['repos']['trixie-updates']}}
+#        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
 #        - file: /etc/apt/sources.list
 #        - order: 2  # execute this state early!
 
@@ -30,6 +34,7 @@ saltstack-repo:
 #trixie-security-updates:
 #    pkgrepo.managed:
 #        - name: {{pillar['repos']['trixie-security']}}
+#        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
 #        - file: /etc/apt/sources.list
 #        - order: 2  # execute this state early!
 
@@ -37,6 +42,7 @@ saltstack-repo:
 #trixie-backports:
 #    pkgrepo.managed:
 #        - name: {{pillar['repos']['trixie-backports']}}
+#        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
 #        - file: /etc/apt/sources.list
 #        - order: 2  # execute this state early!
 #    file.managed:
