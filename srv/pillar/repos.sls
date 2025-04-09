@@ -9,7 +9,7 @@ repos:
     hashicorp: deb https://apt.releases.hashicorp.com bookworm main
     nordvpn: deb https://repo.nordvpn.com/deb/nordvpn/debian stable main
     saltstack: deb https://packages.broadcom.com/artifactory/saltproject-deb/ stable main
-    spotify: deb http://repository.spotify.com stable non-free
+    spotify: deb https://repository.spotify.com stable non-free
 
 
 downloads:
