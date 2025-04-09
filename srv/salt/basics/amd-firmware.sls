@@ -15,10 +15,10 @@ x870e-firmware:
             - firmware-atheros
             - firmware-linux-nonfree
             - firmware-realtek
-        - fromrepo: bookworm-backports
+        #- fromrepo: trixie-backports
         - order: 1
         - require:
-            - pkgrepo: bookworm-backports
+            #- pkgrepo: trixie-backports
             - pkg: basesystem-packages
 
 

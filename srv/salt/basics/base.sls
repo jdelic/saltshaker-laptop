@@ -42,7 +42,7 @@ basesystem-packages:
             - usbguard
         - order: 1
         - require:
-            - pkgrepo: bookworm
+            - pkgrepo: trixie
 
 
 usbguard:
