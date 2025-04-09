@@ -7,7 +7,7 @@ EOF
 TMP1="$(mktemp)"
 cat >$TMP1 <<EOF
 mv /tmp/saltstack.list /etc/apt/sources.list.d/saltstack.list
-apt install --no-install-recommends ca-certificates wget
+apt install --no-install-recommends ca-certificates wget gnupg
 wget -O /etc/apt/keyrings/salt-archive-keyring-2024.gpg.tmp https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public
 gpg --dearmor -o /etc/apt/keyrings/salt-archive-keyring-2024.gpg /etc/apt/keyrings/salt-archive-keyring-2024.gpg.tmp
 rm /etc/apt/keyrings/salt-archive-keyring-2024.gpg.tmp
