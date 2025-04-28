@@ -5,6 +5,7 @@ base:
         - albert
         - ardour
         - basics
+        - cameractrls
         - dev
         - discord
         - enpass
@@ -32,7 +33,6 @@ base:
     'id:hades':
         - match: grain
         - basics.amd-firmware
-        - cameractrls
         - cuda  # includes NVIDIA drivers
         #- steam
         - printing.hp
