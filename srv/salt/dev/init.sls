@@ -4,6 +4,7 @@ include:
     - .python
     - .ruby
     #- .fpm
+    - .uv
     - .vagrant
 
 dev-essentials:
