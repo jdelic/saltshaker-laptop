@@ -6,6 +6,7 @@ base:
         - ardour
         - basics
         - cameractrls
+        - crush
         - dev
         - discord
         - enpass
