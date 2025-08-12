@@ -2,15 +2,15 @@
 
 BASEDIR="$(readlink -f $(dirname $0))"
 cat >/tmp/saltstack.list <<EOF
-deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2024.gpg arch=amd64] https://packages.broadcom.com/artifactory/saltproject-deb/ stable main
+deb [signed-by=/etc/apt/keyrings/salt-archive-keyring.gpg arch=amd64] https://packages.broadcom.com/artifactory/saltproject-deb/ stable main
 EOF
 TMP1="$(mktemp)"
 cat >$TMP1 <<EOF
 mv /tmp/saltstack.list /etc/apt/sources.list.d/saltstack.list
-apt install --no-install-recommends ca-certificates wget
-wget -O /etc/apt/keyrings/salt-archive-keyring-2024.gpg.tmp https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public
-gpg --dearmor -o /etc/apt/keyrings/salt-archive-keyring-2024.gpg /etc/apt/keyrings/salt-archive-keyring-2024.gpg.tmp
-rm /etc/apt/keyrings/salt-archive-keyring-2024.gpg.tmp
+apt install --no-install-recommends ca-certificates wget gnupg
+wget -O /etc/apt/keyrings/salt-archive-keyring.gpg.tmp https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public
+gpg --dearmor -o /etc/apt/keyrings/salt-archive-keyring.gpg /etc/apt/keyrings/salt-archive-keyring.gpg.tmp
+rm /etc/apt/keyrings/salt-archive-keyring.gpg.tmp
 apt update
 apt install --no-install-recommends git salt-minion
 systemctl disable --now salt-minion
