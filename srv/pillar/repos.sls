@@ -4,6 +4,7 @@ repos:
     bookworm-backports: deb http://ftp-stud.hs-esslingen.de/debian/ bookworm-backports main contrib non-free non-free-firmware
     bookworm-security: deb http://security.debian.org/debian-security bookworm-security main contrib non-free non-free-firmware
     bookworm-updates: deb http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware
+    crush: deb https://repo.charm.sh/apt/ * *
     cuda: deb https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/ /
     enpass: deb https://apt.enpass.io/ stable main
     hashicorp: deb https://apt.releases.hashicorp.com bookworm main
