@@ -6,6 +6,7 @@ users:
 {% else %}
     jonas:
         gnupghome: /home/jonas/jm/gpg
+        install-uv: True
 {% endif %}
 
 sudoers:
