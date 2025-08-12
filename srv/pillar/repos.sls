@@ -1,16 +1,15 @@
 repos:
     albert: deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_Testing/ /
-    trixie: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://ftp-stud.hs-esslingen.de/debian/ testing main contrib non-free non-free-firmware
-    trixie-backports: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://ftp-stud.hs-esslingen.de/debian/ trixie-backports main contrib non-free non-free-firmware
-    trixie-security: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://security.debian.org/debian-security testing-security main contrib non-free non-free-firmware
-    trixie-updates: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://deb.debian.org/debian testing-updates main contrib non-free non-free-firmware
     cuda: deb https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/ /
     enpass: deb https://apt.enpass.io/ stable main
     hashicorp: deb https://apt.releases.hashicorp.com bookworm main
     nordvpn: deb https://repo.nordvpn.com/deb/nordvpn/debian stable main
     saltstack: deb https://packages.broadcom.com/artifactory/saltproject-deb/ stable main
     spotify: deb https://repository.spotify.com stable non-free
-
+    trixie: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://ftp-stud.hs-esslingen.de/debian/ trixie main contrib non-free non-free-firmware
+    trixie-backports: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://ftp-stud.hs-esslingen.de/debian/ trixie-backports main contrib non-free non-free-firmware
+    trixie-security: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware
+    trixie-updates: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://deb.debian.org/debian trixie-updates main contrib non-free non-free-firmware
 
 downloads:
     droidsans-nerdfont:
