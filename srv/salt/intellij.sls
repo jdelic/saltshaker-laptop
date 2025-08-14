@@ -1,5 +1,4 @@
 intellij-idea:
     intellij.installed:
-        - user: jonas
-        - group: jonas
- 
+        - user: {{pillar['users'.keys()[0]}}
+        - group: {{pillar['users'.keys()[0]}}
