@@ -17,7 +17,7 @@ saltstack-repo:
         - name: {{pillar['repos']['saltstack']}}
         - listfile_name: /etc/apt/sources.list.d/saltstack.list
         - signing_key_url: https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public
-        - signed_by: /etc/apt/keyrings/salt-archive-keyring-2024.gpg
+        - signed_by: /etc/apt/keyrings/salt-archive-keyring.gpg
         - dearmor: True
         - arch: amd64
         - order: 2  # execute this state early!
