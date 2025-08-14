@@ -119,11 +119,21 @@ cron:
 
 
 # enforce en_us.UTF8
+
+# Ubuntu has removed this file again in bugs.launchpad.net/ubuntu/+source/systemd/+bug/2102028
+# but Debian in Trixie still has it.
+remove-locale-gen-dbus-restriction:
+    file.absent:
+        - name: /usr/share/dbus-1/system.d/systemd-localed-read-only.conf
+        - require:
+            - service: dbus
+
+
 default-locale-gen:
     locale.present:
         - name: en_US.UTF-8
         - require:
-            - service: dbus
+            - file: remove-locale-gen-dbus-restriction
 
 
 default-locale-set:
@@ -131,6 +141,7 @@ default-locale-set:
         - name: en_US.UTF-8
         - require:
             - locale: default-locale-gen
+            - file: remove-locale-gen-dbus-restriction
         - order: 2
 
 
