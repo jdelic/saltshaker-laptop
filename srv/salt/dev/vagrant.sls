@@ -18,7 +18,7 @@ vagrant-enable-nfs:
 # as per https://developer.hashicorp.com/vagrant/docs/synced-folders/nfs#root-privilege-requirement
 vagrant-sudoer-rules:
     file.managed:
-        - name: /etc/sudoers.d/vagrant
+        - name: /etc/sudoers.d/vagrant-libvirt
         - user: root
         - group: root
         - mode: 0440
