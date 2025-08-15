@@ -167,10 +167,10 @@ network-manager-etc-interfaces:
     {# The ids can be found in .local/share/gnome-shell/extensions/ and the numerical part comes from the URL on
        extensions.gnome.org #}
     {% for key, extid in {"Move_Clock@rmy.pobox.com": "2",
-            "vertical-overview@RensAlthuis.github.com": "4144",
+            "vertical-workspaces@G-DH.github.com": "5177",
             "no-overview@fthx": "4099",
             "trayIconsReloaded@selfmade.pl": "2890",
-            "improvedosk@nick-shmyrev.dev": "4413",
+            "gjsosk@vishram1123.com": "5949",
             "tactile@lundal.io": "4548"}.items() %}
 install-extensions-{{user}}-{{extid}}:
     cmd.script:

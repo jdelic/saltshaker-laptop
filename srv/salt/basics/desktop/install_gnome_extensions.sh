@@ -112,7 +112,7 @@ function install_extension() {
 
 function enable_extension() {
     ext_uuid="$1"
-    gnome-extensions enable "$ext_uuid" >/dev/null 2>&1
+    gnome-extensions enable "$ext_uuid"
 }
 
 function disable_extension() {
