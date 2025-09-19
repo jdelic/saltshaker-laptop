@@ -1,5 +1,5 @@
 repos:
-    albert: deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_Testing/ /
+    albert: deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_13/ /
     crush: deb https://repo.charm.sh/apt/ * *
     cuda: deb https://developer.download.nvidia.com/compute/cuda/repos/debian12/x86_64/ /
     enpass: deb https://apt.enpass.io/ stable main
