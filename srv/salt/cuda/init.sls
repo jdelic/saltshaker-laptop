@@ -11,6 +11,7 @@ cuda-repo:
 cuda:
     pkg.installed:
         - pkgs:
+            - cuda
             - cuda-toolkit
             - nvidia-kernel-open-dkms
             - nvidia-open
