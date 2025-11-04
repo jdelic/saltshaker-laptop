@@ -29,7 +29,6 @@ base:
         - airtame
         - basics.intel-firmware
         - printing.hp
-        - printing.xerox
 
     'id:hades':
         - match: grain
