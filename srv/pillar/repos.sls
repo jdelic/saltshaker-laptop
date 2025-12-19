@@ -14,10 +14,10 @@ repos:
 
 downloads:
     droidsans-nerdfont:
-        url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/DroidSansMono.zip
-        hash: sha256=9fc4a511a9e8d3fa5062a2d94398e18898a0b45916ab42b6891307fcee493485
+        url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/DroidSansMono.zip
+        hash: sha256=030229341907c833862f00682f0f4bce65d0dc8d281fc9a40d80b7ee9d306e88
     astral-uv-installer:
         url: https://astral.sh/uv/install.sh
-        hash: sha256=fdc420c0f951e00148a77d5d4b22858bb3b0581ca50b2f62e09adc250104565c
+        hash: sha256=e27424708d1ac59cfc94e3f540a111f2edbb37bc8164febce8ee7fa5d5505c71
 
 # vim: syntax=yaml
