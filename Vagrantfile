@@ -2,7 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    config.vm.box = "debian/testing64"
+    config.vm.box = "debian-13-amd64"
+    config.vm.box_url = "https://s3.eu-central-1.amazonaws.com/vagrant.maurus.net/debian-13-amd64-libvirt.box"
     config.vm.provider :libvirt do |lv|
         #lv.customize ['modifyvm', :id, '--rtcuseutc', 'on']
         lv.memory = 4096
