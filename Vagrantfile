@@ -13,4 +13,5 @@ Vagrant.configure("2") do |config|
                             linux__nfs_options: ['rw','no_subtree_check','all_squash','no_root_squash'],
                             nfs_version: 4,
                             nfs_udp: false
+    config.ssh.forward_agent = true
 end
