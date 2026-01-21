@@ -214,7 +214,7 @@ script-gnome-desktop-keyboard-shortcuts-{{user}}:
         - mode: '0700'
         - makedirs: True
         - require:
-            - cmd: install-extensions-{{user}}-4144
+            - cmd: install-extensions-{{user}}-5177
 
 
 startup-gnome-desktop-keyboard-shortcuts-{{user}}:
