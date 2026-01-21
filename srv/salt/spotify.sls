@@ -1,8 +1,30 @@
 spotify:
-    cmd.run:
-        - name: flatpak install -y --or-update flathub com.spotify.Spotify
+    aptrepo.managed:
+        - name: {{pillar['repos']['spotify']}}
+        - listfile_name: spotify.list
+        - signed_by: /usr/share/keyrings/spotify-archive-keyring.gpg
+        - signing_key_url: https://download.spotify.com/debian/pubkey_C85668DF69375001.gpg
         - require:
-            - cmd: flatpak-flathub
+            - pkg: desktop-packages
+    pkg.installed:
+        - name: spotify-client
+        - require:
+            - aptrepo: spotify
+
+
+{% for user in pillar['users'] %}
+spotify-desktop-{{user}}:
+    file.copy:
+        - name: /home/{{user}}/.local/share/applications/spotify.desktop
+        - source: /usr/share/spotify/spotify.desktop
+        - user: {{user}}
+        - group: {{user}}
+        - makedirs: True
+        - mode: '0644'
+        - require:
+            - pkg: spotify
+{% endfor %}
+
 
 
 # vim: syntax=yaml
