@@ -1,3 +1,3 @@
 include:
-    .terraform
-    .vagrant
+    - .terraform
+    - .vagrant
