@@ -22,7 +22,7 @@ base:
         - thunderbird
         - vscode
         - yubikey
-        - zoom
+        #- zoom
 
     'id:parasite':
         - match: grain
