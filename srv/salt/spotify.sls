@@ -1,9 +1,8 @@
 spotify:
     cmd.run:
-        - name: /usr/bin/snap install --color=never spotify
-        - unless: /usr/bin/snap list --color=never | grep -q spotify
+        - name: flatpak install -y --or-update flathub com.spotify.Spotify
         - require:
-            - pkg: desktop-packages
+            - cmd: flatpak-flathub
 
 
 # vim: syntax=yaml
