@@ -5,7 +5,7 @@ include:
     - .ruby
     #- .fpm
     - .uv
-    - .vagrant
+    - .hashicorp
 
 dev-essentials:
     pkg.installed:

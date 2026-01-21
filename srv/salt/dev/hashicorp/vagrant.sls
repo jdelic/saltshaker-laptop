@@ -5,6 +5,8 @@ vagrant:
             - libffi-dev
             - libvirt-dev
             - rsync
+        - require:
+            - aptrepo: hashicorp-repo
 
 
 vagrant-enable-nfs:
