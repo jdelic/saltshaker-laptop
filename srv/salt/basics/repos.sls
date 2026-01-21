@@ -4,7 +4,7 @@ trixie:
         - file: /etc/apt/sources.list
 {% if pillar['repos'].get('pgpkey', None) %}
         - key_url: {{pillar['repos']['pgpkey']['url']}}
-        - signedby: {{pillar['repos']['pgpkey']['keyring']}}
+        - signed_by: {{pillar['repos']['pgpkey']['keyring']}}
 {% else %}
         - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
         - consolidate: False
