@@ -23,31 +23,31 @@ saltstack-repo:
         - order: 2  # execute this state early!
 
 
-#trixie-updates:
-#    pkgrepo.managed:
-#        - name: {{pillar['repos']['trixie-updates']}}
-#        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
-#        - file: /etc/apt/sources.list
-#        - order: 2  # execute this state early!
+trixie-updates:
+    pkgrepo.managed:
+        - name: {{pillar['repos']['trixie-updates']}}
+        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
+        - file: /etc/apt/sources.list
+        - order: 2  # execute this state early!
 
 
-#trixie-security-updates:
-#    pkgrepo.managed:
-#        - name: {{pillar['repos']['trixie-security']}}
-#        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
-#        - file: /etc/apt/sources.list
-#        - order: 2  # execute this state early!
+trixie-security-updates:
+    pkgrepo.managed:
+        - name: {{pillar['repos']['trixie-security']}}
+        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
+        - file: /etc/apt/sources.list
+        - order: 2  # execute this state early!
 
 
-#trixie-backports:
-#    pkgrepo.managed:
-#        - name: {{pillar['repos']['trixie-backports']}}
-#        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
-#        - file: /etc/apt/sources.list
-#        - order: 2  # execute this state early!
-#    file.managed:
-#        - name: /etc/apt/preferences.d/trixie-backports
-#        - source: salt://basics/etc_mods/trixie-backports
+trixie-backports:
+    pkgrepo.managed:
+        - name: {{pillar['repos']['trixie-backports']}}
+        - signed_by: /usr/share/keyrings/debian-archive-keyring.gpg
+        - file: /etc/apt/sources.list
+        - order: 2  # execute this state early!
+    file.managed:
+        - name: /etc/apt/preferences.d/trixie-backports
+        - source: salt://basics/etc_mods/trixie-backports
 
 
 hashicorp-repo:
