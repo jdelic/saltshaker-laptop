@@ -169,7 +169,7 @@ network-manager-etc-interfaces:
     {% for key, extid in {"Move_Clock@rmy.pobox.com": "2",
             "vertical-workspaces@G-DH.github.com": "5177",
             "no-overview@fthx": "4099",
-            "trayIconsReloaded@selfmade.pl": "2890",
+            "appindicatorsupport@rgcjonas.gmail.com": "615",
             "gjsosk@vishram1123.com": "5949",
             "tactile@lundal.io": "4548"}.items() %}
 install-extensions-{{user}}-{{extid}}:
