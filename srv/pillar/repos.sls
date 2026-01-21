@@ -18,6 +18,6 @@ downloads:
         hash: sha256=030229341907c833862f00682f0f4bce65d0dc8d281fc9a40d80b7ee9d306e88
     astral-uv-installer:
         url: https://astral.sh/uv/install.sh
-        hash: sha256=e27424708d1ac59cfc94e3f540a111f2edbb37bc8164febce8ee7fa5d5505c71
+        hash: sha256=09ace6a888bd5941b5d44f1177a9a8a6145552ec8aa81c51b1b57ff73e6b9e18
 
 # vim: syntax=yaml
