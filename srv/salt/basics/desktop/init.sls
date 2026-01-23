@@ -251,18 +251,6 @@ startup-calendar-display-options-{{user}}:
             - file: script-calendar-display-options-{{user}}
 
 
-script-tray-icons-options-{{user}}:
-    file.managed:
-        - name: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "gnome_tray_icons_setup.py")}}
-        - source: salt://basics/desktop/gnome_tray_icons_setup.py
-        - user: {{user}}
-        - group: {{user}}
-        - mode: '0700'
-        - makedirs: True
-        - require:
-            - cmd: install-extensions-{{user}}-2890
-
-
 startup-tray-icons-option-{{user}}:
     file.accumulated:
         - name: startup-scripts-{{user}}
