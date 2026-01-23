@@ -28,12 +28,13 @@ base:
         - match: grain
         - airtame
         - basics.intel-firmware
-        - printing.hp
+        - drivers.printing.hp
 
     'id:hades':
         - match: grain
         - basics.amd-firmware
-        - cuda  # includes NVIDIA drivers
+        - drivers.cuda  # includes NVIDIA drivers
         #- steam
-        - printing.hp
+        - drivers.printing.hp
+        - drivers.reiner_cyberjack
         - vuescan
