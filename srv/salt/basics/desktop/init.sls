@@ -251,17 +251,6 @@ startup-calendar-display-options-{{user}}:
             - file: script-calendar-display-options-{{user}}
 
 
-startup-tray-icons-option-{{user}}:
-    file.accumulated:
-        - name: startup-scripts-{{user}}
-        - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
-        - text: /usr/bin/env GSETTINGS_SCHEMA_DIR="{{salt['file.join'](salt['user.info'](user).home, ".local", "share", "gnome-shell", "extensions", "trayIconsReloaded@selfmade.pl", "schemas")}}" {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "gnome_tray_icons_setup.py")}}
-        - require_in:
-             - file: startup-scripts-file-{{user}}
-        - require:
-             - file: script-tray-icons-options-{{user}}
-
-
 startup-scripts-file-{{user}}:
     file.managed:
         - name: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
