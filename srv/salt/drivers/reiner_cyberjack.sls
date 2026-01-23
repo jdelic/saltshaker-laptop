@@ -11,7 +11,7 @@ cyberjack-driver:
         - dir_mode: '0755'
     pkg.installed:
         - sources:
-            - code: /var/cache/salt/cyberjack/libifd-cyberjack6_3.99.5final.sp17_amd64_d13.deb
+            - libifd: /var/cache/salt/cyberjack/libifd-cyberjack6_3.99.5final.sp17_amd64_d13.deb
         - onchanges:
             - file: cyberjack-driver
         - require:
