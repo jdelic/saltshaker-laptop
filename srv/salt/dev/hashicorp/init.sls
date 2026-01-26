@@ -1,3 +1,4 @@
 include:
+    - .packer
     - .terraform
     - .vagrant
