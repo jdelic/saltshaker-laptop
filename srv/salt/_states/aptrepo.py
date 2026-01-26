@@ -68,16 +68,16 @@ def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=
     else:
         listfile_fn = "/etc/apt/sources.list.d/%s" % listfile_name
 
-    repo_qualifiers = ""
+    repo_qualifiers = []
     for k, v in unknown_qualifiers:
-        repo_qualifiers += "%s=%s " % (k, v)
+        repo_qualifiers.append("%s=%s " % (k, v))
     if arch:
-        repo_qualifiers += "arch=%s " % arch
+        repo_qualifiers.append("arch=%s " % arch)
     if signed_by:
-        repo_qualifiers += "signed-by=%s" % signed_by
-    if repo_qualifiers:
-        repo_qualifiers = "[" + repo_qualifiers + "] "
-    repo_str = "deb " + repo_qualifiers + repo_params + "\n"
+        repo_qualifiers.append("signed-by=%s" % signed_by)
+
+    repo_qualifiers = sorted(repo_qualifiers)
+    repo_str = "deb [" + " ".join(repo_qualifiers) + "] " + repo_params + "\n"
 
     skip_verify = True
     if signing_key_url.startswith("salt"):
