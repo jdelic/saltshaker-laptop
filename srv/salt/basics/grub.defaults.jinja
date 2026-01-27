@@ -6,7 +6,7 @@
 GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
-GRUB_CMDLINE_LINUX_DEFAULT="splash quiet"
+GRUB_CMDLINE_LINUX_DEFAULT="splash quiet usbcore.authorized_default=0"
 GRUB_CMDLINE_LINUX=""
 GRUB_DISABLE_OS_PROBER={% if enable_osprober %}0{% else %}1{% endif %}
 
