@@ -70,9 +70,9 @@ def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=
 
     repo_qualifiers = []
     for k, v in unknown_qualifiers:
-        repo_qualifiers.append("%s=%s " % (k, v))
+        repo_qualifiers.append("%s=%s" % (k, v))
     if arch:
-        repo_qualifiers.append("arch=%s " % arch)
+        repo_qualifiers.append("arch=%s" % arch)
     if signed_by:
         repo_qualifiers.append("signed-by=%s" % signed_by)
 
