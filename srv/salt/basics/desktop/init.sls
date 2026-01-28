@@ -252,6 +252,19 @@ startup-calendar-display-options-{{user}}:
             - file: script-calendar-display-options-{{user}}
 
 
+startup-gsettings-enforce-usbguard:
+    file.accumulated:
+        - name: startup-scripts-{{user}}
+        - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
+        - text: |
+            gsettings set org.gnome.desktop.privacy usb-protection true
+            gsettings set org.gnome.desktop.privacy usb-protection-level 'always'
+        - require_in:
+            - file: startup-scripts-file-{{user}}
+        - require:
+            - pkg: desktop-packages
+
+
 startup-scripts-file-{{user}}:
     file.managed:
         - name: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
