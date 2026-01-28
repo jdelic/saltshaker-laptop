@@ -8,6 +8,7 @@ include:
     - .noexim
     - .nounup
     - .grub
+    - .udev
     - .pam
     - .bluetooth
     - .firewalld
