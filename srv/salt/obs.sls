@@ -1,14 +1,15 @@
-
-v4l2loopback:
-    pkg.installed:
-        - pkgs:
-            - v4l2loopback-dkms         # for virtual camera support
-            - v4l2loopback-utils
-        - install_recommends: False
-    file.managed:
-        - name: /etc/modules-load.d/v4l2loopback.conf
-        - contents: |
-              v4l2loopback
+# disabled until 0.15.3 is available in trixie-backports because of Kernel incompatibility
+# see https://github.com/v4l2loopback/v4l2loopback/issues/648
+#v4l2loopback:
+#    pkg.installed:
+#        - pkgs:
+#            - v4l2loopback-dkms         # for virtual camera support
+#            - v4l2loopback-utils
+#        - install_recommends: False
+#    file.managed:
+#        - name: /etc/modules-load.d/v4l2loopback.conf
+#        - contents: |
+#              v4l2loopback
 
 
 obs-virtual-camera-source:
