@@ -168,7 +168,7 @@ network-manager-etc-interfaces:
     {# The ids can be found in .local/share/gnome-shell/extensions/ and the numerical part comes from the URL on
        extensions.gnome.org #}
     {% for key, extid in {"Move_Clock@rmy.pobox.com": "2",
-            "vertical-workspaces@G-DH.github.com": "5177",
+            "vertical-workspaces@G-dH.github.com": "5177",
             "no-overview@fthx": "4099",
             "appindicatorsupport@rgcjonas.gmail.com": "615",
             "gjsosk@vishram1123.com": "5949",
