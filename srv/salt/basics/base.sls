@@ -34,6 +34,7 @@ basesystem-packages:
             - pmount
             - python-is-python3
             - read-edid
+            - rfkill
             - systemd-timesyncd
             - traceroute
             - uhubctl
