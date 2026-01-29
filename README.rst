@@ -4,7 +4,7 @@ My laptop config
 This is supposed to run from a local salt-minion install, using ``salt-call``
 in a masterless setup. Based on a clean Debian Bookworm netinst installation,
 I'm using this to provision my work setup on a Dell XPS13 and my home PC. I
-am currently running this on a 9310 model, unfortunately the newer ones are
+am currently running this on a 9310 model, unfortunately the newer XPSs are
 terrible, and my custom-built Ryzen 9.
 
 Among other things, this config will install:
@@ -19,6 +19,7 @@ Among other things, this config will install:
   - `Albert (my favorite launcher) <albert_>`__,
   - Enpass
   - Yubikey support
+  - usbguard and usbguard-notifier
 
 * Most important Firefox extensions (use ``about:debugging`` to find their IDs
   if you want to add more):
@@ -49,15 +50,14 @@ Among other things, this config will install:
   - Logitech camera controls for Brio webcams
 
 
-Getting to Netinst
-------------------
+Getting to Debian
+-----------------
 
-Download the `Debian Netinst ISO <netinst_>`__. Then
-install the minimal system. I like using the text mode installer and I
-partition like this:
+Download the `Debian Installer ISO <instiso_>`__. Then install the minimal
+system. I like using the text mode installer and I partition like this:
 
 * 512MB EFI
-* 512MB EXT4 /boot
+* 2048MB EXT4 /boot
 * Remainder is dm-crypt encrypted volume with LVM (start by configuring the
   encrypted partition in the text mode installer, then add LVM and a volume
   group ``vg0``)
@@ -66,12 +66,14 @@ partition like this:
   - 16GB SWAP vg0-swap ---
   - 256GB EXT4 vg0-home /home
 
-After booting into the minimal system under Bookworm, your wifi will have been
+After booting into the minimal system under Trixie, your wifi may have been
 configured in ``/etc/network/interfaces``. Gnome will later use NetworkManager,
 which will not manage network adapters listed in ``/etc/network/interfaces``.
-So after the first run of ``salt-call``, you'll have to remove the static
-configuration by manually editing it.
 
+Especially with Wifi-7 devices you still need to manually bring them up, as the
+installer fails at it (at least on my Gigabyte x870e). So that's where it's
+useful to have a full installation ISO and use nmcli to connect to wifi after
+booting into the base system.
 
 .. code-block:: shell
 
@@ -80,7 +82,7 @@ configuration by manually editing it.
     cd saltshaker-laptop
     ./configure.sh
 
-    # remove static interface config so NetworkManager can take over
+    # remove static interface config so NetworkManager can take over, if necessary
     vi /etc/network/interfaces
 
 
@@ -92,15 +94,16 @@ useful and you should know. You can install them from ``Extension Manager``:
 
 * `Frippery Move Clock <frippery_>`__ (moves the clock to the right where it 
   belongs)
-* `Vertical overview <vertical_>`__ (because vertically stacked virtual 
-  desktops are much more sensible)
-* `Tray Icons <trayicons_>`__: Reloaded (no idea why Gnome tries to remove 
-  them... so much software still uses them)
-
-  - Make sure to change the settings to allow like 10 or so icons
-
+* `V-Shell Vertical Workspaces <vertical_>`__ (because vertically stacked
+  virtual desktops are much more sensible)
+* `AppIndicator and KStatusNotifier Support <trayicons_>`__: no idea why Gnome
+  tries to remove tray icons... so much software still uses them)
 * `No Overview At Start-up <nooverview_>`__ (with Albert as launcher the
   default is just annoying)
+* `Better onscreen keyboard (GJS OSK) <gjsosk_>`__: Just an improved keyboard
+  that's very useful for touchscreens or when you locked out your USB keyboard.
+* `Tactile tiling <tactile_>`__: Gives keyboard shortcuts for tiling windows.
+  Useful until niri or Hyprland make their way to Debian.
 
 
 Important Gnome Settings changed by this config
@@ -115,6 +118,9 @@ settings:
 3. On Gnome Tweaks set the clock to show calendar weeks and the date
 4. Configure the Gnome extensions, setting the keyboard shortcuts for vertical
    desktops and configuring the tray icons size and position
+5. **Disable Gnome USB protection** in favor of usbguard and usbguard-notifier,
+   changing the Kernel boot to disallow USB devices and adding udev rules for
+   devices needed for boot (like the keyboard to unlock LUKS drives).
 
 
 Which Albert Plugins to Enable?
@@ -173,13 +179,14 @@ Make sure to install the *latest* of these:
 * `VirtIO drivers for Windows VMs <virtio_>`__
 
 
-.. _netinst: https://www.debian.org/devel/debian-installer/
+.. _instiso: https://www.debian.org/CD/http-ftp/
 .. _starship: https://starship.rs
 .. _albert: https://github.com/albertlauncher/albert
 .. _frippery: https://extensions.gnome.org/extension/2/move-clock/
-.. _vertical: https://extensions.gnome.org/extension/4144/vertical-overview/
+.. _vertical: https://extensions.gnome.org/extension/5177/vertical-workspaces/
 .. _nooverview: https://extensions.gnome.org/extension/4099/no-overview/
-.. _trayicons: https://extensions.gnome.org/extension/2890/tray-icons-reloaded/
+.. _trayicons: https://extensions.gnome.org/extension/615/appindicator-support/
+.. _gjsosk: https://extensions.gnome.org/extension/5949/gjs-osk/
 .. _ollama: https://ollama.com/download
 .. _spice: https://www.spice-space.org/download.html
 .. _virtio: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/
