@@ -257,8 +257,8 @@ startup-gsettings-enforce-usbguard:
         - name: startup-scripts-{{user}}
         - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
         - text: |
-            gsettings set org.gnome.desktop.privacy usb-protection true
             gsettings set org.gnome.desktop.privacy usb-protection-level 'always'
+            gsettings set org.gnome.desktop.privacy usb-protection false
         - require_in:
             - file: startup-scripts-file-{{user}}
         - require:
