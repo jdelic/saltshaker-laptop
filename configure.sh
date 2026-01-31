@@ -18,7 +18,7 @@ mkdir -p /etc/salt/minion.d
 cp $BASEDIR/etc/salt-minion/minion.d/saltshaker.conf /etc/salt/minion.d/
 ln -sv $BASEDIR/srv/salt /etc/salt/salt
 ln -sv $BASEDIR/srv/pillar /etc/salt/pillar
-stdbuf -oL -eL salt-call --local state.highstate > >(tee -a /tmp/salt_first_run_stdout) 2> >(tee -a /tmp/salt_first_run_stderr >&2)
+stdbuf -oL -eL salt-call --local --log-level=info state.highstate > >(tee -a /tmp/salt_first_run_stdout) 2> >(tee -a /tmp/salt_first_run_stderr >&2)
 echo "************ Logs are in /tmp/salt_first_run_stdout and ..._stderr"
 EOF
 sudo bash $TMP1
