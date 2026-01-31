@@ -16,7 +16,7 @@ desktop-packages:
             - bluez-tools
             - cups
             - cups-pk-helper
-            - dnsmasq  # required by libvirtd
+            - dnsmasq-base  # required by libvirtd
             - eog
             - eog-plugins
             - evince
