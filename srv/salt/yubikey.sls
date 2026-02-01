@@ -5,4 +5,5 @@ yubikey-packages:
             - ykls
             - yubico-piv-tool
             - libpam-yubico
-
+            - yubikey-manager
+        - install_recommends: False
