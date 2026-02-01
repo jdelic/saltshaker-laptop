@@ -26,7 +26,7 @@ base:
 
     'id:parasite':
         - match: grain
-        - airtame
+        #- airtame
         - basics.intel-firmware
         - drivers.printing.hp
 
