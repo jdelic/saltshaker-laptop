@@ -35,6 +35,7 @@ basesystem-packages:
             - python-is-python3
             - read-edid
             - rfkill
+            - systemd-resolved
             - systemd-timesyncd
             - traceroute
             - uhubctl
