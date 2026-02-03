@@ -1,4 +1,5 @@
 include:
+    - .aws
     - .golang
     - .nfs
     - .python
