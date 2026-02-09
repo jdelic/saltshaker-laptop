@@ -5,11 +5,11 @@ base:
         - albert
         - ardour
         - basics
+        - bitwarden
         - cameractrls
         - crush
         - dev
         - discord
-        - enpass
         - firefox
         - gimp
         - inkscape

@@ -6,11 +6,6 @@
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi",
                 "default_area": "navbar"
             },
-            "firefox-enpass@enpass.io": {
-                "installation_mode": "normal_installed",
-                "install_url": "https://dl.enpass.io/stable/extensions/firefox/versions/6.9.4.173/enpass-firefox-6.9.4.2.xpi",
-                "default_area": "navbar"
-            },
             "de-DE@dictionaries.addons.mozilla.org": {
                 "installation_mode": "normal_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/german-dictionary/latest.xpi"
@@ -26,6 +21,11 @@
             "uMatrix@raymondhill.net": {
                 "installation_mode": "normal_installed",
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/umatrix/latest.xpi",
+                "default_area": "navbar"
+            },
+            "{446900e4-71c2-419f-a6a7-df9c091e268b}": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/{446900e4-71c2-419f-a6a7-df9c091e268b}/latest.xpi",
                 "default_area": "navbar"
             }
         },
