@@ -26,6 +26,8 @@ desktop-packages:
             - gnome-shell
             - gdm3
             - ghostscript
+            - gir1.2-gda-5.0
+            - gir1.2-gsound-1.0
             - gir1.2-libinsane-1.0
             - gir1.2-spiceclientgtk-3.0
             - gir1.2-wp-0.5
@@ -172,7 +174,8 @@ network-manager-etc-interfaces:
             "no-overview@fthx": "4099",
             "appindicatorsupport@rgcjonas.gmail.com": "615",
             "gjsosk@vishram1123.com": "5949",
-            "tactile@lundal.io": "4548"}.items() %}
+            "tactile@lundal.io": "4548",
+            "copyous@boerdereinar.dev": "8834"}.items() %}
 install-extensions-{{user}}-{{extid}}:
     cmd.script:
         - name: install_gnome_extensions.sh -e {{extid}}
@@ -263,6 +266,18 @@ startup-gsettings-enforce-usbguard:
             - file: startup-scripts-file-{{user}}
         - require:
             - pkg: desktop-packages
+
+
+startup-dconf-copyous-inmemorydatabase:
+    file.accumulated:
+        - name: startup-scripts-{{user}}
+        - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
+        - text: |
+            dconf write /org/gnome/shell/extensions/copyous/in-memory-database true
+        - require_in:
+            - file: startup-scripts-file-{{user}}
+        - require:
+            - cmd: install-extensions-{{user}}-8834
 
 
 startup-scripts-file-{{user}}:
