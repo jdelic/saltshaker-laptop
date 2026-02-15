@@ -27,6 +27,7 @@ basesystem-packages:
             - make
             - man-db
             - manpages
+            - mosh
             - net-tools
             - nftables
             - ntfs-3g
