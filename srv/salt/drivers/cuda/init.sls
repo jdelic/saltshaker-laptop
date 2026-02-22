@@ -8,14 +8,34 @@ cuda-repo:
         - arch: amd64
 
 
+nvidia-drivers:
+    pkg.installed:
+        - pkgs:
+            - nvidia-driver
+            - vulkan-tools
+            - nvidia-persistenced
+            - nvidia-settings
+            - libgles-nvidia1
+            - libnvidia-encode1
+            - libnvidia-allocator1
+            - nvidia-driver-libs:i386
+            - libgles-nvidia2
+            - nvidia-vulkan-icd
+            - nvidia-suspend-common
+            - nvidia-smi
+            - nvtop
+            - nvidia-kernel-dkms
+        - fromrepo: trixie-backports
+        - install_recommends: False
+        - require:
+            - pkg: desktop-packages
+
+
 cuda:
     pkg.installed:
         - pkgs:
-            - cuda
             - cuda-toolkit
-            - nvidia-kernel-open-dkms
-            - nvidia-open
-            - nvtop
         - install_recommends: False
         - require:
             - aptrepo: cuda-repo
+            - pkg: nvidia-drivers

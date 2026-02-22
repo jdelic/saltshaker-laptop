@@ -119,7 +119,7 @@ cron:
             - pkg: basesystem-packages
 
 
-# enforce en_us.UTF8
+# === enforce en_us.UTF8
 
 # Ubuntu has removed this file again in bugs.launchpad.net/ubuntu/+source/systemd/+bug/2102028
 # but Debian in Trixie still has it.
