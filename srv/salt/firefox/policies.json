@@ -49,6 +49,9 @@
         "EncryptedMediaExtensions": {
             "Enabled": true
         },
+        "Preferences": {
+            "media.videocontrols.picture-in-picture.respect-disablePictureInPicture": false
+        },
         "Certificates": {
             "Install": {{certificates|tojson}}
         }
