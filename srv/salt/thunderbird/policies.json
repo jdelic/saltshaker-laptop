@@ -1,5 +1,19 @@
 {
     "policies": {
+        "ExtensionSettings": {
+            "dkim_verifier@pl": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://services.addons.thunderbird.net/thunderbird/downloads/latest/dkim-verifier/addon-438634-latest.xpi"
+            },
+            "thunderai@micz.it": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://services.addons.thunderbird.net/thunderbird/downloads/latest/thunderai/addon-988699-latest.xpi"
+            },
+            "EditMailSubject@jcp.covenant": {
+                "installation_mode": "normal_installed",
+                "install_url": "https://addons.thunderbird.net/thunderbird/downloads/latest/edit-email-subject/addon-330066-latest.xpi"
+            }
+        },
         "DNSOverHTTPS": {
             "Enabled": false
         },
