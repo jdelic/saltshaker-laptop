@@ -52,6 +52,9 @@
         "Preferences": {
             "media.videocontrols.picture-in-picture.respect-disablePictureInPicture": false
         },
+        "Cookies": {
+            "Allow": ["https://notes.maurus.net/"]
+        },
         "Certificates": {
             "Install": {{certificates|tojson}}
         }
