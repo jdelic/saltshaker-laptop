@@ -3,6 +3,7 @@
 base:
     '*':
         - albert
+        - anytype
         - ardour
         - basics
         - bitwarden
