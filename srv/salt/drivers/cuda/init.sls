@@ -16,6 +16,7 @@ cuda:
             - nvidia-kernel-open-dkms
             - nvidia-open
             - nvtop
+            - vulkan-tools
         - install_recommends: False
         - require:
             - aptrepo: cuda-repo

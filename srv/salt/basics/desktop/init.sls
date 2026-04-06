@@ -40,6 +40,10 @@ desktop-packages:
             - gnome-terminal
             - gnome-tweaks
             - gphoto2
+            - gstreamer1.0-libav
+            - gstreamer1.0-plugins-good  # these are needed for video playback and h264 streaming
+            - gstreamer1.0-plugins-bad
+            - gstreamer1.0-plugins-ugly
             - gthumb
             - gvfs-backends
             - gvfs-fuse
