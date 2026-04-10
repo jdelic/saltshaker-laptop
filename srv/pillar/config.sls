@@ -5,6 +5,7 @@ wayland:
 
 public-interfaces:
     - wlp0s20f3
+    - wlx74da387ed494
 
 
 starship:
