@@ -82,7 +82,7 @@ byobu-dir-{{username}}:
 byobu-tmux-config-{{username}}:
     file.managed:
         - name: {{home_dir}}/.byobu/.tmux.conf
-        - source: salt://mn/users/tmux-user.conf
+        - source: salt://headless/users/tmux-user.conf
         - user: {{username}}
         - group: {{username}}
         - mode: '0644'
@@ -93,7 +93,7 @@ byobu-tmux-config-{{username}}:
 byobu-status-config-{{username}}:
     file.managed:
         - name: {{home_dir}}/.byobu/status
-        - source: salt://mn/users/status
+        - source: salt://headless/users/status
         - user: {{username}}
         - group: {{username}}
         - mode: '0644'

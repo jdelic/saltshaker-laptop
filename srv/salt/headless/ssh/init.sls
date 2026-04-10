@@ -34,7 +34,7 @@ openssh-config-folder:
 openssh-config:
     file.managed:
         - name: /etc/ssh/sshd_config.d/00-sshd_config.conf
-        - source: salt://basics/crypto/sshd_config.jinja.conf
+        - source: salt://headless/ssh/sshd_config.jinja.conf
         - template: jinja
         - context:
             localaddresses: 0.0.0.0
@@ -47,7 +47,7 @@ openssh-config:
 openssh-client-config:
     file.managed:
         - name: /etc/ssh/ssh_config.d/mn_tmux.conf
-        - source: salt://basics/crypto/ssh_config.jinja.conf
+        - source: salt://headless/ssh/ssh_config.jinja.conf
         - template: jinja
         - user: root
         - group: root
