@@ -1,6 +1,7 @@
 libvirt-packages:
     pkg.installed:
         - pkgs:
+            - dnsmasq-base  # required by libvirtd
             - libvirt-daemon
             - libvirt-daemon-system
             - qemu-kvm
