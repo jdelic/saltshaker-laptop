@@ -1,7 +1,8 @@
 # Desktop environment from Debian Netinst minimal installation
 
 base:
-    '*':
+    'not G@id:rampart':
+        - match: compound
         - albert
         - anytype
         - ardour
@@ -40,3 +41,21 @@ base:
         - drivers.reiner_cyberjack
         - special.usbguard-wcn785x
         - vuescan
+
+    'id:rampart':
+        - match: grain
+        - basics.base
+        - basics.crypto
+        - basics.etc_mods
+        - basics.firewalld
+        - basics.grub
+        - basics.intel-firmware
+        - basics.libvirt
+        - basics.noexim
+        - basics.nounup
+        - basics.pam
+        - basics.repos
+        - basics.udev
+        - basics.vim
+        - dev
+        - salt-minion
