@@ -38,4 +38,5 @@ base:
         #- steam
         - drivers.printing.hp
         - drivers.reiner_cyberjack
+        - special.usbguard-wcn785x
         - vuescan
