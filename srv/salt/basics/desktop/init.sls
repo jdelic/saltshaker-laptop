@@ -1,5 +1,6 @@
 include:
     - .flatpak
+    - .snap
 
 
 desktop-packages:
@@ -80,7 +81,6 @@ desktop-packages:
             - qemu-system-modules-spice
             - seahorse
             - smart-notifier
-            - snapd
             - sound-theme-freedesktop
             - spice-client-gtk
             - spice-vdagent
