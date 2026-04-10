@@ -62,8 +62,6 @@ desktop-packages:
             - libpipewire-0.3-modules
             - libsane1
             - libusbmuxd-tools
-            - libvirt-daemon
-            - libvirt-daemon-system
             - malcontent  # unfortunately needed because otherwise gnome-settings->Applications doesn't populate
             - nautilus
             - network-manager
@@ -81,8 +79,6 @@ desktop-packages:
             - pulseaudio-utils  # this delivers pactl which we need to control virtual sound sinks
             - python3-gi
             - qemu-system-modules-spice
-            - qemu-system-x86
-            - qemu-utils
             - seahorse
             - smart-notifier
             - snapd
@@ -100,7 +96,6 @@ desktop-packages:
             - usbmuxd
             - virt-manager
             - virt-viewer
-            - virtinst
             - vlc
             - wayland-utils
             - wayland-protocols

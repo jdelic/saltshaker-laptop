@@ -12,6 +12,7 @@ include:
     - .pam
     - .bluetooth
     - .firewalld
+    - .libvirt
 
 
 # enforce that Debian packages can't launch daemons while salt runs
