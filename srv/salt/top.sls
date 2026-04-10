@@ -57,7 +57,6 @@ base:
         - basics.repos
         - basics.udev
         - basics.vim
-        - dev
         - headless
         - salt-minion
         - starship.install
