@@ -1,6 +1,7 @@
 include:
     - .flatpak
     - .snap
+    - .pam
 
 
 desktop-packages:
