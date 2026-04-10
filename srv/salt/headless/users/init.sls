@@ -1,7 +1,3 @@
-
-sudo:
-    pkg.installed
-
 include:
     - headless.users.manage
 
