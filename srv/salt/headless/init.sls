@@ -1,3 +1,3 @@
 include:
-    .ssh
-    .users
+    - .ssh
+    - .users
