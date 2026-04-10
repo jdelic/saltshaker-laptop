@@ -36,6 +36,7 @@ basesystem-packages:
             - python-is-python3
             - read-edid
             - rfkill
+            - smartmontools
             - systemd-resolved
             - systemd-timesyncd
             - traceroute
@@ -52,5 +53,13 @@ usbguard:
         - enable: True
         - require:
             - pkg: basesystem-packages
+
+
+smartd-service:
+    service.running:
+        - name: smartd
+        - enable: True
+        - require:
+              - pkg: basesystem-packages
 
 # vim: syntax=yaml
