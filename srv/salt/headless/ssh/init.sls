@@ -37,7 +37,9 @@ openssh-config:
         - source: salt://headless/ssh/sshd_config.jinja.conf
         - template: jinja
         - context:
-            localaddresses: 0.0.0.0
+            # our config allows password login from local addresses. In this config for my private network
+            # we don't want that.
+            localaddresses:  []
         - require:
             - file: openssh-config-folder
         - watch_in:
