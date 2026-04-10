@@ -58,4 +58,6 @@ base:
         - basics.udev
         - basics.vim
         - dev
+        - headless
         - salt-minion
+        - starship.install
