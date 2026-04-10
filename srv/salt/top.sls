@@ -53,7 +53,6 @@ base:
         - basics.libvirt
         - basics.noexim
         - basics.nounup
-        - basics.pam
         - basics.repos
         - basics.udev
         - basics.vim
