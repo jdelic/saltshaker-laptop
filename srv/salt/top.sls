@@ -46,7 +46,7 @@ base:
         - match: grain
         - basics.base
         - basics.crypto
-        - basics.etc_mods
+        - basics.etc_mods.inputrc
         - basics.firewalld
         - basics.grub
         - basics.intel-firmware
