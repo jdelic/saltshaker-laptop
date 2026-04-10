@@ -56,11 +56,7 @@ usbguard:
     # So we add a usbguard rule for it here. This only exists on my Gigabyte Aorus x870e.
     cmd.run:
         - name: >
-            usbguard append-rule 'allow id 0489:e10d serial "" name "" hash 
-                "PmlV/iHfj5xpTD0gx8bauwSPEDfVsG+1FRpCXvs9k/Y=" parent-hash 
-                "LkSVCKUK8lHT19PTHzleQzgA7+hrJbuneikfbrwZl/I=" via-port "1-10" 
-                with-interface { e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 e0:01:01 } 
-                with-connect-type "unknown"
+            usbguard append-rule 'allow id 0489:e10d serial "" name ""'
         - onlyif: >
             usbguard list-devices | grep -q 'block id 0489:e10d'
         - require:
