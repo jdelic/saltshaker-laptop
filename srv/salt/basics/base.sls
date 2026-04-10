@@ -15,6 +15,7 @@ basesystem-packages:
             - efitools
             - firejail
             - firewalld
+            - fontconfig
             - git
             - git-lfs
             - htop
