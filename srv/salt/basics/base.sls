@@ -5,6 +5,7 @@ basesystem-packages:
             - apt-transport-s3
             - bash-completion
             - bind9-dnsutils
+            - bridge-utils
             - byobu
             - coreutils
             - cron
@@ -20,7 +21,9 @@ basesystem-packages:
             - git-lfs
             - htop
             - i2c-tools
+            - ifupdown
             - info
+            - iproute2
             - jq
             - less
             - libcap2-bin
