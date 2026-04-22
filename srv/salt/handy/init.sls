@@ -21,10 +21,22 @@ handy:
             - pkg: wtype
 
 
-wtype:
+ydotool:
     pkg.installed:
+        - fromrepo: trixie-backports
         - require:
             - pkg: desktop-packages
+    cmd.run:
+        - name: >
+            sudo udevadm control --reload-rules;
+            sudo udevadm trigger --subsystem-match=misc --attr-match=name=uinput
+        - require:
+            - pkg: ydotool
+    service.running:
+        - name: ydotoold
+        - enable: True
+        - require:
+            - cmd: ydotool
 
 
 {% for user in pillar['users'] %}
@@ -41,7 +53,17 @@ handy-keyboard-shortcut-{{user}}:
     cmd.run:
         - name: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}} create
         - runas: {{user}}
-        - unless: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}} check
+        - onlyif: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}} check
         - require:
             - file: handy-keyboard-shortcut-{{user}}
+
+
+add-{{user}}-into-input:
+    user.present:
+        - name: {{user}}
+        - optional_groups:
+            - input
+        - remove_groups: False
+        - require:
+            - pkg: desktop-packages
 {% endfor %}
