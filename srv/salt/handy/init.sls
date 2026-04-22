@@ -18,7 +18,6 @@ handy:
         - require:
             - pkg: desktop-packages
             - file: handy
-            - pkg: wtype
 
 
 ydotool:
@@ -28,15 +27,10 @@ ydotool:
             - pkg: desktop-packages
     cmd.run:
         - name: >
-            sudo udevadm control --reload-rules;
-            sudo udevadm trigger --subsystem-match=misc --attr-match=name=uinput
+            udevadm control --reload-rules;
+            udevadm trigger --subsystem-match=misc --attr-match=name=uinput
         - require:
             - pkg: ydotool
-    service.running:
-        - name: ydotoold
-        - enable: True
-        - require:
-            - cmd: ydotool
 
 
 {% for user in pillar['users'] %}
@@ -66,4 +60,13 @@ add-{{user}}-into-input:
         - remove_groups: False
         - require:
             - pkg: desktop-packages
+
+
+systemd-enable-handy-ydotoold-{{user}}:
+    cmd.run:
+         - name: systemctl --user enable ydotool.service
+         - runas: {{user}}
+         - require:
+             - cmd: ydotool
+             - user: add-{{user}}-into-input
 {% endfor %}
