@@ -69,4 +69,15 @@ systemd-enable-handy-ydotoold-{{user}}:
          - require:
              - cmd: ydotool
              - user: add-{{user}}-into-input
+
+
+handy-autostart-{{user}}:
+   file.symlink:
+        - name: /home/{{user}}/.config/autostart/Handy.desktop
+        - target: /usr/share/applications/Handy.desktop
+        - user: {{user}}
+        - group: {{user}}
+        - makedirs: True
+        - require:
+            - pkg: handy
 {% endfor %}
