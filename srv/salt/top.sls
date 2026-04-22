@@ -14,6 +14,7 @@ base:
         - discord
         - firefox
         - gimp
+        - handy
         - inkscape
         - intellij
         - obs
