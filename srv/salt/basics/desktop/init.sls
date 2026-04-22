@@ -102,6 +102,7 @@ desktop-packages:
             - weston
             - wireplumber
             - wmctrl
+            - wtype
             - x11-xserver-utils
             - xdotool
             - xfonts-scalable
