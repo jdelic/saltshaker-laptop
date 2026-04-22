@@ -51,7 +51,7 @@ def main(action):
             sys.exit(0)
     elif action == "create":
         if not shortcut_exists(existing_shortcuts, shortcut_name):
-            create_new_shortcut(existing_shortcuts, shortcut_name, "handy --toggle-transcription", "<Super>z")
+            create_new_shortcut(existing_shortcuts, shortcut_name, "handy --toggle-transcription", "<Super>q")
             print("Shortcut created successfully.")
             sys.exit(0)
         print(f"Shortcut '{shortcut_name}' already exists.")
