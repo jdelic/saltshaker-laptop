@@ -6,6 +6,7 @@ basesystem-packages:
             - bash-completion
             - bind9-dnsutils
             - bridge-utils
+            - btop
             - byobu
             - coreutils
             - cron
@@ -19,7 +20,6 @@ basesystem-packages:
             - fontconfig
             - git
             - git-lfs
-            - htop
             - i2c-tools
             - ifupdown
             - info
