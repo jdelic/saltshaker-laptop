@@ -15,3 +15,10 @@ flatpak-flathub:
         - name: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
         - require:
             - pkg: flatpak
+
+
+flatpak-flatseal:
+    cmd.run:
+        - name: flatpak install -y --or-update flathub com.github.tchx84.Flatseal
+        - require:
+            - cmd: flatpak-flathub
