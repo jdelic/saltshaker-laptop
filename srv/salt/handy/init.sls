@@ -67,15 +67,6 @@ add-{{user}}-into-input:
             - pkg: desktop-packages
 
 
-systemd-enable-handy-ydotoold-{{user}}:
-    cmd.run:
-         - name: systemctl --machine={{user}}@.host --user enable ydotool.service
-         - runas: {{user}}
-         - require:
-             - cmd: ydotool
-             - user: add-{{user}}-into-input
-
-
 handy-autostart-{{user}}:
    file.symlink:
         - name: /home/{{user}}/.config/autostart/Handy.desktop
