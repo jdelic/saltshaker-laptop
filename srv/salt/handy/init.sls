@@ -64,7 +64,7 @@ add-{{user}}-into-input:
 
 systemd-enable-handy-ydotoold-{{user}}:
     cmd.run:
-         - name: systemctl --user enable ydotool.service
+         - name: systemctl --machine={{user}}@.host --user enable ydotool.service
          - runas: {{user}}
          - require:
              - cmd: ydotool
