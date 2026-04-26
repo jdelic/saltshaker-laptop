@@ -44,12 +44,17 @@ handy-keyboard-shortcut-{{user}}:
         - makedirs: True
         - require:
             - pkg: handy
-    cmd.run:
-        - name: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}} create
-        - runas: {{user}}
-        - onlyif: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}} check
+
+
+handy-keyboard-shortcut-startup-{{user}}:
+    file.accumulated:
+        - name: startup-scripts-{{user}}
+        - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}}
+        - text: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}} create
+        - require_in:
+              - file: startup-scripts-file-{{user}}
         - require:
-            - file: handy-keyboard-shortcut-{{user}}
+              - file: handy-keyboard-shortcut-{{user}}
 
 
 add-{{user}}-into-input:
