@@ -6,6 +6,7 @@ repos:
     hashicorp: deb https://apt.releases.hashicorp.com bookworm main
     nordvpn: deb https://repo.nordvpn.com/deb/nordvpn/debian stable main
     saltstack: deb https://packages.broadcom.com/artifactory/saltproject-deb/ stable main
+    signal: deb https://updates.signal.org/desktop/apt xenial main
     spotify: deb https://repository.spotify.com stable non-free
     trixie: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://ftp-stud.hs-esslingen.de/debian/ trixie main contrib non-free non-free-firmware
     trixie-backports: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://ftp-stud.hs-esslingen.de/debian/ trixie-backports main contrib non-free non-free-firmware

@@ -19,6 +19,7 @@ base:
         - intellij
         - obs
         - salt-minion
+        - signal
         - slack
         - spotify
         - starship
