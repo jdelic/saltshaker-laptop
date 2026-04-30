@@ -49,7 +49,7 @@ handy-keyboard-shortcut-{{user}}:
 handy-keyboard-shortcut-startup-{{user}}:
     file.accumulated:
         - name: startup-scripts-{{user}}
-        - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}}
+        - filename: {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "startup.sh")}}
         - text: /usr/bin/python3 {{salt['file.join'](salt['user.info'](user).home, ".local", "lib", "saltshaker-startup", "handy_keyboard_shortcut.py")}} create
         - require_in:
               - file: startup-scripts-file-{{user}}
