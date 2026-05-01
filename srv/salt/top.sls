@@ -12,6 +12,7 @@ base:
         - crush
         - dev
         - discord
+        - element
         - firefox
         - gimp
         - handy

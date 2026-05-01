@@ -2,7 +2,7 @@ repos:
     albert: deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_13/ /
     crush: deb https://repo.charm.sh/apt/ * *
     cuda: deb https://developer.download.nvidia.com/compute/cuda/repos/debian13/x86_64/ /
-    enpass: deb https://apt.enpass.io/ stable main
+    element: deb [signed-by=/usr/share/keyrings/element-io-archive-keyring.gpg] https://packages.element.io/debian/ default main
     hashicorp: deb https://apt.releases.hashicorp.com bookworm main
     nordvpn: deb https://repo.nordvpn.com/deb/nordvpn/debian stable main
     saltstack: deb https://packages.broadcom.com/artifactory/saltproject-deb/ stable main
