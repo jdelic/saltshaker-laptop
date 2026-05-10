@@ -47,6 +47,8 @@ basesystem-packages:
             - uhubctl
             - unzip
             - usbguard
+            - xz-utils
+            - zstd
         - order: 1
         - require:
             - pkgrepo: trixie
