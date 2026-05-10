@@ -1,7 +1,7 @@
 # Desktop environment from Debian Netinst minimal installation
 
 base:
-    'not G@id:rampart and (not G@ip4_gw:192.168.121* and not I@force-desktop)':
+    'not G@id:rampart and ( not G@ip4_gw:192.168.121* and not I@force-desktop:true )':
         - match: compound
         - albert
         - anytype
