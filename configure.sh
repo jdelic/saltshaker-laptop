@@ -7,12 +7,12 @@ EOF
 TMP1="$(mktemp)"
 cat >$TMP1 <<EOF
 mv /tmp/saltstack.list /etc/apt/sources.list.d/saltstack.list
-apt install --no-install-recommends ca-certificates wget gnupg
+apt install -y --no-install-recommends ca-certificates wget gnupg
 wget -O /etc/apt/keyrings/salt-archive-keyring.gpg.tmp https://packages.broadcom.com/artifactory/api/security/keypair/SaltProjectKey/public
 gpg --dearmor -o /etc/apt/keyrings/salt-archive-keyring.gpg /etc/apt/keyrings/salt-archive-keyring.gpg.tmp
 rm /etc/apt/keyrings/salt-archive-keyring.gpg.tmp
 apt update
-apt install --no-install-recommends git salt-minion
+apt install -y --no-install-recommends git salt-minion
 systemctl disable --now salt-minion
 mkdir -p /etc/salt/minion.d
 cp $BASEDIR/etc/salt-minion/minion.d/saltshaker.conf /etc/salt/minion.d/
