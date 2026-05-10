@@ -3,7 +3,12 @@ users:
 {% if salt['user.info']('vagrant') %}
     vagrant:
         gnupghome: /home/vagrant/.gnupg
-{% else %}
+        # the following are only used for headless installs
+        groups:
+            - vagrant
+            - sudo
+            - gpg-access
+   {% else %}
     jonas:
         gnupghome: /home/jonas/jm/gpg
         install-uv: True
