@@ -1,7 +1,7 @@
 # Desktop environment from Debian Netinst minimal installation
 
 base:
-    'not G@id:rampart':
+    'not G@id:rampart and (not G@ip4_gw:192.168.121* and not I@force-desktop)':
         - match: compound
         - albert
         - anytype
@@ -47,17 +47,20 @@ base:
 
     'id:rampart':
         - match: grain
+        - basics.grub
+        - basics.intel-firmware
+        - basics.libvirt
+        - basics.udev
+
+    '*':
+        - match: glob
         - basics.base
         - basics.crypto
         - basics.etc_mods.inputrc
         - basics.firewalld
-        - basics.grub
-        - basics.intel-firmware
-        - basics.libvirt
         - basics.noexim
         - basics.nounup
         - basics.repos
-        - basics.udev
         - basics.vim
         - headless
         - salt-minion
