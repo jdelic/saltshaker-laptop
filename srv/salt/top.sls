@@ -15,7 +15,7 @@ base:
         - element
         - firefox
         - gimp
-        - handy
+        #- handy
         - inkscape
         - intellij
         - obs
