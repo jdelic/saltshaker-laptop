@@ -4,6 +4,12 @@ nomad:
             - aptrepo: hashicorp-repo
     service.dead:
         - name: nomad
-        - disable: True
+        - enable: False
+        - require:
+            - pkg: nomad
+
+mask-nomad:
+    service.masked:
+        - name: nomad
         - require:
             - pkg: nomad
