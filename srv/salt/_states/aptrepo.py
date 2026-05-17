@@ -69,7 +69,7 @@ def managed(name, listfile_name, signing_key_url, signed_by, dearmor=True, arch=
         listfile_fn = "/etc/apt/sources.list.d/%s" % listfile_name
 
     repo_qualifiers = []
-    for k, v in unknown_qualifiers:
+    for k, v in unknown_qualifiers.items():
         repo_qualifiers.append("%s=%s" % (k, v))
     if arch:
         repo_qualifiers.append("arch=%s" % arch)
