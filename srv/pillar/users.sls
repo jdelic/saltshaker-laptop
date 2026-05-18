@@ -8,7 +8,7 @@ users:
             - vagrant
             - sudo
             - gpg-access
-   {% else %}
+{% else %}
     jonas:
         gnupghome: /home/jonas/jm/gpg
         install-uv: True
@@ -24,7 +24,7 @@ users:
             - 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINuRkuMdRdZ8aNZu6X8qlAfrVWbRP2Bi9M96I2zdZ31O jonas@parasite'
             - 'sk-ecdsa-sha2-nistp256@openssh.com AAAAInNrLWVjZHNhLXNoYTItbmlzdHAyNTZAb3BlbnNzaC5jb20AAAAIbmlzdHAyNTYAAABBBKvJ8nPel1Lojsdpv0eTxQHyXok2KnRRmmAuzZxmBtcK9WAhTMoDRkXJ01ZE6pOGVfVQIPjmpqqp+RxVYtM1cmsAAAALdGVybWl1cy5jb20= jm cardno:23497472'
         enable_byobu: True
-  {% endif %}
+{% endif %}
 
 sudoers:
 {% if salt['user.info']('vagrant') %}

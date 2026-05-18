@@ -51,6 +51,7 @@ base:
         - basics.intel-firmware
         - basics.libvirt
         - basics.udev
+        - headless
 
     '*':
         - match: glob
@@ -62,6 +63,5 @@ base:
         - basics.nounup
         - basics.repos
         - basics.vim
-        - headless
         - salt-minion
         - starship.install
