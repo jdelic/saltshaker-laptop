@@ -8,6 +8,7 @@ repos:
     saltstack: deb https://packages.broadcom.com/artifactory/saltproject-deb/ stable main
     signal: deb https://updates.signal.org/desktop/apt xenial main
     spotify: deb https://repository.spotify.com stable non-free
+    tailscale: deb https://pkgs.tailscale.com/stable/debian trixie main
     trixie: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://ftp-stud.hs-esslingen.de/debian/ trixie main contrib non-free non-free-firmware
     trixie-backports: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://ftp-stud.hs-esslingen.de/debian/ trixie-backports main contrib non-free non-free-firmware
     trixie-security: deb [signed-by=/usr/share/keyrings/debian-archive-keyring.gpg arch=amd64] http://security.debian.org/debian-security trixie-security main contrib non-free non-free-firmware

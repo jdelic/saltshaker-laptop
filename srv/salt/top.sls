@@ -43,6 +43,7 @@ base:
         - drivers.printing.hp
         - drivers.reiner_cyberjack
         - special.usbguard-wcn785x
+        - tailscale
         - vuescan
 
     'id:rampart':
