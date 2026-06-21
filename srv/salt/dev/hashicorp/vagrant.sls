@@ -51,5 +51,5 @@ add-{{user}}-into-libvirt:
             - libvirt
         - remove_groups: False
         - require:
-            - pkg: desktop-packages
+            - pkg: basesystem-packages
 {% endfor %}
