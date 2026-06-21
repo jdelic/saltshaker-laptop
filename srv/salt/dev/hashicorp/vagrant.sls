@@ -40,8 +40,9 @@ vagrant-libvirt:
         - unless: vagrant plugin list | grep -q libvirt
         - runas: {{user}}
         - require:
-              - pkg: vagrant
-              - pkg: ruby
+            - pkg: vagrant
+            - pkg: ruby
+            - pkg: dev-essentials
 
 
 add-{{user}}-into-libvirt:
