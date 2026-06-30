@@ -9,7 +9,6 @@ include:
     - .nounup
     - .grub
     - .udev
-    - .bluetooth
     - .firewalld
     - .libvirt
 
